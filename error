@@ -1,0 +1,52 @@
+[vite] connected from window 6ba49a41-2f28-4934-ba1d-ffd29d787448:68:11
+[vite] connected from window 35b9ad19-deec-4299-878c-8270af4f4c65:68:11
+[vite] new window visibility hidden 6ba49a41-2f28-4934-ba1d-ffd29d787448:64:12
+[vite] new window visibility hidden 35b9ad19-deec-4299-878c-8270af4f4c65:64:12
+[vite] ping successful 6ba49a41-2f28-4934-ba1d-ffd29d787448:70:12
+[vite] ping successful 35b9ad19-deec-4299-878c-8270af4f4c65:70:12
+[vite] connected from window dc3f6c9d-7095-469a-8c58-165433172436:68:11
+[vite] new window visibility hidden dc3f6c9d-7095-469a-8c58-165433172436:64:12
+[vite] connecting... client:733:9
+[vite] connected. client:827:12
+Uncaught TypeError: React10.useContext(...) is null
+    LinkWithRef chunk-PVWAREVJ.mjs:9155
+    React 11
+    workLoop scheduler.development.js:266
+    flushWork scheduler.development.js:239
+    performWorkUntilDeadline scheduler.development.js:533
+5 react-router-hash-link.js:2708:32
+Uncaught TypeError: React10.useContext(...) is null
+    LinkWithRef chunk-PVWAREVJ.mjs:9155
+    React 12
+    workLoop scheduler.development.js:266
+    flushWork scheduler.development.js:239
+    performWorkUntilDeadline scheduler.development.js:533
+5 react-router-hash-link.js:2708:32
+The above error occurred in the <Link> component:
+
+LinkWithRef@http://localhost:5173/node_modules/.vite/deps/react-router-hash-link.js?v=ddd25992:2694:23
+genericHashLink/<@http://localhost:5173/node_modules/.vite/deps/react-router-hash-link.js?v=ddd25992:3423:9
+NavLink@http://localhost:5173/src/components/NavLink.tsx?t=1757393437373:18:24
+ul
+div
+nav
+header
+Header@http://localhost:5173/src/sections/Header.tsx?t=1757393437373:33:23
+div
+Layout@http://localhost:5173/src/App.tsx?t=1757393437373:28:47
+RenderedRoute@http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=ddd25992:5575:23
+Routes@http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=ddd25992:6335:16
+App
+Router@http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=ddd25992:6278:16
+BrowserRouter@http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=ddd25992:9369:23
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. 5 chunk-OY5C42Z6.js:14080:23
+Uncaught TypeError: React10.useContext(...) is null
+    LinkWithRef chunk-PVWAREVJ.mjs:9155
+    React 9
+    workLoop scheduler.development.js:266
+    flushWork scheduler.development.js:239
+    performWorkUntilDeadline scheduler.development.js:533
+react-router-hash-link.js:2708:32
+Error al interpretar el valor para '-webkit-text-size-adjust'.  Declaración rechazada. doblaje-basico-presencial:33:29

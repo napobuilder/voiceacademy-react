@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1100px] mx-auto px-5;
+  }
+}
+
+.card-texture {
+  background-color: #F8F9FA; /* Usando el color 'fondo' del tema */
+  background-image: url('https://www.transparenttextures.com/patterns/noise-pattern-with-subtle-cross-lines.png'), url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27160%27%20height%3D%27160%27%20viewBox%3D%270%200%20100%20100%27%3E%3Crect%20fill%3D%27transparent%27%20width%3D%27100%27%20height%3D%27100%27/%3E%3Cg%20fill%3D%27%23AAAAAA%27%20fill-opacity%3D%270.2%27%3E%3Crect%20x%3D%2750%27%20width%3D%2750%27%20height%3D%2750%27/%3E%3Crect%20y%3D%2750%27%20width%3D%2750%27%20height%3D%2750%27/%3E%3Cpath%20d%3D%27M0%2050%20L50%20100%20L50%2050%20Z%27/%3E%3Ccircle%20cx%3D%2725%27%20cy%3D%2725%27%20r%3D%2715%27/%3E%3Ccircle%20cx%3D%2775%27%20cy%3D%2775%27%20r%3D%2715%27/%3E%3C/g%3E%3C/svg%3E");
+}
