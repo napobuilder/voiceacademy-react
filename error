@@ -1,52 +1,84 @@
-[vite] connected from window 6ba49a41-2f28-4934-ba1d-ffd29d787448:68:11
-[vite] connected from window 35b9ad19-deec-4299-878c-8270af4f4c65:68:11
-[vite] new window visibility hidden 6ba49a41-2f28-4934-ba1d-ffd29d787448:64:12
-[vite] new window visibility hidden 35b9ad19-deec-4299-878c-8270af4f4c65:64:12
-[vite] ping successful 6ba49a41-2f28-4934-ba1d-ffd29d787448:70:12
-[vite] ping successful 35b9ad19-deec-4299-878c-8270af4f4c65:70:12
-[vite] connected from window dc3f6c9d-7095-469a-8c58-165433172436:68:11
-[vite] new window visibility hidden dc3f6c9d-7095-469a-8c58-165433172436:64:12
+[vite] connected from window 9cbacaa7-7ca7-4e36-bc1d-705af3889f9a:68:11
+[vite] new window visibility hidden 9cbacaa7-7ca7-4e36-bc1d-705af3889f9a:64:12
+[vite] new window visibility visible 9cbacaa7-7ca7-4e36-bc1d-705af3889f9a:64:12
+[vite] new window visibility hidden 9cbacaa7-7ca7-4e36-bc1d-705af3889f9a:64:12
+[vite] new window visibility visible 9cbacaa7-7ca7-4e36-bc1d-705af3889f9a:64:12
+[vite] new window visibility hidden 9cbacaa7-7ca7-4e36-bc1d-705af3889f9a:64:12
+[vite] new window visibility visible 9cbacaa7-7ca7-4e36-bc1d-705af3889f9a:64:12
+[vite] new window visibility hidden 9cbacaa7-7ca7-4e36-bc1d-705af3889f9a:64:12
+[vite] new window visibility visible 9cbacaa7-7ca7-4e36-bc1d-705af3889f9a:64:12
+[vite] new window visibility hidden 9cbacaa7-7ca7-4e36-bc1d-705af3889f9a:64:12
+[vite] new window visibility visible 9cbacaa7-7ca7-4e36-bc1d-705af3889f9a:64:12
+[vite] ping successful 9cbacaa7-7ca7-4e36-bc1d-705af3889f9a:70:12
+[vite] connected from window b4e7ab46-bca6-4008-9666-79c8dc4a78bc:68:11
+[vite] new window visibility hidden b4e7ab46-bca6-4008-9666-79c8dc4a78bc:64:12
+[vite] ping successful b4e7ab46-bca6-4008-9666-79c8dc4a78bc:70:12
+[vite] connected from window 8af3c227-81ac-467b-a361-067c93af5ae6:68:11
+[vite] connected from window 2694cfde-0531-4bde-b177-6d7cac2804ad:68:11
+[vite] new window visibility hidden 8af3c227-81ac-467b-a361-067c93af5ae6:64:12
+[vite] new window visibility hidden 2694cfde-0531-4bde-b177-6d7cac2804ad:64:12
+[vite] ping successful 8af3c227-81ac-467b-a361-067c93af5ae6:70:12
+[vite] ping successful 2694cfde-0531-4bde-b177-6d7cac2804ad:70:12
+[vite] connected from window 7ae6e2be-47a8-4502-97e4-7f5cc7f3b290:68:11
+[vite] new window visibility hidden 7ae6e2be-47a8-4502-97e4-7f5cc7f3b290:64:12
+[vite] ping successful 7ae6e2be-47a8-4502-97e4-7f5cc7f3b290:70:12
+[vite] connected from window df958152-4a13-4e3e-80fc-355edaae16fa:68:11
+[vite] new window visibility hidden df958152-4a13-4e3e-80fc-355edaae16fa:64:12
+[vite] ping successful df958152-4a13-4e3e-80fc-355edaae16fa:70:12
+[vite] connected from window bf6f9a89-549f-4421-92be-ba1d24ac19dc:68:11
+[vite] new window visibility hidden bf6f9a89-549f-4421-92be-ba1d24ac19dc:64:12
+[vite] connected from window 5f3f880c-3f26-4a8c-b8ac-204bba34f8ff:68:11
+[vite] new window visibility hidden 5f3f880c-3f26-4a8c-b8ac-204bba34f8ff:64:12
+[vite] ping successful 5f3f880c-3f26-4a8c-b8ac-204bba34f8ff:70:12
+[vite] connected from window c1ac6ab9-d8b6-43fb-9c45-47432bb52da4:68:11
+[vite] new window visibility hidden c1ac6ab9-d8b6-43fb-9c45-47432bb52da4:64:12
+[vite] ping successful c1ac6ab9-d8b6-43fb-9c45-47432bb52da4:70:12
+[vite] connected from window 4bbcb784-a7df-4277-be8d-386b1a96f24e:68:11
+[vite] connected from window 6f72886b-d737-49ca-9afe-5dba8895e755:68:11
+[vite] new window visibility hidden 4bbcb784-a7df-4277-be8d-386b1a96f24e:64:12
+[vite] new window visibility hidden 6f72886b-d737-49ca-9afe-5dba8895e755:64:12
+[vite] ping successful 4bbcb784-a7df-4277-be8d-386b1a96f24e:70:12
+[vite] ping successful 6f72886b-d737-49ca-9afe-5dba8895e755:70:12
+[vite] connected from window 29389c13-29f7-4e95-a7dc-90c25766ed81:68:11
+[vite] new window visibility hidden 29389c13-29f7-4e95-a7dc-90c25766ed81:64:12
+[vite] connected from window 4bac646b-ddcf-464b-9cbd-2ec3eaa5f51b:68:11
+[vite] new window visibility hidden 4bac646b-ddcf-464b-9cbd-2ec3eaa5f51b:64:12
+[vite] ping successful 4bac646b-ddcf-464b-9cbd-2ec3eaa5f51b:70:12
+[vite] connected from window d99a7f41-9034-4485-836e-fc8df73615f1:68:11
+[vite] new window visibility hidden d99a7f41-9034-4485-836e-fc8df73615f1:64:12
+[vite] ping successful d99a7f41-9034-4485-836e-fc8df73615f1:70:12
+[vite] connected from window d43b7b7e-d0cb-43d0-9a68-93862671bf64:68:11
+[vite] new window visibility hidden d43b7b7e-d0cb-43d0-9a68-93862671bf64:64:12
+[vite] ping successful d43b7b7e-d0cb-43d0-9a68-93862671bf64:70:12
+[vite] connected from window 145b1eb1-f8ef-460b-9315-ee0f041da658:68:11
+[vite] new window visibility hidden 145b1eb1-f8ef-460b-9315-ee0f041da658:64:12
+[vite] ping successful 145b1eb1-f8ef-460b-9315-ee0f041da658:70:12
+[vite] connected from window ed724573-b29c-4fc3-b48e-7ba2253a978a:68:11
+[vite] new window visibility hidden ed724573-b29c-4fc3-b48e-7ba2253a978a:64:12
+[vite] connected from window dea8e05e-89aa-43f2-b9f2-5ebbd2ce5deb:68:11
+[vite] new window visibility hidden dea8e05e-89aa-43f2-b9f2-5ebbd2ce5deb:64:12
+[vite] ping successful ed724573-b29c-4fc3-b48e-7ba2253a978a:70:12
+[vite] ping successful dea8e05e-89aa-43f2-b9f2-5ebbd2ce5deb:70:12
+[vite] new window visibility visible 29389c13-29f7-4e95-a7dc-90c25766ed81:64:12
+[vite] ping successful 29389c13-29f7-4e95-a7dc-90c25766ed81:70:12
+[vite] connected from window 46c0d3d6-a368-4ca3-9fcc-4dc0c8541f5d:68:11
+[vite] new window visibility hidden 46c0d3d6-a368-4ca3-9fcc-4dc0c8541f5d:64:12
+[vite] ping successful 46c0d3d6-a368-4ca3-9fcc-4dc0c8541f5d:70:12
+[vite] connected from window f794d4e8-d775-42be-acc6-e6673e7f2238:68:11
+[vite] new window visibility hidden f794d4e8-d775-42be-acc6-e6673e7f2238:64:12
+[vite] ping successful f794d4e8-d775-42be-acc6-e6673e7f2238:70:12
+[vite] connected from window 488288eb-5880-461f-abd9-6f39cc276b7e:68:11
+[vite] new window visibility hidden 488288eb-5880-461f-abd9-6f39cc276b7e:64:12
+[vite] ping successful 488288eb-5880-461f-abd9-6f39cc276b7e:70:12
+[vite] connected from window dcae91fe-7bb0-4147-85ab-61d248474f72:68:11
+[vite] new window visibility hidden dcae91fe-7bb0-4147-85ab-61d248474f72:64:12
+[vite] ping successful dcae91fe-7bb0-4147-85ab-61d248474f72:70:12
+[vite] connected from window 244bacab-92fc-4c8a-a533-2e34c252eb8e:68:11
+[vite] connected from window fee235e5-f650-4203-a05c-3119e93cab3a:68:11
+[vite] new window visibility hidden fee235e5-f650-4203-a05c-3119e93cab3a:64:12
+[vite] new window visibility hidden 244bacab-92fc-4c8a-a533-2e34c252eb8e:64:12
+[vite] ping successful 244bacab-92fc-4c8a-a533-2e34c252eb8e:70:12
+[vite] ping successful fee235e5-f650-4203-a05c-3119e93cab3a:70:12
 [vite] connecting... client:733:9
+Uncaught SyntaxError: The requested module 'http://localhost:5173/node_modules/.vite/deps/zustand.js?v=8e5eb595' doesn't provide an export named: 'StateCreator' cartStore.ts:1:18
 [vite] connected. client:827:12
-Uncaught TypeError: React10.useContext(...) is null
-    LinkWithRef chunk-PVWAREVJ.mjs:9155
-    React 11
-    workLoop scheduler.development.js:266
-    flushWork scheduler.development.js:239
-    performWorkUntilDeadline scheduler.development.js:533
-5 react-router-hash-link.js:2708:32
-Uncaught TypeError: React10.useContext(...) is null
-    LinkWithRef chunk-PVWAREVJ.mjs:9155
-    React 12
-    workLoop scheduler.development.js:266
-    flushWork scheduler.development.js:239
-    performWorkUntilDeadline scheduler.development.js:533
-5 react-router-hash-link.js:2708:32
-The above error occurred in the <Link> component:
-
-LinkWithRef@http://localhost:5173/node_modules/.vite/deps/react-router-hash-link.js?v=ddd25992:2694:23
-genericHashLink/<@http://localhost:5173/node_modules/.vite/deps/react-router-hash-link.js?v=ddd25992:3423:9
-NavLink@http://localhost:5173/src/components/NavLink.tsx?t=1757393437373:18:24
-ul
-div
-nav
-header
-Header@http://localhost:5173/src/sections/Header.tsx?t=1757393437373:33:23
-div
-Layout@http://localhost:5173/src/App.tsx?t=1757393437373:28:47
-RenderedRoute@http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=ddd25992:5575:23
-Routes@http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=ddd25992:6335:16
-App
-Router@http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=ddd25992:6278:16
-BrowserRouter@http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=ddd25992:9369:23
-
-Consider adding an error boundary to your tree to customize error handling behavior.
-Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. 5 chunk-OY5C42Z6.js:14080:23
-Uncaught TypeError: React10.useContext(...) is null
-    LinkWithRef chunk-PVWAREVJ.mjs:9155
-    React 9
-    workLoop scheduler.development.js:266
-    flushWork scheduler.development.js:239
-    performWorkUntilDeadline scheduler.development.js:533
-react-router-hash-link.js:2708:32
-Error al interpretar el valor para '-webkit-text-size-adjust'.  Declaración rechazada. doblaje-basico-presencial:33:29

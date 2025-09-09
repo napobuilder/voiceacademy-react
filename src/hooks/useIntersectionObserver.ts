@@ -1,5 +1,6 @@
 // FILE: src/hooks/useIntersectionObserver.ts
-import { useState, useEffect, useRef, RefObject } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import type { RefObject } from 'react';
 
 interface IntersectionObserverOptions {
   threshold?: number | number[];
@@ -10,7 +11,7 @@ interface IntersectionObserverOptions {
 
 export function useIntersectionObserver(
   options: IntersectionObserverOptions = {}
-): [RefObject<HTMLDivElement>, boolean] {
+): [RefObject<HTMLDivElement | null>, boolean] {
   const { threshold = 0.1, root = null, rootMargin = '0px', triggerOnce = true } = options;
   const [isIntersecting, setIsIntersecting] = useState(false);
   const ref = useRef<HTMLDivElement>(null);

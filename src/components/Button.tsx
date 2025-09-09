@@ -8,9 +8,11 @@ interface ButtonProps {
   onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
   type?: 'button' | 'submit' | 'reset';
   variant?: 'primary' | 'secondary' | 'whatsapp'; // Add variant prop
+  target?: string;
+  rel?: string;
 }
 
-const Button: FC<ButtonProps> = ({ href, children, className, onClick, type, variant }) => {
+const Button: FC<ButtonProps> = ({ href, children, className, onClick, type, variant, target, rel }) => {
   const baseClasses = "inline-block py-3 px-8 rounded-custom font-bold text-base transition-all duration-300 cursor-pointer text-center";
   
   const variantClasses = {
@@ -23,7 +25,7 @@ const Button: FC<ButtonProps> = ({ href, children, className, onClick, type, var
 
   if (href) {
     return (
-      <a href={href} className={combinedClasses} onClick={onClick as MouseEventHandler<HTMLAnchorElement>}>
+      <a href={href} className={combinedClasses} onClick={onClick as MouseEventHandler<HTMLAnchorElement>} target={target} rel={rel}>
         {children}
       </a>
     );
