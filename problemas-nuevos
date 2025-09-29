@@ -1,0 +1,16 @@
+[vite] connecting... client:733:9
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/pages/CoursePage.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/sections/Header.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/pages/GoDemosPage.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/components/CartPanel.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/pages/CheckoutPage.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/sections/Hero.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/sections/GoDemosBanner.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/sections/Metodo.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/sections/Filosofia.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/sections/Online.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/sections/Presenciales.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/sections/Corporativos.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/sections/Servicios.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+Se bloqueó la carga de un módulo de “http://localhost:5173/src/sections/CtaFinal.tsx” debido a un tipo MIME no permitido (“”). localhost:5173
+[vite] connected. client:827:12

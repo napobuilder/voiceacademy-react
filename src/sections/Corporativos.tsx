@@ -52,7 +52,7 @@ export function Corporativos() {
           </ScrollAnimation>
         </div>
         <ScrollAnimation className="text-center mt-16">
-            <p className="text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg max-w-2xl mx-auto leading-relaxed drop-shadow-md">
                 Nuestros módulos son independientes y adaptables según cada necesidad. Pueden estructurarse en formato de 3 ó 6 horas de trabajo intensivo bajo la modalidad de workshop, o en un taller completo de 4 sesiones de 90 minutos cada una.
             </p>
             <Button href="#cta-final" variant="secondary" className="mt-8">

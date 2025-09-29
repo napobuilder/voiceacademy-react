@@ -65,7 +65,7 @@ export function InfoCard({
   personImage
 }: InfoCardProps) {
   
-  const baseClasses = 'relative overflow-hidden rounded-lg shadow-suave p-8 pt-12 text-center flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-lg';
+  const baseClasses = 'relative overflow-hidden rounded-lg shadow-suave p-8 pt-12 text-center flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-lg h-full';
   
   const variantClasses = {
     light: {
@@ -127,7 +127,7 @@ export function InfoCard({
 
   return (
     <div
-      className={`${baseClasses} ${styles.card} ${className} ${personImage ? 'min-h-[460px]' : ''}`}
+      className={`${baseClasses} ${styles.card} ${className}`}
       style={style}
     >
       {titleContent}

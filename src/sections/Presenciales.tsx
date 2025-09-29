@@ -34,7 +34,6 @@ export const Presenciales: FC = () => {
                 details={course.details}
                 buttonText="Ver Detalles"
                 to={`/cursos/${course.slug}`}
-                personImage={course.personImage}
               />
             </ScrollAnimation>
           ))}

@@ -1,14 +1,15 @@
 // FILE: src/pages/HomePage.tsx
-import { Hero } from 'src/sections/Hero';
-import { Metodo } from 'src/sections/Metodo';
-import { Filosofia } from 'src/sections/Filosofia';
-import { Cashea } from 'src/sections/Cashea';
-import { Presenciales } from 'src/sections/Presenciales';
-import { Online } from 'src/sections/Online';
-import { Corporativos } from 'src/sections/Corporativos';
-import { Servicios } from 'src/sections/Servicios';
-import { Nosotros } from 'src/sections/Nosotros';
-import { CtaFinal } from 'src/sections/CtaFinal';
+import { Hero } from '@/sections/Hero';
+import { Metodo } from '@/sections/Metodo';
+import { Filosofia } from '@/sections/Filosofia';
+import { GoDemosBanner } from '@/sections/GoDemosBanner';
+import { Cashea } from '@/sections/Cashea';
+import { Presenciales } from '@/sections/Presenciales';
+import { Online } from '@/sections/Online';
+import { Corporativos } from '@/sections/Corporativos';
+import { Servicios } from '@/sections/Servicios';
+import { Nosotros } from '@/sections/Nosotros';
+import { CtaFinal } from '@/sections/CtaFinal';
 
 export function HomePage() {
   return (
@@ -16,6 +17,7 @@ export function HomePage() {
       <Hero />
       <Metodo />
       <Filosofia />
+      <GoDemosBanner />
       <Cashea />
       <Presenciales />
       <Online />

@@ -1,12 +1,13 @@
 // FILE: src/App.tsx
 import { Routes, Route, Outlet } from 'react-router-dom';
-import { useCartStore } from './stores/cartStore';
-import { Header } from 'src/sections/Header';
-import { Footer } from 'src/sections/Footer';
-import { HomePage } from 'src/pages/HomePage';
-import { CoursePage } from 'src/pages/CoursePage';
-import { CheckoutPage } from 'src/pages/CheckoutPage';
-import { CartPanel } from 'src/components/CartPanel';
+import { useCartStore } from '@/stores/cartStore';
+import { Header } from '@/sections/Header';
+import { Footer } from '@/sections/Footer';
+import { HomePage } from '@/pages/HomePage';
+import { CoursePage } from '@/pages/CoursePage';
+import { CheckoutPage } from '@/pages/CheckoutPage';
+import GoDemosPage from '@/pages/GoDemosPage'; // Import GoDemosPage
+import { CartPanel } from '@/components/CartPanel';
 
 function Layout() {
   const { isCartOpen, openCart, closeCart } = useCartStore();
@@ -30,7 +31,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="cursos/:slug" element={<CoursePage />} />
         <Route path="checkout" element={<CheckoutPage />} />
-        {/* Aquí se pueden añadir otras rutas como /carrito, etc. */}
+        <Route path="godemos" element={<GoDemosPage />} /> {/* Add GoDemosPage Route */}
       </Route>
     </Routes>
   );

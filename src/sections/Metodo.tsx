@@ -14,7 +14,10 @@ export const Metodo: FC = () => {
       <div className="container mx-auto px-5 relative z-20">
         <ScrollAnimation>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-4">Vamos más allá del talento: El poder de nuestro método</h2>
+            <div className="mb-4">
+              <h2 className="text-2xl font-bold">Vamos más allá del talento</h2>
+              <p className="text-2xl font-bold mt-1">El poder de nuestro método</p>
+            </div>
             <p className="text-lg opacity-90">
               La industria está llena de voces buenas y talentosas que nunca llegan a profesionalizarse y no alcanzan su máximo nivel nunca. ¿Por qué? Porque el talento y la experiencia por sí solos no son suficientes para destacar en una industria cada vez más competitiva y demandante. Nuestro método se basa en el desarrollo de técnicas y herramientas que potencian el talento, aquí desmitificamos aquello de "la voz de locutor", hacemos énfasis en el conocimiento profundo de tu aparato fonador, el desarrollo de tu confianza y te entregamos lo necesario para que puedas modelar, cambiar y mejorar tus talentos y capacidades. Aquí, le damos a tu voz la estructura que necesita para triunfar.
             </p>

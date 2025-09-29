@@ -33,7 +33,6 @@ export interface Course {
     imageUrl: string;
   };
   type: 'Presencial' | 'Online';
-  personImage?: string; // New optional property
 }
 
 export const courses: Course[] = [
@@ -41,16 +40,16 @@ export const courses: Course[] = [
   {
     slug: 'acento-neutro-presencial',
     title: "Acento Neutro",
-    shortDescription: "", // Text removed as requested
+    shortDescription: "Deslocaliza tu acento y logra una comunicación de alcance internacional. Te enseñamos un método único para aplicarlo en locución, doblaje y oratoria.",
     longDescription: "Este entrenamiento intensivo y efectivo, se basa en un método propio que te enseña a deslocalizar tu acento natal. Te enseñamos sus distintas aplicaciones para la oratoria, la locución, el doblaje y para la comunicación en general. No vas a creer como cambia tu forma de comunicar cuando deslocalizas y neutralizas tu acento.",
     price: 50,
     currency: 'USD',
     icon: <MicrophoneIcon className="w-9 h-9 text-secondary-bg" />,
     // Details removed as requested
     syllabus: [
-      { title: 'Módulo 1: Fundamentos', description: 'Entendiendo el aparato fonador y los puntos de articulación.' },
-      { title: 'Módulo 2: Deslocalización', description: 'Ejercicios prácticos para neutralizar el acento nativo.' },
-      { title: 'Módulo 3: Aplicaciones', description: 'Prácticas de locución comercial, doblaje y oratoria.' },
+      { title: 'Fundamentos', description: 'Entendiendo el aparato fonador y los puntos de articulación.' },
+      { title: 'Deslocalización', description: 'Ejercicios prácticos para neutralizar el acento nativo.' },
+      { title: 'Aplicaciones', description: 'Prácticas de locución comercial, doblaje y oratoria.' },
     ],
     instructor: {
       name: 'Abelardo Oseches',
@@ -58,7 +57,6 @@ export const courses: Course[] = [
       imageUrl: '/assets/abelardo-oseche.jpg'
     },
     type: 'Presencial',
-    personImage: '/assets/Abelardo-neutro.png', // Image added
   },
   {
     slug: 'diccion-perfecta-presencial',
@@ -73,9 +71,9 @@ export const courses: Course[] = [
       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value: 'Grupos reducidos' },
     ],
     syllabus: [
-        { title: 'Módulo 1: Diagnóstico', description: 'Identificación de vicios de dicción y áreas de mejora.' },
-        { title: 'Módulo 2: Mecánica Fonética', description: 'Ejercicios de articulación y modulación.' },
-        { title: 'Módulo 3: Práctica Dirigida', description: 'Lectura en voz alta con feedback personalizado.' },
+        { title: 'Diagnóstico', description: 'Identificación de vicios de dicción y áreas de mejora.' },
+        { title: 'Mecánica Fonética', description: 'Ejercicios de articulación y modulación.' },
+        { title: 'Práctica Dirigida', description: 'Lectura en voz alta con feedback personalizado.' },
     ],
     instructor: {
         name: 'Maira Rojas',
@@ -97,9 +95,9 @@ export const courses: Course[] = [
       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value: 'Grupos reducidos' },
     ],
     syllabus: [
-        { title: 'Módulo 1: El Guión Comercial', description: 'Análisis de texto, intención y público objetivo.' },
-        { title: 'Módulo 2: Estilos y Registros', description: 'Prácticas con diferentes estilos: institucional, promocional, etc.' },
-        { title: 'Módulo 3: Grabación en Cabina', description: 'Simulación de un casting real y grabación de demo.' },
+        { title: 'El Guión Comercial', description: 'Análisis de texto, intención y público objetivo.' },
+        { title: 'Estilos y Registros', description: 'Prácticas con diferentes estilos: institucional, promocional, etc.' },
+        { title: 'Grabación en Cabina', description: 'Simulación de un casting real y grabación de demo.' },
     ],
     instructor: {
         name: 'Abelardo Oseches',
@@ -121,9 +119,9 @@ export const courses: Course[] = [
       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value: 'Grupos reducidos' },
     ],
     syllabus: [
-        { title: 'Módulo 1: Sincronización y Ritmo', description: 'Técnicas de lip sync y ajuste a la banda de sonido original.' },
-        { title: 'Módulo 2: Creación de Personajes', description: 'Intención, caracterización y propuesta actoral.' },
-        { title: 'Módulo 3: Práctica en Atril', description: 'Grabación de escenas de series y películas.' },
+        { title: 'Sincronización y Ritmo', description: 'Técnicas de lip sync y ajuste a la banda de sonido original.' },
+        { title: 'Creación de Personajes', description: 'Intención, caracterización y propuesta actoral.' },
+        { title: 'Práctica en Atril', description: 'Grabación de escenas de series y películas.' },
     ],
     instructor: {
         name: 'Zayanit Lamas',
@@ -145,9 +143,9 @@ export const courses: Course[] = [
       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value: 'Grupos reducidos' },
     ],
     syllabus: [
-        { title: 'Módulo 1: El Miedo Escénico', description: 'Técnicas para controlar la ansiedad y proyectar confianza.' },
-        { title: 'Módulo 2: Estructura del Discurso', description: 'Introducción, desarrollo, conclusión y storytelling.' },
-        { title: 'Módulo 3: Lenguaje No Verbal', description: 'Gestos, postura y contacto visual para reforzar tu mensaje.' },
+        { title: 'El Miedo Escénico', description: 'Técnicas para controlar la ansiedad y proyectar confianza.' },
+        { title: 'Estructura del Discurso', description: 'Introducción, desarrollo, conclusión y storytelling.' },
+        { title: 'Lenguaje No Verbal', description: 'Gestos, postura y contacto visual para reforzar tu mensaje.' },
     ],
     instructor: {
         name: 'Abelardo Oseches',
@@ -169,9 +167,9 @@ export const courses: Course[] = [
       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value: 'Grupos reducidos' },
     ],
     syllabus: [
-        { title: 'Módulo 1: Caracterización Vocal', description: 'Uso de resonadores, tonos y matices para crear personajes.' },
-        { title: 'Módulo 2: El Cartoon', description: 'Análisis de estilos de animación y actuación.' },
-        { title: 'Módulo 3: ¡A Grabar!', description: 'Práctica intensiva con personajes de series animadas.' },
+        { title: 'Caracterización Vocal', description: 'Uso de resonadores, tonos y matices para crear personajes.' },
+        { title: 'El Cartoon', description: 'Análisis de estilos de animación y actuación.' },
+        { title: '¡A Grabar!', description: 'Práctica intensiva con personajes de series animadas.' },
     ],
     instructor: {
         name: 'Zayanit Lamas',
@@ -195,9 +193,9 @@ export const courses: Course[] = [
         { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value: '7 cupos disponibles' },
     ],
     syllabus: [
-        { title: 'Clase 1: Intención y Estilos', description: 'Aprende a diferenciar y ejecutar los principales estilos de la locución comercial.' },
-        { title: 'Clase 2: La Voz como Instrumento', description: 'Ejercicios de modulación, ritmo y proyección.' },
-        { title: 'Clase 3: Práctica y Demo', description: 'Grabación de piezas para tu portafolio con feedback en vivo.' },
+        { title: 'Intención y Estilos', description: 'Aprende a diferenciar y ejecutar los principales estilos de la locución comercial.' },
+        { title: 'La Voz como Instrumento', description: 'Ejercicios de modulación, ritmo y proyección.' },
+        { title: 'Práctica y Demo', description: 'Grabación de piezas para tu portafolio con feedback en vivo.' },
     ],
     instructor: {
         name: 'Abelardo Oseches',
@@ -219,9 +217,9 @@ export const courses: Course[] = [
         { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value: 'Cupos limitados' },
     ],
     syllabus: [
-        { title: 'Clase 1: Fundamentos del Acento Neutro', description: 'Teoría y ejercicios iniciales de deslocalización.' },
-        { title: 'Clase 2: Práctica Intensiva', description: 'Ejercicios con textos variados y corrección de errores comunes.' },
-        { title: 'Clase 3: Aplicación Profesional', description: 'Simulación de castings y aplicación en diferentes medios.' },
+        { title: 'Fundamentos del Acento Neutro', description: 'Teoría y ejercicios iniciales de deslocalización.' },
+        { title: 'Práctica Intensiva', description: 'Ejercicios con textos variados y corrección de errores comunes.' },
+        { title: 'Aplicación Profesional', description: 'Simulación de castings y aplicación en diferentes medios.' },
     ],
     instructor: {
         name: 'Abelardo Oseches',
@@ -243,9 +241,9 @@ export const courses: Course[] = [
         { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value: 'Cupos limitados' },
     ],
     syllabus: [
-        { title: 'Clase 1: Estructura y Mensaje', description: 'Aprende a organizar tus ideas y a construir un discurso coherente.' },
-        { title: 'Clase 2: Storytelling y Conexión', description: 'El arte de contar historias para persuadir y emocionar.' },
-        { title: 'Clase 3: Puesta en Escena', description: 'Manejo del lenguaje no verbal y técnicas de presentación.' },
+        { title: 'Estructura y Mensaje', description: 'Aprende a organizar tus ideas y a construir un discurso coherente.' },
+        { title: 'Storytelling y Conexión', description: 'El arte de contar historias para persuadir y emocionar.' },
+        { title: 'Puesta en Escena', description: 'Manejo del lenguaje no verbal y técnicas de presentación.' },
     ],
     instructor: {
         name: 'Maira Rojas',
@@ -267,9 +265,9 @@ export const courses: Course[] = [
         { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value: 'Cupos limitados' },
     ],
     syllabus: [
-        { title: 'Clase 1: Introducción al Doblaje', description: 'Sincronía, ritmo y técnicas básicas de actuación vocal.' },
-        { title: 'Clase 2: Interpretación y Personajes', description: 'Creación de voces y adaptación a diferentes personajes.' },
-        { title: 'Clase 3: Práctica de Doblaje', description: 'Grabación de escenas y takes con dirección profesional.' },
+        { title: 'Introducción al Doblaje', description: 'Sincronía, ritmo y técnicas básicas de actuación vocal.' },
+        { title: 'Interpretación y Personajes', description: 'Creación de voces y adaptación a diferentes personajes.' },
+        { title: 'Práctica de Doblaje', description: 'Grabación de escenas y takes con dirección profesional.' },
     ],
     instructor: {
         name: 'Zayanit Lamas',

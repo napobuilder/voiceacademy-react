@@ -34,6 +34,26 @@ export const CheckoutPage: FC = () => {
                       <label htmlFor="email" className="block text-sm font-bold text-texto-principal mb-2">Correo Electrónico</label>
                       <input type="email" id="email" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-blue focus:border-transparent transition" />
                     </div>
+                    <div>
+                      <label htmlFor="idNumber" className="block text-sm font-bold text-texto-principal mb-2">Cédula o ID</label>
+                      <input type="text" id="idNumber" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-blue focus:border-transparent transition" />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-bold text-texto-principal mb-2">Número de Teléfono</label>
+                      <input type="tel" id="phone" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-blue focus:border-transparent transition" />
+                    </div>
+                    <div>
+                      <label htmlFor="country" className="block text-sm font-bold text-texto-principal mb-2">País</label>
+                      <input type="text" id="country" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-blue focus:border-transparent transition" />
+                    </div>
+                    <div>
+                      <label htmlFor="address" className="block text-sm font-bold text-texto-principal mb-2">Dirección Corta</label>
+                      <input type="text" id="address" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-blue focus:border-transparent transition" />
+                    </div>
+                    <div>
+                      <label htmlFor="instagram" className="block text-sm font-bold text-texto-principal mb-2">Cuenta de Instagram (Opcional)</label>
+                      <input type="text" id="instagram" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-blue focus:border-transparent transition" />
+                    </div>
                   </div>
                 </section>
 
@@ -42,16 +62,20 @@ export const CheckoutPage: FC = () => {
                   <div className="space-y-4">
                     {/* TODO: Implement payment method selection logic */}
                     <button type="button" className="w-full flex items-center justify-between p-4 border border-gray-300 rounded-md text-left hover:bg-gray-50 transition">
-                      <span className="font-bold">Cashea</span>
+                      <span className="font-bold">Financia con Cashea</span>
                       <img src="/assets/logo-cashea-oficial.webp" alt="Cashea" className="h-6" />
                     </button>
                     <button type="button" className="w-full flex items-center justify-between p-4 border border-gray-300 rounded-md text-left hover:bg-gray-50 transition">
-                      <span className="font-bold">Totalpago (TDC / TDD)</span>
+                      <span className="font-bold">Pagos en Bs</span>
                       {/* Placeholder for Totalpago logo */}
                     </button>
                     <button type="button" className="w-full flex items-center justify-between p-4 border border-gray-300 rounded-md text-left hover:bg-gray-50 transition">
-                      <span className="font-bold">Bancamiga (Cash / Puntos)</span>
+                      <span className="font-bold">Pagos con Tarjetas internacionales</span>
                       {/* Placeholder for Bancamiga logo */}
+                    </button>
+                    <button type="button" className="w-full flex items-center justify-between p-4 border border-gray-300 rounded-md text-left hover:bg-gray-50 transition">
+                      <span className="font-bold">Otros métodos de pago</span>
+                      {/* Placeholder for Zelle, Paypal, Binance logos */}
                     </button>
                   </div>
                 </section>
