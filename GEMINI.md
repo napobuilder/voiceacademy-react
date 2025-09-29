@@ -149,6 +149,11 @@ Traducción de CSS a Tailwind: Convertir sistemáticamente las reglas de CSS del
     *   **Causa:** El efecto de solapamiento se crea usando un margen superior negativo (ej. `-mt-[100px]`) en la sección inferior para que se deslice por debajo de la superior. Si la sección superior tiene un `padding` (relleno) en su parte inferior, este empuja a la sección de abajo, anulando el efecto del margen negativo.
     *   **Solución:** La sección que está **arriba** en la transición no debe tener `padding` inferior (`pb-0`). Todo el espaciado vertical debe ser controlado por el `padding` superior de la sección de **abajo**, que debe ser lo suficientemente grande para compensar el margen negativo y además dar el espaciado deseado al contenido.
 
+### **Comandos y Soluciones Recientes**
+
+*   **Error de MIME Type en Vite:** Un error de "disallowed MIME type" en Vite puede ser causado por una inconsistencia en los alias de importación (`@/` vs `src/`). Si Vite no puede resolver un alias usado en un archivo, puede que sirva el archivo `.tsx` sin compilar, causando el error. La solución es estandarizar todos los alias en el código (usando `@/`) y en las configuraciones (`vite.config.ts`, `tsconfig.json`). Para mayor robustez, se configuraron ambos para resolver tanto `@` como `src`.
+*   **Commits Multi-línea Seguros:** Para realizar commits con mensajes multi-línea de forma segura a través de `run_shell_command`, se debe crear un archivo temporal con el mensaje (ej. `COMMIT_MSG.tmp`), ejecutar `git commit -F COMMIT_MSG.tmp`, y luego borrar el archivo temporal con `del COMMIT_MSG.tmp` (en Windows).
+
 CONTEXTO INICIAL DEL PROYECTO
 Proyecto: Migración del sitio web "Voice Academy".
 

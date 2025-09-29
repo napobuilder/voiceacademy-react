@@ -35,28 +35,39 @@ export const leaders: Instructor[] = [
 
 export const galleryInstructors: Instructor[] = [
   {
-    name: 'Instructor 1',
-    imgSrc: '/assets/maira-rojas.jpg', // Placeholder
-    bio: 'Biografía detallada del Instructor 1. Aquí se hablará de su experiencia, logros y especialidades.'
+    name: 'Abelardo Oseches',
+    imgSrc: '/assets/fotos-voiceacademy/Abelardo Oseches.jpg'
   },
   {
-    name: 'Instructor 2',
-    imgSrc: '/assets/abelardo-oseche.jpg', // Placeholder
-    bio: 'Biografía detallada del Instructor 2. Aquí se hablará de su experiencia, logros y especialidades.'
+    name: 'Alí Rondón',
+    imgSrc: '/assets/fotos-voiceacademy/Alí Rondón.jpg'
   },
   {
-    name: 'Instructor 3',
-    imgSrc: '/assets/zayanit-lamas.jpg', // Placeholder
-    bio: 'Biografía detallada del Instructor 3. Aquí se hablará de su experiencia, logros y especialidades.'
+    name: 'Charlot Prince',
+    imgSrc: '/assets/fotos-voiceacademy/Charlot Prince.jpg'
   },
   {
-    name: 'Instructor 4',
-    imgSrc: '/assets/maira-rojas.jpg', // Placeholder
-    bio: 'Biografía detallada del Instructor 4. Aquí se hablará de su experiencia, logros y especialidades.'
+    name: 'Félix Ptolo',
+    imgSrc: '/assets/fotos-voiceacademy/Félix Ptolo.jpg'
   },
   {
-    name: 'Instructor 5',
-    imgSrc: '/assets/abelardo-oseche.jpg', // Placeholder
-    bio: 'Biografía detallada del Instructor 5. Aquí se hablará de su experiencia, logros y especialidades.'
+    name: 'Henrique Palacios',
+    imgSrc: '/assets/fotos-voiceacademy/Henrique Palacios.jpg'
+  },
+  {
+    name: 'Hernan Rodriguez',
+    imgSrc: '/assets/fotos-voiceacademy/Hernan Rodriguez2.png'
+  },
+  {
+    name: 'Jesús Conde',
+    imgSrc: '/assets/fotos-voiceacademy/Jesús Conde.jpg'
+  },
+  {
+    name: 'José Antonio Castillo',
+    imgSrc: '/assets/fotos-voiceacademy/José Antonio Castillo.jpg'
+  },
+  {
+    name: 'José Gomez Chompré',
+    imgSrc: '/assets/fotos-voiceacademy/José Gomez Chompré.jpg'
   }
 ];
