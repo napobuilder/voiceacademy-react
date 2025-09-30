@@ -48,12 +48,16 @@ export function CoursePage() {
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-accent-blue leading-tight">{course.title}</h1>
             
-            <div className="flex items-center gap-4 mt-6 mb-8">
-              <img src={course.instructor.imageUrl} alt={course.instructor.name} className="w-12 h-12 rounded-full object-cover" />
-              <div>
-                <p className="font-bold text-texto-principal">{course.instructor.name}</p>
-                <p className="text-sm text-texto-secundario">{course.instructor.title}</p>
-              </div>
+            <div className="mt-6 mb-8 space-y-4">
+              {course.instructors.map((instructor, index) => (
+                <div key={index} className="flex items-center gap-4">
+                  <img src={instructor.imageUrl} alt={instructor.name} className="w-12 h-12 rounded-full object-cover" />
+                  <div>
+                    <p className="font-bold text-texto-principal">{instructor.name}</p>
+                    <p className="text-sm text-texto-secundario">{instructor.title}</p>
+                  </div>
+                </div>
+              ))}
             </div>
 
             <h2 className="text-2xl font-bold text-accent-blue mt-12 mb-4">Descripción del Curso</h2>

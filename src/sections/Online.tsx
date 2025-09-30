@@ -1,11 +1,11 @@
-
 // FILE: src/sections/Online.tsx
 import { SectionHeader } from 'src/components/SectionHeader';
 import { InfoCard } from 'src/components/InfoCard';
 import { courses } from 'src/data/courses';
 import { ScrollAnimation } from 'src/components/ScrollAnimation';
 
-const onlineCourses = courses.filter(course => course.type === 'Online');
+// Lógica para mostrar solo los cursos online DESTACADOS
+const featuredOnlineCourses = courses.filter(course => course.type === 'Online' && course.featured);
 
 export function Online() {
   const imageUrl = 'https://img.arrelsfundacio.org/wp-content/uploads/2022/09/6D1A2891-768x384.jpg';
@@ -20,12 +20,12 @@ export function Online() {
       <div className="container mx-auto px-5 relative z-10">
         <SectionHeader
           isWhite
-          title="Talleres Online en Vivo"
-          subtitle="Fórmate desde cualquier parte del mundo con la misma calidad y cercanía. Clases en directo, interacción constante, dirección personalizada, ejercicios prácticos y acceso a las grabaciones de las clases."
+          title="Talleres Online Destacados"
+          subtitle="Fórmate desde cualquier parte del mundo con la misma calidad y cercanía. Clases en directo, interacción constante, dirección personalizada y acceso a las grabaciones."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {onlineCourses.map((course, index) => (
+          {featuredOnlineCourses.map((course, index) => (
             <ScrollAnimation key={course.slug} className={`transition-delay-[${index * 100}ms]`}>
               <InfoCard
                 variant="dark"

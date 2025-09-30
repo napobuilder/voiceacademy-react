@@ -1,0 +1,1114 @@
+
+ Aquí está el código completo que escribiré en el archivo. He eliminado los cursos presenciales antiguos y he 
+
+  añadido los 10 nuevos cursos del documento, infiriendo y adaptando los datos como hemos comentado. También he 
+
+  actualizado la interfaz para aceptar 'EUR'.
+
+ ╭──────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+
+ │ ?  WriteFile Writing to src\data\courses.tsx ←                                                                   │
+
+ │                                                                                                                  │
+
+ │   1 - // FILE: src/data/courses.ts                                                                               │
+
+ │   1 + // FILE: src/data/courses.tsx                                                                              │
+
+ │   2   import type { ReactNode } from 'react';                                                                    │
+
+ │   3   import {                                                                                                   │
+
+ │   4     CalendarDaysIcon,                                                                                        │
+
+ │   8     MegaphoneIcon,                                                                                           │
+
+ │   9     SpeakerWaveIcon,                                                                                         │
+
+ │  10     PresentationChartLineIcon,                                                                               │
+
+ │  11 +   BookOpenIcon,                                                                                            │
+
+ │  12 +   FilmIcon,                                                                                                │
+
+ │  13 +   DocumentTextIcon,                                                                                        │
+
+ │  14   } from '@heroicons/react/24/outline';                                                                      │
+
+ │  15                                                                                                              │
+
+ │  16   export interface Course {                                                                                  │
+
+ │  19     shortDescription: string;                                                                                │
+
+ │  20     longDescription: string;                                                                                 │
+
+ │  21     price: number;                                                                                           │
+
+ │  19 -   currency: 'USD';                                                                                         │
+
+ │  22 +   currency: 'USD' | 'EUR';                                                                                 │
+
+ │  23     icon: ReactNode;                                                                                         │
+
+ │  24     startDate?: Date;                                                                                        │
+
+ │  22 -   featured?: boolean; // <-- ATRIBUTO PARA DESTACAR                                                        │
+
+ │  25 +   featured?: boolean;                                                                                      │
+
+ │  26     details?: {                                                                                              │
+
+ │  27       icon: ReactNode;                                                                                       │
+
+ │  28       label: string;                                                                                         │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │  43   export const courses: Course[] = [                                                                         │
+
+ │  44     // --- Cursos Presenciales ---                                                                           │
+
+ │  45     {                                                                                                        │
+
+ │  43 -     slug: 'acento-neutro-presencial',                                                                      │
+
+ │  44 -     title: "Acento Neutro",                                                                                │
+
+ │  45 -     shortDescription: "Deslocaliza tu acento y logra una comunicación de alcance internacional             │
+
+ │     Te enseñamos un método único para aplicarlo en locución, doblaje y oratoria.",                               │
+
+ │  46 -     longDescription: "Este entrenamiento intensivo y efectivo, se basa en un método propio que             │
+
+ │     te enseña a deslocalizar tu acento natal. Te enseñamos sus distintas aplicaciones para la                    │
+
+ │     oratoria, la locución, el doblaje y para la comunicación en general. No vas a creer como cambia              │
+
+ │     forma de comunicar cuando deslocalizas y neutralizas tu acento.",                                            │
+
+ │  46 +     slug: 'doblaje-basico-sabatino-presencial',                                                            │
+
+ │  47 +     title: 'Doblaje Básico (Sabatino)',                                                                    │
+
+ │  48 +     shortDescription: 'Aprende las técnicas fundamentales del doblaje, desde la respiración y              │
+
+ │     acento neutro hasta el manejo de intenciones.',                                                              │
+
+ │  49 +     longDescription: 'Un curso completo que cubre respiración, manejo del aire, entonación,                │
+
+ │     articulación, dicción, acento neutro, proyección de la voz y manejo de intenciones a través de               │
+
+ │     ejercicios prácticos y dirigidos.',                                                                          │
+
+ │  50       price: 50,                                                                                             │
+
+ │  48 -     currency: 'USD',                                                                                       │
+
+ │  51 +     currency: 'EUR',                                                                                       │
+
+ │  52 +     icon: <SpeakerWaveIcon className="w-9 h-9 text-secondary-bg" />,                                       │
+
+ │  53 +     startDate: new Date('2025-10-04T13:00:00Z'),                                                           │
+
+ │  54 +     featured: true,                                                                                        │
+
+ │  55 +     details: [                                                                                             │
+
+ │  56 +       { icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />, label: 'Fechas',             │
+
+ │     value: 'Octubre 4 y 11' },                                                                                   │
+
+ │  57 +       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Horario', value             │
+
+ │     '9:00 AM - 4:00 PM' },                                                                                       │
+
+ │  58 +     ],                                                                                                     │
+
+ │  59 +     syllabus: [                                                                                            │
+
+ │  60 +       { title: 'Respiración y manejo del aire', description: '' },                                         │
+
+ │  61 +       { title: 'Entonación', description: '' },                                                            │
+
+ │  62 +       { title: 'Articulación y dicción', description: '' },                                                │
+
+ │  63 +       { title: 'Manejo de la voz', description: '' },                                                      │
+
+ │  64 +       { title: 'Acento neutro internacional', description: '' },                                           │
+
+ │  65 +       { title: 'Técnicas de dicción', description: '' },                                                   │
+
+ │  66 +       { title: 'Proyección de la voz', description: '' },                                                  │
+
+ │  67 +       { title: 'Manejo de intenciones', description: '' },                                                 │
+
+ │  68 +     ],                                                                                                     │
+
+ │  69 +     instructor: {                                                                                          │
+
+ │  70 +       name: 'José Gómez Chompré',                                                                          │
+
+ │  71 +       title: 'Instructor de Doblaje',                                                                      │
+
+ │  72 +       imageUrl: '/assets/fotos-voiceacademy/José Gomez Chompré.jpg',                                       │
+
+ │  73 +     },                                                                                                     │
+
+ │  74 +     type: 'Presencial',                                                                                    │
+
+ │  75 +   },                                                                                                       │
+
+ │  76 +   {                                                                                                        │
+
+ │  77 +     slug: 'acento-neutro-sabatino-presencial',                                                             │
+
+ │  78 +     title: 'Acento Neutro (Sabatino)',                                                                     │
+
+ │  79 +     shortDescription: 'Domina el ritmo, la melodía y la cadencia del acento neutro para                    │
+
+ │     aplicarlo en narración, doblaje y locución.',                                                                │
+
+ │  80 +     longDescription: 'Aprende las características, ritmo, melodía y cadencia del acento neutro             │
+
+ │     y sus usos en narración, doblaje y locución con ejercicios prácticos.',                                      │
+
+ │  81 +     price: 50,                                                                                             │
+
+ │  82 +     currency: 'EUR',                                                                                       │
+
+ │  83       icon: <MicrophoneIcon className="w-9 h-9 text-secondary-bg" />,                                        │
+
+ │  50 -     startDate: new Date('2025-10-05T12:00:00Z'),                                                           │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │  84 +     startDate: new Date('2025-10-04T13:00:00Z'),                                                           │
+
+ │  85       featured: true,                                                                                        │
+
+ │  86       details: [                                                                                             │
+
+ │  53 -       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value:              │
+
+ │     'Grupos reducidos' },                                                                                        │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │  87 +       { icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />, label: 'Fechas',             │
+
+ │     value: 'Octubre 4 y 11' },                                                                                   │
+
+ │  88 +       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Horario', value             │
+
+ │     '9:00 AM - 4:00 PM' },                                                                                       │
+
+ │  89       ],                                                                                                     │
+
+ │  90       syllabus: [                                                                                            │
+
+ │  56 -       { title: 'Fundamentos', description: 'Entendiendo el aparato fonador y los puntos de                 │
+
+ │     articulación.' },                                                                                            │
+
+ │  57 -       { title: 'Deslocalización', description: 'Ejercicios prácticos para neutralizar el acent             │
+
+ │     nativo.' },                                                                                                  │
+
+ │  58 -       { title: 'Aplicaciones', description: 'Prácticas de locución comercial, doblaje y                    │
+
+ │     oratoria.' },                                                                                                │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │  91 +       { title: 'Características del acento neutro', description: '' },                                     │
+
+ │  92 +       { title: 'Ritmo, melodía y cadencia del acento neutro', description: '' },                           │
+
+ │  93 +       { title: 'Técnicas para desarrollar el acento neutro', description: '' },                            │
+
+ │  94 +       { title: 'Usos del acento neutro en narración, doblaje, locución', description: '' },                │
+
+ │  95       ],                                                                                                     │
+
+ │  96       instructor: {                                                                                          │
+
+ │  97         name: 'Abelardo Oseches',                                                                            │
+
+ │  62 -       title: 'Director Académico',                                                                         │
+
+ │  63 -       imageUrl: '/assets/abelardo-oseche.jpg'                                                              │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │  98 +       title: 'CEO fundador. Director Académico',                                                           │
+
+ │  99 +       imageUrl: '/assets/abelardo-oseche.jpg',                                                             │
+
+ │ 100       },                                                                                                     │
+
+ │ 101       type: 'Presencial',                                                                                    │
+
+ │ 102     },                                                                                                       │
+
+ │ 103     {                                                                                                        │
+
+ │  68 -     slug: 'diccion-perfecta-presencial',                                                                   │
+
+ │  69 -     title: "Dicción Perfecta",                                                                             │
+
+ │  70 -     shortDescription: "Deja de usar el lápiz creyendo que vas a corregir tus problemas de                  │
+
+ │     pronunciación. Aquí te enseñamos un método único.",                                                          │
+
+ │  71 -     longDescription: "Aquí te enseñamos un método único que se basa en la mecánica de los                  │
+
+ │     fonemas y en el componente auditivo de la dicción, para que tu pronunciación vaya de 0 a 100 en              │
+
+ │     simples pasos. 100% práctico, interactivo y con resultados sorprendentes.",                                  │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 104 +     slug: 'oratoria-semana-presencial',                                                                    │
+
+ │ 105 +     title: 'Oratoria (Entre semana)',                                                                      │
+
+ │ 106 +     shortDescription: 'Maneja el miedo escénico, estructura un discurso y comunica eficazmente             │
+
+ │     usando tu lenguaje corporal.',                                                                               │
+
+ │ 107 +     longDescription: 'Desarrolla tu autoconfianza, aprende los elementos del discurso, cómo                │
+
+ │     comunicar eficazmente y a usar tu lenguaje corporal a través de ejercicios prácticos.',                      │
+
+ │ 108       price: 50,                                                                                             │
+
+ │  73 -     currency: 'USD',                                                                                       │
+
+ │  74 -     icon: <ChatBubbleBottomCenterTextIcon className="w-9 h-9 text-secondary-bg" />,                        │
+
+ │  75 -     startDate: new Date('2025-09-17T12:00:00Z'),                                                           │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 109 +     currency: 'EUR',                                                                                       │
+
+ │ 110 +     icon: <PresentationChartLineIcon className="w-9 h-9 text-secondary-bg" />,                             │
+
+ │ 111 +     startDate: new Date('2025-10-07T17:00:00Z'),                                                           │
+
+ │ 112       featured: true,                                                                                        │
+
+ │ 113       details: [                                                                                             │
+
+ │  78 -       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value:              │
+
+ │     'Grupos reducidos' },                                                                                        │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 114 +       { icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />, label: 'Fechas',             │
+
+ │     value: 'Octubre 7 al 10' },                                                                                  │
+
+ │ 115 +       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Horario', value             │
+
+ │     '1:00 PM - 4:00 PM' },                                                                                       │
+
+ │ 116       ],                                                                                                     │
+
+ │ 117       syllabus: [                                                                                            │
+
+ │  81 -         { title: 'Diagnóstico', description: 'Identificación de vicios de dicción y áreas de               │
+
+ │     mejora.' },                                                                                                  │
+
+ │  82 -         { title: 'Mecánica Fonética', description: 'Ejercicios de articulación y modulación.'              │
+
+ │  83 -         { title: 'Práctica Dirigida', description: 'Lectura en voz alta con feedback                       │
+
+ │     personalizado.' },                                                                                           │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 118 +       { title: 'Manejo del miedo escénico y autoconfianza', description: '' },                             │
+
+ │ 119 +       { title: 'Elementos del discurso', description: '' },                                                │
+
+ │ 120 +       { title: 'Cómo comunicar eficazmente', description: '' },                                            │
+
+ │ 121 +       { title: 'Cómo elaborar una presentación', description: '' },                                        │
+
+ │ 122 +       { title: 'El lenguaje corporal y gestual', description: '' },                                        │
+
+ │ 123       ],                                                                                                     │
+
+ │ 124       instructor: {                                                                                          │
+
+ │  86 -         name: 'Maira Rojas',                                                                               │
+
+ │  87 -         title: 'Directora Operativa',                                                                      │
+
+ │  88 -         imageUrl: '/assets/maira-rojas.jpg'                                                                │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 125 +       name: 'Félix Ptolo',                                                                                 │
+
+ │ 126 +       title: 'Instructor de Oratoria',                                                                     │
+
+ │ 127 +       imageUrl: '/assets/fotos-voiceacademy/Félix Ptolo.jpg',                                              │
+
+ │ 128       },                                                                                                     │
+
+ │ 129       type: 'Presencial',                                                                                    │
+
+ │ 130     },                                                                                                       │
+
+ │ 131     {                                                                                                        │
+
+ │  93 -     slug: 'locucion-comercial-presencial',                                                                 │
+
+ │  94 -     title: "Locución Comercial",                                                                           │
+
+ │  95 -     shortDescription: "La disciplina más rentable del mundo profesional de la voz. Aprende a               │
+
+ │     decodificar y comprender los textos y mucho más.",                                                           │
+
+ │  96 -     longDescription: "Aprende a decodificar y comprender los textos, herramientas para lograr              │
+
+ │     diferencias estilos e intenciones comerciales, manejo de las cualidades de la voz, entiende el               │
+
+ │     nuevo rol del locutor comercial, aprende las técnicas de la locución internacional en una                    │
+
+ │     experiencia dinámica, práctica y con dirección personalizada.",                                              │
+
+ │  97 -     price: 50,                                                                                             │
+
+ │  98 -     currency: 'USD',                                                                                       │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 132 +     slug: 'locucion-comercial-integral-presencial',                                                        │
+
+ │ 133 +     title: 'Locución Comercial Integral',                                                                  │
+
+ │ 134 +     shortDescription: 'Un programa completo que te llevará a dominar la locución comercial, de             │
+
+ │     promociones y corporativa.',                                                                                 │
+
+ │ 135 +     longDescription: 'Este curso integral se divide en tres módulos clave: Locución Comercial,             │
+
+ │     Locución de Promociones para Radio y TV, y Locución Corporativa.',                                           │
+
+ │ 136 +     price: 170,                                                                                            │
+
+ │ 137 +     currency: 'EUR',                                                                                       │
+
+ │ 138       icon: <MegaphoneIcon className="w-9 h-9 text-secondary-bg" />,                                         │
+
+ │ 100 -     startDate: new Date('2025-09-18T12:00:00Z'),                                                           │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 139 +     startDate: new Date('2025-10-14T17:00:00Z'),                                                           │
+
+ │ 140       featured: true,                                                                                        │
+
+ │ 141       details: [                                                                                             │
+
+ │ 103 -       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value:              │
+
+ │     'Grupos reducidos' },                                                                                        │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 142 +       { icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />, label: 'Fechas',             │
+
+ │     value: 'Octubre 14 al 31' },                                                                                 │
+
+ │ 143 +       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Horario', value             │
+
+ │     '1:00 PM - 4:00 PM' },                                                                                       │
+
+ │ 144       ],                                                                                                     │
+
+ │ 145       syllabus: [                                                                                            │
+
+ │ 106 -         { title: 'El Guión Comercial', description: 'Análisis de texto, intención y público                │
+
+ │     objetivo.' },                                                                                                │
+
+ │ 107 -         { title: 'Estilos y Registros', description: 'Prácticas con diferentes estilos:                    │
+
+ │     institucional, promocional, etc.' },                                                                         │
+
+ │ 108 -         { title: 'Grabación en Cabina', description: 'Simulación de un casting real y grabació             │
+
+ │     de demo.' },                                                                                                 │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 146 +       { title: 'Módulo 1: Locución Comercial', description: '' },                                          │
+
+ │ 147 +       { title: 'Módulo 2: Locución de Promociones para Radio y TV', description: '' },                     │
+
+ │ 148 +       { title: 'Módulo 3: Locución Corporativa', description: '' },                                        │
+
+ │ 149       ],                                                                                                     │
+
+ │ 150       instructor: {                                                                                          │
+
+ │ 111 -         name: 'Abelardo Oseches',                                                                          │
+
+ │ 112 -         title: 'Director Académico',                                                                       │
+
+ │ 113 -         imageUrl: '/assets/abelardo-oseche.jpg'                                                            │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 151 +       name: 'Abelardo Oseches y Jesús Conde',                                                              │
+
+ │ 152 +       title: 'Instructores',                                                                               │
+
+ │ 153 +       imageUrl: '/assets/abelardo-oseche.jpg', // Se usa una imagen principal                              │
+
+ │ 154       },                                                                                                     │
+
+ │ 155       type: 'Presencial',                                                                                    │
+
+ │ 156     },                                                                                                       │
+
+ │ 157     {                                                                                                        │
+
+ │ 118 -     slug: 'doblaje-basico-presencial',                                                                     │
+
+ │ 119 -     title: "Doblaje Básico",                                                                               │
+
+ │ 120 -     shortDescription: "Vive una experiencia inmersiva en el mundo del doblaje, entrenando tu               │
+
+ │     capacidad interpretativa y manejando el lip sync.",                                                          │
+
+ │ 121 -     longDescription: "Vive una experiencia inmersiva en el mundo del doblaje, entrenando tu                │
+
+ │     capacidad interpretativa, manejando y controlando tonos, matices, ritmos e intenciones, aprende              │
+
+ │     manejar el lip sync y otras herramientas para que vivas la experiencia real de ponerle tu voz a              │
+
+ │     personajes de series reales o dibujos animados. Prácticas dirigidas y ejercicios reales.",                   │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 158 +     slug: 'doblaje-basico-semana-presencial',                                                              │
+
+ │ 159 +     title: 'Doblaje Básico (Entre semana)',                                                                │
+
+ │ 160 +     shortDescription: 'Aprende las técnicas fundamentales del doblaje en un formato intensivo              │
+
+ │     entre semana.',                                                                                              │
+
+ │ 161 +     longDescription: 'Un curso completo que cubre respiración, manejo del aire, entonación,                │
+
+ │     articulación, dicción, acento neutro, proyección de la voz y manejo de intenciones a través de               │
+
+ │     ejercicios prácticos y dirigidos.',                                                                          │
+
+ │ 162       price: 50,                                                                                             │
+
+ │ 123 -     currency: 'USD',                                                                                       │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 163 +     currency: 'EUR',                                                                                       │
+
+ │ 164       icon: <SpeakerWaveIcon className="w-9 h-9 text-secondary-bg" />,                                       │
+
+ │ 125 -     startDate: new Date('2025-09-19T12:00:00Z'),                                                           │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 165 +     startDate: new Date('2025-10-14T17:00:00Z'),                                                           │
+
+ │ 166 +     featured: true,                                                                                        │
+
+ │ 167       details: [                                                                                             │
+
+ │ 127 -       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value:              │
+
+ │     'Grupos reducidos' },                                                                                        │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 168 +       { icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />, label: 'Fechas',             │
+
+ │     value: 'Octubre 14 al 17' },                                                                                 │
+
+ │ 169 +       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Horario', value             │
+
+ │     '1:00 PM - 4:00 PM' },                                                                                       │
+
+ │ 170       ],                                                                                                     │
+
+ │ 171       syllabus: [                                                                                            │
+
+ │ 130 -         { title: 'Sincronización y Ritmo', description: 'Técnicas de lip sync y ajuste a la                │
+
+ │     banda de sonido original.' },                                                                                │
+
+ │ 131 -         { title: 'Creación de Personajes', description: 'Intención, caracterización y propuest             │
+
+ │     actoral.' },                                                                                                 │
+
+ │ 132 -         { title: 'Práctica en Atril', description: 'Grabación de escenas de series y películas             │
+
+ │     },                                                                                                           │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 172 +       { title: 'Respiración y manejo del aire', description: '' },                                         │
+
+ │ 173 +       { title: 'Entonación', description: '' },                                                            │
+
+ │ 174 +       { title: 'Articulación y dicción', description: '' },                                                │
+
+ │ 175 +       { title: 'Manejo de la voz', description: '' },                                                      │
+
+ │ 176 +       { title: 'Acento neutro internacional', description: '' },                                           │
+
+ │ 177 +       { title: 'Técnicas de dicción', description: '' },                                                   │
+
+ │ 178 +       { title: 'Proyección de la voz', description: '' },                                                  │
+
+ │ 179 +       { title: 'Manejo de intenciones', description: '' },                                                 │
+
+ │ 180       ],                                                                                                     │
+
+ │ 181       instructor: {                                                                                          │
+
+ │ 135 -         name: 'Zayanit Lamas',                                                                             │
+
+ │ 136 -         title: 'Coordinadora',                                                                             │
+
+ │ 137 -         imageUrl: '/assets/zayanit-lamas.jpg'                                                              │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 182 +       name: 'José Gómez Chompré',                                                                          │
+
+ │ 183 +       title: 'Instructor de Doblaje',                                                                      │
+
+ │ 184 +       imageUrl: '/assets/fotos-voiceacademy/José Gomez Chompré.jpg',                                       │
+
+ │ 185       },                                                                                                     │
+
+ │ 186       type: 'Presencial',                                                                                    │
+
+ │ 187     },                                                                                                       │
+
+ │ 188     {                                                                                                        │
+
+ │ 142 -     slug: 'oratoria-presencial',                                                                           │
+
+ │ 143 -     title: "Oratoria",                                                                                     │
+
+ │ 144 -     shortDescription: "La oratoria moderna, la que se basa en la comunicación efectiva, en la              │
+
+ │     estructura de mensajes orientados a impactar.",                                                              │
+
+ │ 145 -     longDescription: "La oratoria moderna, la que se basa en la comunicación efectiva, en la               │
+
+ │     estructura de mensajes orientados a impactar mediante herramientas como el storytelling, la                  │
+
+ │     naturalidad y el sentido orgánico de la expresión, pero trabajada con técnicas y herramientas pa             │
+
+ │     hacerlo bien, que suene bien y que se vea bien. No hay comunicación sin autenticidad y eso es lo             │
+
+ │     que te enseñamos aquí.",                                                                                     │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 189 +     slug: 'oratoria-sabatino-presencial',                                                                  │
+
+ │ 190 +     title: 'Oratoria (Sabatino)',                                                                          │
+
+ │ 191 +     shortDescription: 'Aprende a comunicar con impacto y confianza en nuestro curso de fin de              │
+
+ │     semana.',                                                                                                    │
+
+ │ 192 +     longDescription: 'Desarrolla tu autoconfianza, aprende los elementos del discurso, cómo                │
+
+ │     comunicar eficazmente y a usar tu lenguaje corporal a través de ejercicios prácticos.',                      │
+
+ │ 193       price: 50,                                                                                             │
+
+ │ 147 -     currency: 'USD',                                                                                       │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 194 +     currency: 'EUR',                                                                                       │
+
+ │ 195       icon: <PresentationChartLineIcon className="w-9 h-9 text-secondary-bg" />,                             │
+
+ │ 149 -     startDate: new Date('2025-09-20T12:00:00Z'),                                                           │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 196 +     startDate: new Date('2025-10-18T13:00:00Z'),                                                           │
+
+ │ 197 +     featured: true,                                                                                        │
+
+ │ 198       details: [                                                                                             │
+
+ │ 151 -       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value:              │
+
+ │     'Grupos reducidos' },                                                                                        │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 199 +       { icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />, label: 'Fechas',             │
+
+ │     value: 'Octubre 18 y 25' },                                                                                  │
+
+ │ 200 +       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Horario', value             │
+
+ │     '9:00 AM - 4:00 PM' },                                                                                       │
+
+ │ 201       ],                                                                                                     │
+
+ │ 202       syllabus: [                                                                                            │
+
+ │ 154 -         { title: 'El Miedo Escénico', description: 'Técnicas para controlar la ansiedad y                  │
+
+ │     proyectar confianza.' },                                                                                     │
+
+ │ 155 -         { title: 'Estructura del Discurso', description: 'Introducción, desarrollo, conclusión             │
+
+ │     storytelling.' },                                                                                            │
+
+ │ 156 -         { title: 'Lenguaje No Verbal', description: 'Gestos, postura y contacto visual para                │
+
+ │     reforzar tu mensaje.' },                                                                                     │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 203 +       { title: 'Manejo del miedo escénico y autoconfianza', description: '' },                             │
+
+ │ 204 +       { title: 'Elementos del discurso', description: '' },                                                │
+
+ │ 205 +       { title: 'Cómo comunicar eficazmente', description: '' },                                            │
+
+ │ 206 +       { title: 'Cómo elaborar una presentación', description: '' },                                        │
+
+ │ 207 +       { title: 'El lenguaje corporal y gestual', description: '' },                                        │
+
+ │ 208       ],                                                                                                     │
+
+ │ 209       instructor: {                                                                                          │
+
+ │ 210 +       name: 'Félix Ptolo',                                                                                 │
+
+ │ 211 +       title: 'Instructor de Oratoria',                                                                     │
+
+ │ 212 +       imageUrl: '/assets/fotos-voiceacademy/Félix Ptolo.jpg',                                              │
+
+ │ 213 +     },                                                                                                     │
+
+ │ 214 +     type: 'Presencial',                                                                                    │
+
+ │ 215 +   },                                                                                                       │
+
+ │ 216 +   {                                                                                                        │
+
+ │ 217 +     slug: 'diccion-perfecta-sabatino-presencial',                                                          │
+
+ │ 218 +     title: 'Dicción Perfecta (Sabatino)',                                                                  │
+
+ │ 219 +     shortDescription: 'Perfecciona tu pronunciación con nuestro método basado en la mecánica d             │
+
+ │     la dicción.',                                                                                                │
+
+ │ 220 +     longDescription: 'Conoce los órganos articulatorios y los puntos de cada fonema para logra             │
+
+ │     una dicción impecable a través de ejercicios prácticos y dirigidos.',                                        │
+
+ │ 221 +     price: 50,                                                                                             │
+
+ │ 222 +     currency: 'EUR',                                                                                       │
+
+ │ 223 +     icon: <ChatBubbleBottomCenterTextIcon className="w-9 h-9 text-secondary-bg" />,                        │
+
+ │ 224 +     startDate: new Date('2025-10-18T13:00:00Z'),                                                           │
+
+ │ 225 +     featured: true,                                                                                        │
+
+ │ 226 +     details: [                                                                                             │
+
+ │ 227 +       { icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />, label: 'Fechas',             │
+
+ │     value: 'Octubre 18 y 25' },                                                                                  │
+
+ │ 228 +       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Horario', value             │
+
+ │     '9:00 AM - 4:00 PM' },                                                                                       │
+
+ │ 229 +     ],                                                                                                     │
+
+ │ 230 +     syllabus: [                                                                                            │
+
+ │ 231 +       { title: 'Método de la mecánica de la dicción', description: '' },                                   │
+
+ │ 232 +       { title: 'Conocimiento de los órganos articulatorios', description: '' },                            │
+
+ │ 233 +       { title: 'Puntos articulatorios de cada fonema', description: '' },                                  │
+
+ │ 234 +     ],                                                                                                     │
+
+ │ 235 +     instructor: {                                                                                          │
+
+ │ 236         name: 'Abelardo Oseches',                                                                            │
+
+ │ 160 -         title: 'Director Académico',                                                                       │
+
+ │ 161 -         imageUrl: '/assets/abelardo-oseche.jpg'                                                            │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 237 +       title: 'CEO fundador. Director Académico',                                                           │
+
+ │ 238 +       imageUrl: '/assets/abelardo-oseche.jpg',                                                             │
+
+ │ 239       },                                                                                                     │
+
+ │ 240       type: 'Presencial',                                                                                    │
+
+ │ 241     },                                                                                                       │
+
+ │ 242     {                                                                                                        │
+
+ │ 166 -     slug: 'doblaje-animados-presencial',                                                                   │
+
+ │ 167 -     title: "Doblaje de Dibujos Animados",                                                                  │
+
+ │ 168 -     shortDescription: "El doblaje de animados no es imitar voces o "hacer vocecitas" la                    │
+
+ │     caracterización es un arte y se basa en técnica.",                                                           │
+
+ │ 169 -     longDescription: "Aprende a manejar tu voz, a colocarla, a usar tus resonadores para                   │
+
+ │     convertirla en aguda o en grave segúnelas características de tu personaje. Te enseñamos a combin             │
+
+ │     esas habilidades con la interpretación a través de técnicas divertidas, inmersivas y 100%                    │
+
+ │     prácticas.",                                                                                                 │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 243 +     slug: 'voces-animados-sabatino-presencial',                                                            │
+
+ │ 244 +     title: 'Voces para Dibujos Animados (Sabatino)',                                                       │
+
+ │ 245 +     shortDescription: 'Aprende a crear voces originales para personajes animados, manejando                │
+
+ │     ritmo, sincro e interpretación.',                                                                            │
+
+ │ 246 +     longDescription: 'Domina la intención, interpretación y caracterización de voces. Aprende              │
+
+ │     crear voces originales, manejar el ritmo, el sincro y el libreto en este curso práctico.',                   │
+
+ │ 247       price: 50,                                                                                             │
+
+ │ 171 -     currency: 'USD',                                                                                       │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 248 +     currency: 'EUR',                                                                                       │
+
+ │ 249       icon: <MicrophoneIcon className="w-9 h-9 text-secondary-bg" />,                                        │
+
+ │ 173 -     startDate: new Date('2025-09-21T12:00:00Z'),                                                           │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 250 +     startDate: new Date('2025-10-18T13:00:00Z'),                                                           │
+
+ │ 251 +     featured: true,                                                                                        │
+
+ │ 252       details: [                                                                                             │
+
+ │ 175 -       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value:              │
+
+ │     'Grupos reducidos' },                                                                                        │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 253 +       { icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />, label: 'Fechas',             │
+
+ │     value: 'Octubre 18 y 25' },                                                                                  │
+
+ │ 254 +       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Horario', value             │
+
+ │     '9:00 AM - 4:00 PM' },                                                                                       │
+
+ │ 255       ],                                                                                                     │
+
+ │ 256       syllabus: [                                                                                            │
+
+ │ 178 -         { title: 'Caracterización Vocal', description: 'Uso de resonadores, tonos y matices pa             │
+
+ │     crear personajes.' },                                                                                        │
+
+ │ 179 -         { title: 'El Cartoon', description: 'Análisis de estilos de animación y actuación.' },             │
+
+ │ 180 -         { title: '¡A Grabar!', description: 'Práctica intensiva con personajes de series                   │
+
+ │     animadas.' },                                                                                                │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 257 +       { title: 'Intención e interpretación', description: '' },                                            │
+
+ │ 258 +       { title: 'Caracterización de voces', description: '' },                                              │
+
+ │ 259 +       { title: 'Cómo crear voces originales', description: '' },                                           │
+
+ │ 260 +       { title: 'Manejo del ritmo', description: '' },                                                      │
+
+ │ 261 +       { title: 'Sincro', description: '' },                                                                │
+
+ │ 262 +       { title: 'Manejo del libreto', description: '' },                                                    │
+
+ │ 263       ],                                                                                                     │
+
+ │ 264       instructor: {                                                                                          │
+
+ │ 183 -         name: 'Zayanit Lamas',                                                                             │
+
+ │ 184 -         title: 'Coordinadora',                                                                             │
+
+ │ 185 -         imageUrl: '/assets/zayanit-lamas.jpg'                                                              │
+
+ │ ════════════════════════════════════════════════════════════════════════════════════════════════════             │
+
+ │ 265 +       name: 'José Gómez Chompré',                                                                          │
+
+ │ 266 +       title: 'Instructor de Doblaje',                                                                      │
+
+ │ 267 +       imageUrl: '/assets/fotos-voiceacademy/José Gomez Chompré.jpg',                                       │
+
+ │ 268       },                                                                                                     │
+
+ │ 269       type: 'Presencial',                                                                                    │
+
+ │ 270     },                                                                                                       │
+
+ │ 271 +   {                                                                                                        │
+
+ │ 272 +     slug: 'doblaje-integral-presencial',                                                                   │
+
+ │ 273 +     title: 'Doblaje Integral',                                                                             │
+
+ │ 274 +     shortDescription: 'Un programa exhaustivo de 4 módulos que te formará como un profesional              │
+
+ │     completo del doblaje.',                                                                                      │
+
+ │ 275 +     longDescription: 'Este curso integral abarca Acento Neutro, Dibujos Animados, Reality y Li             │
+
+ │     Action, y Narración para Documentales, impartido por nuestros mejores instructores.',                        │
+
+ │ 276 +     price: 170,                                                                                            │
+
+ │ 277 +     currency: 'EUR',                                                                                       │
+
+ │ 278 +     icon: <FilmIcon className="w-9 h-9 text-secondary-bg" />,                                              │
+
+ │ 279 +     startDate: new Date('2025-10-21T17:00:00Z'),                                                           │
+
+ │ 280 +     featured: true,                                                                                        │
+
+ │ 281 +     details: [                                                                                             │
+
+ │ 282 +       { icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />, label: 'Fechas',             │
+
+ │     value: 'Octubre 21 a Nov. 14' },                                                                             │
+
+ │ 283 +       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Horario', value             │
+
+ │     '1:00 PM - 4:00 PM' },                                                                                       │
+
+ │ 284 +     ],                                                                                                     │
+
+ │ 285 +     syllabus: [                                                                                            │
+
+ │ 286 +       { title: 'Módulo 1: Acento Neutro', description: 'Instructor: Abelardo Oseches' },                   │
+
+ │ 287 +       { title: 'Módulo 2: Dibujos Animados', description: 'Instructor: José Gómez Chompré' },              │
+
+ │ 288 +       { title: 'Módulo 3: Reality y Live Action', description: 'Instructora: Mariangélica                  │
+
+ │     Aumaitre' },                                                                                                 │
+
+ │ 289 +       { title: 'Módulo 4: Narración para Documentales', description: 'Instructor: Abelardo                 │
+
+ │     Oseches' },                                                                                                  │
+
+ │ 290 +     ],                                                                                                     │
+
+ │ 291 +     instructor: {                                                                                          │
+
+ │ 292 +       name: 'Varios Instructores',                                                                         │
+
+ │ 293 +       title: 'Equipo Voice Academy',                                                                       │
+
+ │ 294 +       imageUrl: '/assets/logo-solo.png',                                                                   │
+
+ │ 295 +     },                                                                                                     │
+
+ │ 296 +     type: 'Presencial',                                                                                    │
+
+ │ 297 +   },                                                                                                       │
+
+ │ 298 +   {                                                                                                        │
+
+ │ 299 +     slug: 'narracion-documentales-presencial',                                                             │
+
+ │ 300 +     title: 'Narración para Documentales',                                                                  │
+
+ │ 301 +     shortDescription: 'Aprende las claves de la narración de documentales, desde la articulaci             │
+
+ │     y proyección hasta el ritmo y la intención.',                                                                │
+
+ │ 302 +     longDescription: 'Domina las características de la narración de documentales, incluyendo               │
+
+ │     articulación, proyección, intención, ritmo, melodía y el uso del acento neutro.',                            │
+
+ │ 303 +     price: 50,                                                                                             │
+
+ │ 304 +     currency: 'EUR',                                                                                       │
+
+ │ 305 +     icon: <DocumentTextIcon className="w-9 h-9 text-secondary-bg" />,                                      │
+
+ │ 306 +     startDate: new Date('2025-10-21T13:00:00Z'),                                                           │
+
+ │ 307 +     featured: true,                                                                                        │
+
+ │ 308 +     details: [                                                                                             │
+
+ │ 309 +       { icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />, label: 'Fechas',             │
+
+ │     value: 'Octubre 21 al 24' },                                                                                 │
+
+ │ 310 +       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Horario', value             │
+
+ │     '9:00 AM – 12:00 M' },                                                                                       │
+
+ │ 311 +     ],                                                                                                     │
+
+ │ 312 +     syllabus: [                                                                                            │
+
+ │ 313 +       { title: 'Características de la narración de documentales', description: '' },                       │
+
+ │ 314 +       { title: 'Articulación y Proyección de la voz', description: '' },                                   │
+
+ │ 315 +       { title: 'Intención, Ritmo, melodía y cadencia', description: '' },                                  │
+
+ │ 316 +       { title: 'Usos del acento neutro en narración', description: '' },                                   │
+
+ │ 317 +     ],                                                                                                     │
+
+ │ 318 +     instructor: {                                                                                          │
+
+ │ 319 +       name: 'Abelardo Oseches',                                                                            │
+
+ │ 320 +       title: 'CEO fundador. Director Académico',                                                           │
+
+ │ 321 +       imageUrl: '/assets/abelardo-oseche.jpg',                                                             │
+
+ │ 322 +     },                                                                                                     │
+
+ │ 323 +     type: 'Presencial',                                                                                    │
+
+ │ 324 +   },                                                                                                       │
+
+ │ 325                                                                                                              │
+
+ │ 326     // --- Cursos Online ---                                                                                 │
+
+ │ 327     {                                                                                                        │
+
+ │                                                                                                                  │
+
+ │ Apply this change?                                                                                               │
+
+ │                                                                                                                  │
+
+ │ ● 1. Yes, allow once                                                                                             │
+
+ │   2. Yes, allow always                                                                                           │
+
+ │   3. No, suggest changes (esc)                                                                                   │
+
+ │                                                                                                                  │
+
+ ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+⠏ Waiting for user confirmation...
+
+
+Using: 2 GEMINI.md files
+
+
+╭───────────────────────────────────────────────────────────────────────────────────────────────────────╮
+
+│ Debug Console (ctrl+o to close)                                                                       │
+
+│                                                                                                       │
+
+│ ... first 113 lines hidden ...                                                                        │
+
+│      error: undefined,                                                                                │
+
+│      status: 429,                                                                                     │
+
+│      [Symbol(gaxios-gaxios-error)]: '6.7.1'                                                           │
+
+│    }                                                                                                  │
+
+│ ✖ [ERROR] [IDEClient] IDE connection error. The connection was lost unexpectedly. Please try         │
+
+│    reconnecting by running /ide enable                                                                │
+
+│    fetch failed                                                                                       │
+
+│ ✖ =========================================                                                          │
+
+│    This is an unexpected error. Please file a bug report using the /bug tool.                         │
+
+│    CRITICAL: Unhandled Promise Rejection!                                                             │
+
+│    =========================================                                                          │
+
+│    Reason: TypeError: fetch failed                                                                    │
+
+│    Stack trace:                                                                                       │
+
+│    TypeError: fetch failed                                                                            │
+
+│        at                                                                                             │
+
+│    C:\Users\Napoleon\AppData\Roaming\npm\node_modules\@google\gemini-cli\node_modules\undici\index.js │
+
+│    :124:13                                                                                            │
+
+│        at process.processTicksAndRejections (node:internal/process/task_queues:105:5)                 │
+
+│        at async                                                                                       │
+
+│    file:///C:/Users/Napoleon/AppData/Roaming/npm/node_modules/@google/gemini-cli/node_modules/@google │
+
+│    /gemini-cli-core/dist/src/ide/ide-client.js:509:30                                                 │
+
+│        at async StreamableHTTPClientTransport.send                                                    │
+
+│    (file:///C:/Users/Napoleon/AppData/Roaming/npm/node_modules/@google/gemini-cli/node_modules/@model │
+
+│    contextprotocol/sdk/dist/esm/client/streamableHttp.js:267:30) (x3

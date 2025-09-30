@@ -44,7 +44,11 @@ export const CartPanel: FC<CartPanelProps> = ({ isOpen, onClose }) => {
             <div className="flex-grow overflow-y-auto p-6 space-y-4">
               {items.map(item => (
                 <div key={item.slug} className="flex items-start gap-4">
-                  <img src={item.instructor.imageUrl} alt={item.title} className="w-20 h-20 object-cover rounded-md" />
+                  <img 
+                    src={item.instructors?.[0]?.imageUrl || '/assets/logo-solo.png'} 
+                    alt={item.title} 
+                    className="w-20 h-20 object-cover rounded-md" 
+                  />
                   <div className="flex-grow">
                     <h3 className="font-bold text-texto-principal">{item.title}</h3>
                     <p className="text-accent-orange font-bold">${item.price}</p>

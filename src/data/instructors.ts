@@ -69,5 +69,9 @@ export const galleryInstructors: Instructor[] = [
   {
     name: 'José Gomez Chompré',
     imgSrc: '/assets/fotos-voiceacademy/José Gomez Chompré.jpg'
+  },
+  {
+    name: 'Mariangélica Aumaitre',
+    imgSrc: '/assets/placeholder.png' // <-- USAREMOS UN PLACEHOLDER
   }
 ];
