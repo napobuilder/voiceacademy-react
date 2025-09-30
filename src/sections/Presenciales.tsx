@@ -47,32 +47,37 @@ export const Presenciales: FC = () => {
           subtitle="Vive la experiencia Voice Academy en persona. Grupos reducidos, feedback inmediato, cursos 100% prácticos y la energía de aprender junto a otros artistas de la voz."
         />
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {upcomingPresencialesCourses.map((course, index) => {
-            // 2. Inyectar dinámicamente la fecha formateada en los detalles de la tarjeta
-            const courseDetails = [
-              {
-                icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />,
-                label: 'Inicia',
-                value: course.startDate ? formatDate(course.startDate) : 'Próximamente',
-              },
-              ...(course.details || []),
-            ];
+        <div className="-mx-5 px-5 md:mx-0 md:px-0">
+          <div className="flex overflow-x-auto space-x-6 md:space-x-0 scroll-snap-x mandatory py-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 mt-12">
+            {upcomingPresencialesCourses.map((course, index) => {
+              // 2. Inyectar dinámicamente la fecha formateada en los detalles de la tarjeta
+              const courseDetails = [
+                {
+                  icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />,
+                  label: 'Inicia',
+                  value: course.startDate ? formatDate(course.startDate) : 'Próximamente',
+                },
+                ...(course.details || []),
+              ];
 
-            return (
-              <ScrollAnimation key={course.slug} className={`transition-delay-[${index * 100}ms]`}>
-                <InfoCard
-                  variant="dark"
-                  icon={course.icon}
-                  title={course.title}
-                  description={course.shortDescription}
-                  details={courseDetails} // <-- Pasando los detalles con la fecha formateada
-                  buttonText="Ver Detalles"
-                  to={`/cursos/${course.slug}`}
-                />
-              </ScrollAnimation>
-            );
-          })}
+              return (
+                <ScrollAnimation 
+                  key={course.slug} 
+                  className={`w-4/5 flex-shrink-0 scroll-snap-start md:w-full transition-delay-[${index * 100}ms]`}
+                >
+                  <InfoCard
+                    variant="dark"
+                    icon={course.icon}
+                    title={course.title}
+                    description={course.shortDescription}
+                    details={courseDetails} // <-- Pasando los detalles con la fecha formateada
+                    buttonText="Ver Detalles"
+                    to={`/cursos/${course.slug}`}
+                  />
+                </ScrollAnimation>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

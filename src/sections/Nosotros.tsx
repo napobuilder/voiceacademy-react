@@ -21,7 +21,7 @@ export function Nosotros() {
   };
 
   return (
-    <section id="nosotros" className="relative bg-fondo-seccion py-24 mt-[-100px] pt-[200px] [clip-path:polygon(0_0,100%_100px,100%_100%,0%_100%)]">
+    <section id="nosotros" className="relative z-10 bg-fondo-seccion py-24 mt-[-100px] pt-[200px] [clip-path:polygon(0_0,100%_100px,100%_100%,0%_100%)]">
       <div className="container mx-auto px-4">
         <SectionHeader
           title="Un Equipo Dedicado a tu Voz"

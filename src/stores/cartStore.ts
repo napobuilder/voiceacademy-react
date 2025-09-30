@@ -3,15 +3,17 @@ import { create } from 'zustand';
 import type { StateCreator } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { Course } from 'src/data/courses';
+import type { Instructor } from 'src/data/instructors';
 
 interface CartItem extends Course {
   quantity: number;
+  instructors: Instructor[];
 }
 
 interface CartState {
   items: CartItem[];
   isCartOpen: boolean;
-  addToCart: (course: Course) => void;
+  addToCart: (course: Course, instructors: Instructor[]) => void;
   removeFromCart: (slug: string) => void;
   clearCart: () => void;
   openCart: () => void;
@@ -23,7 +25,7 @@ const cartStateCreator: StateCreator<CartState> = (set, get) => ({
   isCartOpen: false,
   openCart: () => set({ isCartOpen: true }),
   closeCart: () => set({ isCartOpen: false }),
-  addToCart: (course) => {
+  addToCart: (course, instructors) => {
     const cart = get();
     const existingItem = cart.items.find(item => item.slug === course.slug);
 
@@ -32,7 +34,7 @@ const cartStateCreator: StateCreator<CartState> = (set, get) => ({
       // If you wanted to allow quantity, you would increment here.
       return; // Do nothing if item is already in cart
     } else {
-      set({ items: [...cart.items, { ...course, quantity: 1 }] });
+      set({ items: [...cart.items, { ...course, quantity: 1, instructors }] });
     }
   },
   removeFromCart: (slug) => {

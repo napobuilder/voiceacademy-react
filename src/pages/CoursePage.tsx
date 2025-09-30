@@ -13,6 +13,11 @@ export function CoursePage() {
   
   const course = courses.find(c => c.slug === slug);
 
+  // Obtener los objetos completos de los instructores para este curso
+  const courseInstructors = course?.instructorSlugs
+    .map(slug => getInstructorBySlug(slug))
+    .filter(instructor => instructor !== undefined) as NonNullable<ReturnType<typeof getInstructorBySlug>>[];
+
   if (!course) {
     return (
       <div className="container mx-auto px-5 py-24 text-center">
@@ -27,13 +32,13 @@ export function CoursePage() {
 
   const handleAddToCart = () => {
     if (!course) return;
-    addToCart(course);
+    addToCart(course, courseInstructors);
     openCart();
   };
 
   const handleBuyNow = () => {
     if (!course) return;
-    addToCart(course); // Ensure item is in cart before checkout
+    addToCart(course, courseInstructors); // Ensure item is in cart before checkout
     navigate('/checkout');
   };
 

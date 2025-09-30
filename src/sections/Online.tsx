@@ -24,20 +24,25 @@ export function Online() {
           subtitle="Fórmate desde cualquier parte del mundo con la misma calidad y cercanía. Clases en directo, interacción constante, dirección personalizada y acceso a las grabaciones."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {featuredOnlineCourses.map((course, index) => (
-            <ScrollAnimation key={course.slug} className={`transition-delay-[${index * 100}ms]`}>
-              <InfoCard
-                variant="dark"
-                icon={course.icon}
-                title={course.title}
-                description={course.shortDescription}
-                details={course.details}
-                buttonText="Ver Detalles"
-                to={`/cursos/${course.slug}`}
-              />
-            </ScrollAnimation>
-          ))}
+        <div className="-mx-5 px-5 md:mx-0 md:px-0">
+          <div className="flex overflow-x-auto space-x-6 md:space-x-0 scroll-snap-x mandatory py-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 mt-12">
+            {featuredOnlineCourses.map((course, index) => (
+              <ScrollAnimation 
+                key={course.slug} 
+                className={`w-4/5 flex-shrink-0 scroll-snap-start md:w-full transition-delay-[${index * 100}ms]`}
+              >
+                <InfoCard
+                  variant="dark"
+                  icon={course.icon}
+                  title={course.title}
+                  description={course.shortDescription}
+                  details={course.details}
+                  buttonText="Ver Detalles"
+                  to={`/cursos/${course.slug}`}
+                />
+              </ScrollAnimation>
+            ))}
+          </div>
         </div>
       </div>
     </section>
