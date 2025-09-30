@@ -1,8 +1,9 @@
 // FILE: src/pages/CoursePage.tsx
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { courses } from 'src/data/courses';
-import { PrimaryButton } from 'src/components/Button';
-import { useCartStore } from 'src/stores/cartStore';
+import { courses } from '@/data/courses';
+import { getInstructorBySlug } from '@/data/instructors';
+import { PrimaryButton } from '@/components/Button';
+import { useCartStore } from '@/stores/cartStore';
 
 export function CoursePage() {
   const { slug } = useParams<{ slug: string }>();
@@ -49,15 +50,20 @@ export function CoursePage() {
             <h1 className="text-4xl md:text-5xl font-bold text-accent-blue leading-tight">{course.title}</h1>
             
             <div className="mt-6 mb-8 space-y-4">
-              {course.instructors.map((instructor, index) => (
-                <div key={index} className="flex items-center gap-4">
-                  <img src={instructor.imageUrl} alt={instructor.name} className="w-12 h-12 rounded-full object-cover" />
-                  <div>
-                    <p className="font-bold text-texto-principal">{instructor.name}</p>
-                    <p className="text-sm text-texto-secundario">{instructor.title}</p>
+              {course.instructorSlugs.map((slug, index) => {
+                const instructor = getInstructorBySlug(slug);
+                if (!instructor) return null; // No debería pasar si los datos son consistentes
+
+                return (
+                  <div key={index} className="flex items-center gap-4">
+                    <img src={instructor.imageUrl} alt={instructor.name} className="w-12 h-12 rounded-full object-cover" />
+                    <div>
+                      <p className="font-bold text-texto-principal">{instructor.name}</p>
+                      <p className="text-sm text-texto-secundario">{instructor.title}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             <h2 className="text-2xl font-bold text-accent-blue mt-12 mb-4">Descripción del Curso</h2>

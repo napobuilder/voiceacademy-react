@@ -1,12 +1,12 @@
 // FILE: src/components/InstructorGalleryCard.tsx
 
 interface InstructorGalleryCardProps {
-  imgSrc: string;
+  imageUrl: string;
   name: string;
   onClick: () => void;
 }
 
-export function InstructorGalleryCard({ imgSrc, name, onClick }: InstructorGalleryCardProps) {
+export function InstructorGalleryCard({ imageUrl, name, onClick }: InstructorGalleryCardProps) {
   return (
     <div 
       className="flex-shrink-0 w-48 text-center cursor-pointer group" 
@@ -15,7 +15,7 @@ export function InstructorGalleryCard({ imgSrc, name, onClick }: InstructorGalle
       <div className="relative w-full h-56 overflow-hidden rounded-lg shadow-md transition-shadow duration-300 group-hover:shadow-xl">
         <img 
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-          src={imgSrc} 
+          src={imageUrl} 
           alt={`Foto de ${name}`}
         />
       </div>

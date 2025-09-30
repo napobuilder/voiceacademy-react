@@ -4,7 +4,10 @@ import { SectionHeader } from '@/components/SectionHeader';
 import { InstructorCard } from '@/components/InstructorCard';
 import { InstructorGalleryCard } from '@/components/InstructorGalleryCard';
 import { InstructorModal } from '@/components/InstructorModal';
-import { leaders, galleryInstructors, type Instructor } from '@/data/instructors';
+import { getLeaders, getGalleryInstructors, type Instructor } from '@/data/instructors';
+
+const leaders = getLeaders();
+const galleryInstructors = getGalleryInstructors();
 
 export function Nosotros() {
   const [selectedInstructor, setSelectedInstructor] = useState<Instructor | null>(null);

@@ -1,4 +1,4 @@
-// FILE: src/data/courses.ts
+// FILE: src/data/courses.tsx
 import type { ReactNode } from 'react';
 import {
   CalendarDaysIcon,
@@ -10,12 +10,8 @@ import {
   PresentationChartLineIcon,
 } from '@heroicons/react/24/outline';
 
-// Se define una interfaz para el instructor para reutilizarla
-export interface Instructor {
-  name: string;
-  title: string;
-  imageUrl: string;
-}
+// La interfaz del instructor ahora se importa desde el archivo unificado
+// import type { Instructor } from '@/data/instructors';
 
 export interface Course {
   slug: string;
@@ -36,7 +32,8 @@ export interface Course {
     title: string;
     description: string;
   }[];
-  instructors: Instructor[]; // <-- CAMBIO: de objeto a array de Instructores
+  // CAMBIO: Ahora es un array de strings (slugs de instructores)
+  instructorSlugs: string[]; 
   type: 'Presencial' | 'Online';
 }
 
@@ -63,11 +60,7 @@ export const courses: Course[] = [
       { title: 'Usos y Aplicaciones', description: 'Prácticas en narración de documentales, doblaje y locución comercial.' },
       { title: 'Ejercicios Prácticos Dirigidos', description: 'Feedback personalizado para pulir tu acento.' },
     ],
-    instructors: [{
-      name: 'Abelardo Oseches',
-      title: 'Director Académico',
-      imageUrl: '/assets/abelardo-oseche.jpg'
-    }],
+    instructorSlugs: ['abelardo-oseches'],
     type: 'Presencial',
   },
   {
@@ -89,11 +82,7 @@ export const courses: Course[] = [
         { title: 'Articulación de Fonemas', description: 'Ejercicios específicos para cada fonema del español.' },
         { title: 'Ejercicios Prácticos Dirigidos', description: 'Prácticas de lectura y conversación con corrección en vivo.' },
     ],
-    instructors: [{
-        name: 'Abelardo Oseches',
-        title: 'Director Académico',
-        imageUrl: '/assets/abelardo-oseche.jpg'
-    }],
+    instructorSlugs: ['abelardo-oseches'],
     type: 'Presencial',
   },
   {
@@ -115,18 +104,7 @@ export const courses: Course[] = [
         { title: 'Módulo 2: Promociones para Radio y TV', description: 'Técnicas para IDs, promos y liners. El ritmo y la energía de la venta.' },
         { title: 'Módulo 3: Locución Corporativa', description: 'El tono institucional, e-learning y narración para videos corporativos.' },
     ],
-    instructors: [
-      {
-        name: 'Abelardo Oseches',
-        title: 'Director Académico',
-        imageUrl: '/assets/abelardo-oseche.jpg'
-      },
-      {
-        name: 'Jesús Conde',
-        title: 'Instructor de Locución',
-        imageUrl: '/assets/fotos-voiceacademy/Jesús Conde.jpg'
-      }
-    ],
+    instructorSlugs: ['abelardo-oseches', 'jesus-conde'],
     type: 'Presencial',
   },
   {
@@ -148,18 +126,7 @@ export const courses: Course[] = [
         { title: 'Módulo 3: Doblaje de Documentales', description: 'Narración, tono neutro y sincronización con entrevistas.' },
         { title: 'Módulo 4: Doblaje de Animados', description: 'Creación de personajes, caracterización vocal y lip sync para cartoon.' },
     ],
-    instructors: [
-      {
-        name: 'Abelardo Oseches',
-        title: 'Director Académico',
-        imageUrl: '/assets/abelardo-oseche.jpg'
-      },
-      {
-        name: 'Henrique Palacios',
-        title: 'Instructor de Doblaje',
-        imageUrl: '/assets/fotos-voiceacademy/Henrique Palacios.jpg'
-      }
-    ],
+    instructorSlugs: ['abelardo-oseches', 'henrique-palacios'],
     type: 'Presencial',
   },
   {
@@ -183,11 +150,7 @@ export const courses: Course[] = [
       { title: 'Manejo de Intenciones', description: 'Interpretación y transmisión de la emoción y el propósito del personaje.' },
       { title: 'Ejercicios Prácticos Dirigidos', description: 'Prácticas en atril con escenas reales y feedback personalizado.' },
     ],
-    instructors: [{
-        name: 'José Gómez Chompré',
-        title: 'Instructor de Doblaje',
-        imageUrl: '/assets/fotos-voiceacademy/José Gomez Chompré.jpg'
-    }],
+    instructorSlugs: ['jose-gomez-chompre'],
     type: 'Presencial',
   },
   {
@@ -204,18 +167,14 @@ export const courses: Course[] = [
       { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value: 'Grupos reducidos' },
     ],
     syllabus: [
-      { title: 'Respiración y Manejo del Aire', description: 'Técnicas fundamentales para el control de la voz y el soporte del diafragma.' },
+      { title: 'Respiración y Manejo del Aire', description: 'Técnicas fundamentales para el control de la voz y el soporte del diafragmas.' },
       { title: 'Entonación y Articulación', description: 'Modulación de la voz y ejercicios para una pronunciación clara y precisa.' },
       { title: 'Acento Neutro Internacional', description: 'Estándares para doblaje y locución de alcance global.' },
       { title: 'Proyección de la Voz', description: 'Cómo hacer que tu voz se escuche con claridad sin forzarla.' },
       { title: 'Manejo de Intenciones', description: 'Interpretación y transmisión de la emoción y el propósito del personaje.' },
       { title: 'Ejercicios Prácticos Dirigidos', description: 'Prácticas en atril con escenas reales y feedback personalizado.' },
     ],
-    instructors: [{
-        name: 'José Gómez Chompré',
-        title: 'Instructor de Doblaje',
-        imageUrl: '/assets/fotos-voiceacademy/José Gomez Chompré.jpg'
-    }],
+    instructorSlugs: ['jose-gomez-chompre'],
     type: 'Presencial',
   },
   {
@@ -237,11 +196,7 @@ export const courses: Course[] = [
         { title: 'Lenguaje Corporal y Gestual', description: 'Uso del lenguaje no verbal como elemento de comunicación.' },
         { title: 'Ejercicios Prácticos', description: 'Prácticas personalizadas con feedback para pulir tus habilidades.' },
     ],
-    instructors: [{
-        name: 'Félix Ptolo',
-        title: 'Instructor de Oratoria',
-        imageUrl: '/assets/fotos-voiceacademy/Félix Ptolo.jpg'
-    }],
+    instructorSlugs: ['felix-ptolo'],
     type: 'Presencial',
   },
   {
@@ -263,63 +218,7 @@ export const courses: Course[] = [
         { title: 'Lenguaje Corporal y Gestual', description: 'Uso del lenguaje no verbal como elemento de comunicación.' },
         { title: 'Ejercicios Prácticos', description: 'Prácticas personalizadas con feedback para pulir tus habilidades.' },
     ],
-    instructors: [{
-        name: 'Félix Ptolo',
-        title: 'Instructor de Oratoria',
-        imageUrl: '/assets/fotos-voiceacademy/Félix Ptolo.jpg'
-    }],
-    type: 'Presencial',
-  },
-  {
-    slug: 'oratoria-sabatino-presencial-2',
-    title: "Oratoria (Sabatino)",
-    shortDescription: "La oratoria moderna, la que se basa en la comunicación efectiva, en la estructura de mensajes orientados a impactar.",
-    longDescription: "La oratoria moderna, la que se basa en la comunicación efectiva, en la estructura de mensajes orientados a impactar mediante herramientas como el storytelling, la naturalidad y el sentido orgánico de la expresión, pero trabajada con técnicas y herramientas para hacerlo bien, que suene bien y que se vea bien. No hay comunicación sin autenticidad y eso es lo que te enseñamos aquí.",
-    price: 50,
-    currency: 'USD',
-    icon: <PresentationChartLineIcon className="w-9 h-9 text-secondary-bg" />,
-    startDate: new Date('2025-10-18T09:00:00Z'),
-    details: [
-      { icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />, label: 'Horario', value: 'Sáb. 18 y 25 de Oct. | 9am-4pm' },
-      { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value: 'Grupos reducidos' },
-    ],
-    syllabus: [
-        { title: 'Manejo del Miedo Escénico', description: 'Técnicas para controlar la ansiedad y proyectar confianza.' },
-        { title: 'Comunicación Efectiva', description: 'Cómo estructurar una presentación y comunicar con impacto.' },
-        { title: 'Lenguaje Corporal y Gestual', description: 'Uso del lenguaje no verbal como elemento de comunicación.' },
-        { title: 'Ejercicios Prácticos', description: 'Prácticas personalizadas con feedback para pulir tus habilidades.' },
-    ],
-    instructors: [{
-        name: 'Félix Ptolo',
-        title: 'Instructor de Oratoria',
-        imageUrl: '/assets/fotos-voiceacademy/Félix Ptolo.jpg'
-    }],
-    type: 'Presencial',
-  },
-  {
-    slug: 'oratoria-sabatino-presencial-3',
-    title: "Oratoria (Sabatino)",
-    shortDescription: "La oratoria moderna, la que se basa en la comunicación efectiva, en la estructura de mensajes orientados a impactar.",
-    longDescription: "La oratoria moderna, la que se basa en la comunicación efectiva, en la estructura de mensajes orientados a impactar mediante herramientas como el storytelling, la naturalidad y el sentido orgánico de la expresión, pero trabajada con técnicas y herramientas para hacerlo bien, que suene bien y que se vea bien. No hay comunicación sin autenticidad y eso es lo que te enseñamos aquí.",
-    price: 50,
-    currency: 'USD',
-    icon: <PresentationChartLineIcon className="w-9 h-9 text-secondary-bg" />,
-    startDate: new Date('2025-10-18T09:00:00Z'),
-    details: [
-      { icon: <CalendarDaysIcon className="w-6 h-6 text-texto-secundario" />, label: 'Horario', value: 'Sáb. 18 y 25 de Oct. | 9am-4pm' },
-      { icon: <UsersIcon className="w-6 h-6 text-texto-secundario" />, label: 'Cupos', value: 'Grupos reducidos' },
-    ],
-    syllabus: [
-        { title: 'Manejo del Miedo Escénico', description: 'Técnicas para controlar la ansiedad y proyectar confianza.' },
-        { title: 'Comunicación Efectiva', description: 'Cómo estructurar una presentación y comunicar con impacto.' },
-        { title: 'Lenguaje Corporal y Gestual', description: 'Uso del lenguaje no verbal como elemento de comunicación.' },
-        { title: 'Ejercicios Prácticos', description: 'Prácticas personalizadas con feedback para pulir tus habilidades.' },
-    ],
-    instructors: [{
-        name: 'Félix Ptolo',
-        title: 'Instructor de Oratoria',
-        imageUrl: '/assets/fotos-voiceacademy/Félix Ptolo.jpg'
-    }],
+    instructorSlugs: ['felix-ptolo'],
     type: 'Presencial',
   },
   {
@@ -341,11 +240,7 @@ export const courses: Course[] = [
         { title: 'Actuación y Lip Sync', description: 'Prácticas de sincronización de labios y actuación para dibujos animados.' },
         { title: 'Prácticas Dirigidas', description: 'Grabación y análisis de escenas con material audiovisual real.' },
     ],
-    instructors: [{
-        name: 'Charlot Prince',
-        title: 'Instructor de Doblaje',
-        imageUrl: '/assets/fotos-voiceacademy/Charlot Prince.jpg'
-    }],
+    instructorSlugs: ['charlot-prince'],
     type: 'Presencial',
   },
   {
@@ -367,11 +262,7 @@ export const courses: Course[] = [
         { title: 'Español Neutro Aplicado', description: 'Uso del acento neutro para audiencias internacionales.' },
         { title: 'Prácticas con Material Real', description: 'Grabación de documentales de diversos géneros (naturaleza, ciencia, historia).' },
     ],
-    instructors: [{
-        name: 'Hernán Rodriguez',
-        title: 'Instructor de Narración',
-        imageUrl: '/assets/fotos-voiceacademy/Hernan Rodriguez2.png'
-    }],
+    instructorSlugs: ['hernan-rodriguez'],
     type: 'Presencial',
   },
 
@@ -395,11 +286,7 @@ export const courses: Course[] = [
         { title: 'Fonemas y Articulación', description: 'Puntos articulatorios de cada fonema.' },
         { title: 'Ejercicios Prácticos', description: 'Ejercicios prácticos y dirigidos para la corrección.' },
     ],
-    instructors: [{
-        name: 'Abelardo Oseches',
-        title: 'Director Académico',
-        imageUrl: '/assets/abelardo-oseche.jpg'
-    }],
+    instructorSlugs: ['abelardo-oseches'],
     type: 'Online',
   },
   {
@@ -421,11 +308,7 @@ export const courses: Course[] = [
         { title: 'Discurso y Comunicación', description: 'Elementos del discurso, y cómo comunicar y presentar eficazmente.' },
         { title: 'Lenguaje No Verbal', description: 'El lenguaje corporal y gestual como elemento de comunicación.' },
     ],
-    instructors: [{
-        name: 'Félix Ptolo',
-        title: 'Instructor de Oratoria',
-        imageUrl: '/assets/fotos-voiceacademy/Félix Ptolo.jpg'
-    }],
+    instructorSlugs: ['felix-ptolo'],
     type: 'Online',
   },
   {
@@ -447,11 +330,7 @@ export const courses: Course[] = [
         { title: 'Intención y Ritmo', description: 'Cómo abordar los diferentes tipos de promociones (IDs, liners, promos).' },
         { title: 'Prácticas Dirigidas', description: 'Ejercicios prácticos y feedback con material real de radio y TV.' },
     ],
-    instructors: [{
-        name: 'José Antonio Castillo',
-        title: 'Instructor de Locución',
-        imageUrl: '/assets/fotos-voiceacademy/José Antonio Castillo.jpg'
-    }],
+    instructorSlugs: ['jose-antonio-castillo'],
     type: 'Online',
   },
   {
@@ -474,11 +353,7 @@ export const courses: Course[] = [
       { title: 'Interpretación', description: 'Manejo de intenciones y creación de personajes.' },
       { title: 'Práctica Dirigida', description: 'Ejercicios prácticos con feedback personalizado.' },
     ],
-    instructors: [{
-        name: 'José Gómez Chompré',
-        title: 'Instructor de Doblaje',
-        imageUrl: '/assets/fotos-voiceacademy/José Gomez Chompré.jpg'
-    }],
+    instructorSlugs: ['jose-gomez-chompre'],
     type: 'Online',
   },
   {
@@ -500,11 +375,7 @@ export const courses: Course[] = [
         { title: 'Técnica Vocal Aplicada', description: 'Articulación, proyección y uso del acento neutro en narración.' },
         { title: 'Prácticas Grabadas', description: 'Ejercicios prácticos con guiones reales y feedback personalizado.' },
     ],
-    instructors: [{
-        name: 'Abelardo Oseches',
-        title: 'Director Académico',
-        imageUrl: '/assets/abelardo-oseche.jpg'
-    }],
+    instructorSlugs: ['abelardo-oseches'],
     type: 'Online',
   },
   {
@@ -526,11 +397,7 @@ export const courses: Course[] = [
         { title: 'Manejo de la Voz', description: 'Control de la voz, intenciones narrativas, ritmos e inflexiones.' },
         { title: 'Prácticas Dirigidas', description: 'Ejercicios prácticos y dirigidos con interpretación de textos.' },
     ],
-    instructors: [{
-        name: 'Charlot Prins',
-        title: 'Instructor de Doblaje',
-        imageUrl: '/assets/fotos-voiceacademy/Charlot Prince.jpg'
-    }],
+    instructorSlugs: ['charlot-prince'],
     type: 'Online',
   },
 ];
