@@ -5,7 +5,7 @@ interface InstructorCardProps {
   imageUrl: string;
   name: string;
   title: string;
-  quote: string;
+  quote?: string;
   imgStyle?: ImgHTMLAttributes<HTMLImageElement>['style'];
 }
 
@@ -20,7 +20,7 @@ export function InstructorCard({ imageUrl, name, title, quote, imgStyle }: Instr
       />
       <h4 className="text-[1.4rem] font-bold text-accent-blue">{name}</h4>
       <span className="text-accent-orange font-semibold block mb-2.5">{title}</span>
-      <p className="text-[0.95rem] text-texto-secundario">"{quote}"</p>
+      {quote && <p className="text-[0.95rem] text-texto-secundario">"{quote}"</p>}
     </div>
   );
 }

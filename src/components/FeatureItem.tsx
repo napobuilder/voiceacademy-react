@@ -1,13 +1,14 @@
-import type { FC, ReactElement } from 'react';
+import type { FC, ReactElement, ReactNode } from 'react';
 
 interface FeatureItemProps {
   icon: ReactElement;
   title: string;
   description: string;
   isWhite?: boolean;
+  children?: ReactNode;
 }
 
-export const FeatureItem: FC<FeatureItemProps> = ({ icon, title, description, isWhite }) => {
+export const FeatureItem: FC<FeatureItemProps> = ({ icon, title, description, isWhite, children }) => {
   const titleColor = isWhite ? 'text-white' : 'text-texto-principal';
   const descriptionColor = isWhite ? 'text-white' : 'text-texto-secundario';
   const iconBgColor = isWhite ? 'bg-white/20' : 'bg-gray-100';
@@ -21,6 +22,7 @@ export const FeatureItem: FC<FeatureItemProps> = ({ icon, title, description, is
       <div className={`feature-text ${shadowClass}`}>
         <h3 className={`text-xl font-bold mb-2 ${titleColor}`}>{title}</h3>
         <p className={`${descriptionColor} leading-relaxed`}>{description}</p>
+        {children && <div className="mt-4">{children}</div>}
       </div>
     </div>
   );
