@@ -94,7 +94,7 @@ export const CheckoutPage: FC = () => {
                   {items.map(item => (
                     <div key={item.slug} className="flex justify-between items-start">
                       <div className="flex items-start gap-4">
-                        <img src={item.instructor.imageUrl} alt={item.title} className="w-16 h-16 object-cover rounded-md" />
+                        <img src={item.instructors?.[0]?.imageUrl || '/assets/logo-solo.png'} alt={item.title} className="w-16 h-16 object-cover rounded-md" />
                         <div>
                           <h3 className="font-bold text-texto-principal">{item.title}</h3>
                           <p className="text-sm text-texto-secundario">x {item.quantity}</p>

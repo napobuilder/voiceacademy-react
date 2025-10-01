@@ -25,4 +25,7 @@ dist-ssr
 
 # Local Secrets
 instrucciones-totalpago
-error 
+
+# Archivos y carpetas locales del proyecto
+/Guía de integración TotalPago V1.5.2.pdf
+/apis/
