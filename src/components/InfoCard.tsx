@@ -6,32 +6,35 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 interface InfoCardProps {
   icon?: React.ReactNode;
   title: string;
-  description?: string; // Made optional
+  displayTitle?: string; // Nueva prop para el título corto
+  description?: string;
   details?: {
     icon: React.ReactNode;
     label: string;
     value: string;
-  }[]; // Made optional
-  buttonText: string; // Kept for other cards, but will be replaced by an icon for cards with personImage
+  }[];
+  buttonText: string;
   to: string;
   variant?: 'light' | 'dark';
   className?: string;
   style?: React.CSSProperties;
-  personImage?: string; // New prop for the person's image
+  personImage?: string;
 }
 
-// Helper function to split title for two stripes
+// ... (la función splitTitleForTwoStripes no cambia)
 function splitTitleForTwoStripes(title: string): [string, string] {
+  if (title.includes('|')) {
+    const parts = title.split('|');
+    return [parts[0], parts[1] || ''];
+  }
   const words = title.split(' ');
   if (words.length <= 1) {
-    return [title, '']; // Cannot split single word or empty string
+    return [title, ''];
   }
-
   let part1Words: string[] = [];
   let part2Words: string[] = [];
   let currentLength = 0;
   const targetLength = title.length / 2;
-
   for (let i = 0; i < words.length; i++) {
     if (currentLength + words[i].length + (i > 0 ? 1 : 0) <= targetLength) {
       part1Words.push(words[i]);
@@ -40,21 +43,18 @@ function splitTitleForTwoStripes(title: string): [string, string] {
       part2Words.push(words[i]);
     }
   }
-
-  // If part1 is empty, or part2 is empty, or all words went to part1, adjust
   if (part1Words.length === 0 && words.length > 0) {
     part1Words.push(words[0]);
     part2Words = words.slice(1);
   } else if (part2Words.length === 0 && words.length > 1) {
-    part2Words.push(part1Words.pop()!); // Move last word from part1 to part2
+    part2Words.push(part1Words.pop()!);
   }
-
   return [part1Words.join(' '), part2Words.join(' ')];
 }
 
-
 export function InfoCard({
   title,
+  displayTitle,
   description,
   details,
   buttonText,
@@ -65,12 +65,14 @@ export function InfoCard({
   personImage
 }: InfoCardProps) {
   
-  const baseClasses = 'relative overflow-hidden rounded-lg shadow-suave p-8 pt-12 text-center flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-lg h-full';
+  const effectiveTitle = displayTitle || title;
+
+  const baseClasses = 'relative overflow-hidden rounded-lg shadow-[0_8px_30px_-5px_rgba(0,0,0,0.2)] p-6 pt-10 text-center flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_-5px_rgba(0,0,0,0.25)] h-full';
   
   const variantClasses = {
     light: {
       card: 'bg-fondo-seccion border border-gray-100',
-      description: 'text-xl font-semibold text-texto-secundario',
+      description: 'text-base font-normal text-texto-secundario',
       details: 'text-texto-secundario',
       detailsIcon: 'text-accent-orange',
       detailsStrong: 'text-texto-principal',
@@ -78,7 +80,7 @@ export function InfoCard({
     },
     dark: {
       card: 'card-texture',
-      description: 'text-xl font-semibold text-texto-secundario',
+      description: 'text-base font-normal text-texto-secundario',
       details: 'text-texto-secundario',
       detailsIcon: 'text-accent-orange',
       detailsStrong: 'text-texto-principal',
@@ -88,42 +90,42 @@ export function InfoCard({
 
   const styles = variantClasses[variant];
 
-  // Determine which title style to use
   let titleContent;
-  if (title.length <= 14) { // Short titles: single blue stripe
+  const displayRenderTitle = effectiveTitle.replace('|', ' ');
+
+  if (effectiveTitle.length <= 14) { // Short titles
     titleContent = (
       <div className="mb-4 h-16 relative">
         <div className="absolute bottom-0 right-0 w-full h-10 md:h-12 bg-accent-blue flex items-center justify-center transform -rotate-2 px-4 shadow-lg">
-          <h3 className="text-white text-3xl font-bold text-center whitespace-nowrap">
-            {title.toUpperCase()}
+          <h3 className="text-white text-2xl md:text-3xl font-bold text-center whitespace-nowrap">
+            {displayRenderTitle.toUpperCase()}
           </h3>
         </div>
       </div>
     );
-  } else if (title.length <= 30) { // Medium titles: two stripes
-    const [part1, part2] = splitTitleForTwoStripes(title.toUpperCase());
+  } else if (effectiveTitle.length <= 45) { // Medium titles
+    const [part1, part2] = splitTitleForTwoStripes(effectiveTitle.toUpperCase());
+    const titleFontSize = effectiveTitle.length > 32 ? 'text-lg md:text-xl' : 'text-xl md:text-2xl';
+
     titleContent = (
-      <div className="mb-4 h-20 relative"> {/* Increased height to accommodate two stripes */}
-        {/* First stripe (blue, inclined) */}
+      <div className="mb-4 h-20 relative">
         <div className="absolute top-0 right-0 w-full h-10 bg-accent-blue flex items-center justify-center transform -rotate-2 px-4 shadow-lg">
-          <h3 className="text-white text-2xl font-bold text-center whitespace-nowrap">
+          <h3 className={`text-white ${titleFontSize} font-bold text-center whitespace-nowrap`}>
             {part1}
           </h3>
         </div>
-        {/* Second stripe (orange, not inclined) */}
         <div className="absolute bottom-0 right-0 w-full h-10 bg-accent-orange flex items-center justify-center px-4 shadow-lg">
-          <h3 className="text-white text-2xl font-bold text-center whitespace-nowrap">
+          <h3 className={`text-white ${titleFontSize} font-bold text-center whitespace-nowrap`}>
             {part2}
           </h3>
         </div>
       </div>
     );
-  } else { // Very long titles: simple h3
+  } else { // Very long titles
     titleContent = (
-      <h3 className={`text-2xl font-bold mb-4 text-accent-blue`}>{title}</h3>
+      <h3 className={`text-2xl font-bold mb-4 text-accent-blue`}>{displayRenderTitle}</h3>
     );
   }
-
 
   return (
     <div
@@ -137,11 +139,11 @@ export function InfoCard({
       )}
 
       {details && details.length > 0 && (
-        <div className={`text-left text-xl mb-6 space-y-2 ${styles.details}`}>
+        <div className={`text-left text-base mb-6 space-y-3 ${styles.details}`}>
           {details.map((detail, index) => (
-            <div key={index} className="flex items-center gap-3">
-              <span className={styles.detailsIcon}>{detail.icon}</span>
-              <span><strong className={styles.detailsStrong}>{detail.label}:</strong> {detail.value}</span>
+            <div key={index} className="flex items-start gap-3">
+              <span className={`mt-1 ${styles.detailsIcon}`}>{detail.icon}</span>
+              <span className="flex-1"><strong className={styles.detailsStrong}>{detail.label}:</strong> {detail.value}</span>
             </div>
           ))}
         </div>
@@ -152,7 +154,7 @@ export function InfoCard({
           <ArrowRightIcon className="w-6 h-6" />
         </Link>
       ) : (
-        <Link to={to} className={`mt-auto py-2 px-6 block z-10 relative ${styles.button}`}>
+        <Link to={to} className={`mt-auto py-3 px-8 block z-10 relative ${styles.button} text-lg font-semibold`}>
           {buttonText}
         </Link>
       )}

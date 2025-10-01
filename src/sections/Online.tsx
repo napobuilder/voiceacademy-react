@@ -1,14 +1,14 @@
 // FILE: src/sections/Online.tsx
 import { SectionHeader } from 'src/components/SectionHeader';
 import { InfoCard } from 'src/components/InfoCard';
-import { courses } from 'src/data/courses';
 import { ScrollAnimation } from 'src/components/ScrollAnimation';
+import type { Course } from '@/data/courses';
 
-// Lógica para mostrar solo los cursos online DESTACADOS
-const featuredOnlineCourses = courses.filter(course => course.type === 'Online' && course.featured);
-
-export function Online() {
+export function Online({ courses }: { courses: Course[] }) {
   const imageUrl = 'https://img.arrelsfundacio.org/wp-content/uploads/2022/09/6D1A2891-768x384.jpg';
+
+  // Lógica para mostrar solo los cursos online DESTACADOS
+  const featuredOnlineCourses = courses.filter(course => course.type === 'Online' && course.featured);
 
   return (
     <section 
@@ -25,16 +25,17 @@ export function Online() {
         />
 
         <div className="-mx-5 px-5 md:mx-0 md:px-0">
-          <div className="flex overflow-x-auto space-x-6 md:space-x-0 scroll-snap-x mandatory py-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 mt-12">
+          <div className="flex overflow-x-auto space-x-4 md:space-x-0 scroll-snap-x mandatory py-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 mt-12">
             {featuredOnlineCourses.map((course, index) => (
               <ScrollAnimation 
                 key={course.slug} 
-                className={`w-4/5 flex-shrink-0 scroll-snap-start md:w-full transition-delay-[${index * 100}ms]`}
+                className={`w-[85%] flex-shrink-0 scroll-snap-center md:w-full transition-delay-[${index * 100}ms]`}
               >
                 <InfoCard
                   variant="dark"
                   icon={course.icon}
                   title={course.title}
+                  displayTitle={course.displayTitle}
                   description={course.shortDescription}
                   details={course.details}
                   buttonText="Ver Detalles"

@@ -28,4 +28,4 @@ instrucciones-totalpago
 
 # Archivos y carpetas locales del proyecto
 /Guía de integración TotalPago V1.5.2.pdf
-/apis/
+/apis/.env 
