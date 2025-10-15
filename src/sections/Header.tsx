@@ -58,17 +58,17 @@ export const Header: FC<HeaderProps> = ({ onCartClick }) => {
 
   return (
     <header className="relative z-[1000] w-full py-5">
-      <nav className="w-[95%] max-w-[1100px] mx-auto flex justify-between items-center bg-accent-blue/95 backdrop-blur-lg px-8 py-2.5 rounded-custom shadow-intensa relative">
+      <nav className="w-[95%] max-w-[1100px] mx-auto flex justify-between items-center bg-accent-blue/95 backdrop-blur-lg px-4 lg:px-8 py-2.5 rounded-custom shadow-intensa relative">
         <Logo />
 
         {/* Collapsible Menu (for links only) */}
         <div className={`absolute top-full left-0 w-full bg-accent-blue flex-col items-stretch p-5 rounded-custom shadow-intensa lg:static lg:flex lg:flex-row lg:items-center lg:w-auto lg:bg-transparent lg:p-0 lg:shadow-none ${isMenuOpen ? 'flex' : 'hidden'}`}>
           <ul className="flex flex-col gap-5 lg:flex-row lg:gap-6">
-            <NavLink href="#metodo">Método</NavLink>
-            <NavLink href="#filosofia">Filosofía</NavLink>
-            <NavLink href="#corporativos">Corporativos</NavLink>
-            <NavLink href="#servicios">Servicios</NavLink>
-            <NavLink href="#nosotros">Nosotros</NavLink>
+            <NavLink href="/#metodo">Método</NavLink>
+            <NavLink href="/#filosofia">Filosofía</NavLink>
+            <NavLink href="/#corporativos">Corporativos</NavLink>
+            <NavLink href="/#servicios">Servicios</NavLink>
+            <NavLink href="/#nosotros">Nosotros</NavLink>
           </ul>
           
           {/* --- Desktop Dropdown Button --- */}
