@@ -27,7 +27,7 @@ export function Nosotros() {
           title="Un Equipo Dedicado a tu Voz"
           subtitle="No sólo somos instructores, somos artistas y profesionales activos. Estamos aquí para guiarte con experiencia real, carreras consolidadas y ejemplos de vida capaces de inspirar y transformar."
         />
-        <div className="grid md:grid-cols-3 gap-8 mb-24">
+        <div className="flex flex-wrap justify-center gap-8 mb-24">
           {leaders.map((instructor, index) => (
             <InstructorCard key={index} {...instructor} />
           ))}

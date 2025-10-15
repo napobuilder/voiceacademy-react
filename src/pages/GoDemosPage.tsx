@@ -25,7 +25,7 @@ const GoDemosPage: FC = () => {
         {/* --- Cabecera --- */}
         <header className="text-center max-w-4xl mx-auto">
             <div className="inline-block mb-8">
-                <img src="/Logo_Horizontal_W_PNG (1).png" alt="GoDemos Logo" className="h-16" />
+                <img src="/Logo_Horizontal_W_PNG (1).png" alt="GoDemos Logo" className="h-16 [filter:drop-shadow(1px_1px_0_rgba(0,0,0,0.2))_drop-shadow(-1px_-1px_0_rgba(0,0,0,0.2))_drop-shadow(1px_-1px_0_rgba(0,0,0,0.2))_drop-shadow(-1px_1px_0_rgba(0,0,0,0.2))]" />
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-texto-principal">
                 Tu Voz, <span className="bg-gradient-to-r from-accent-orange to-orange-400 text-transparent bg-clip-text">Potenciada</span>. Todo en un Mismo Lugar.
