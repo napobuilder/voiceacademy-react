@@ -6,3 +6,6 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[secrets]
+  keys = ["VITE_SUPABASE_URL", "VITE_SUPABASE_ANON_KEY"]
