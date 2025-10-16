@@ -22,7 +22,7 @@ const EXTERNAL_CLIENT_ID = '1609'; // This should be a string as per SDK example
 export const CasheaButton: FC<CasheaButtonProps> = ({ customer }) => {
   const { items } = useCartStore();
   const containerRef = useRef<HTMLDivElement>(null);
-  const sdkRef = useRef<CheckoutSDK | null>(null);
+  const sdkRef = useRef<any | null>(null);
 
   useEffect(() => {
     // Ensure this effect runs only once by checking if the SDK is already instantiated

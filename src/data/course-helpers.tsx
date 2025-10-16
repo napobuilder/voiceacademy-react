@@ -1,5 +1,4 @@
 // FILE: src/data/course-helpers.ts
-import type { ReactNode } from 'react';
 import {
   MicrophoneIcon,
   PresentationChartLineIcon,
