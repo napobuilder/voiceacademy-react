@@ -12,7 +12,7 @@ import { Servicios } from '@/sections/Servicios';
 import { Nosotros } from '@/sections/Nosotros';
 import { CtaFinal } from '@/sections/CtaFinal';
 import { supabase } from '@/lib/supabaseClient';
-import type { Course } from '@/data/course-helpers';
+import type { Course } from '@/data/courses';
 import { transformDbCourseToCourse } from '@/data/course-helpers';
 
 export function HomePage() {

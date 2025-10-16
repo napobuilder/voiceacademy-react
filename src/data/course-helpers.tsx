@@ -8,31 +8,10 @@ import {
   ChatBubbleBottomCenterTextIcon,
 } from '@heroicons/react/24/outline';
 import type { Database } from './supabase.types';
+import type { Course } from './courses'; // Import the single source of truth
 
 // La interfaz de curso que usan los componentes de React
-export interface Course {
-  slug: string;
-  title: string;
-  displayTitle?: string;
-  shortDescription: string;
-  longDescription: string;
-  price: number;
-  currency: 'USD';
-  icon: ReactNode;
-  startDate?: Date;
-  featured?: boolean;
-  details?: {
-    icon: ReactNode;
-    label: string;
-    value: string;
-  }[];
-  syllabus: {
-    title: string;
-    description: string;
-  }[];
-  instructorSlugs: string[];
-  type: 'Presencial' | 'Online';
-}
+// DELETED the duplicate interface
 
 // Tipo para un curso como viene de la DB de Supabase
 type DbCourse = Database['public']['Tables']['courses']['Row'];
@@ -58,7 +37,7 @@ export const transformDbCourseToCourse = (dbCourse: DbCourse): Course => {
     shortDescription: dbCourse.short_description || '',
     longDescription: dbCourse.long_description || '',
     price: dbCourse.price,
-    currency: 'USD',
+    currency: 'EUR', // CORRECTED to EUR
     // El elemento se crea aquí, dentro de la lógica de renderizado, no en el nivel superior.
     icon: IconComponent ? <IconComponent className="w-9 h-9" /> : null,
     startDate: dbCourse.start_date ? new Date(dbCourse.start_date) : undefined,

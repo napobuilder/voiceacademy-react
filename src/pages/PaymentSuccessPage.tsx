@@ -1,5 +1,6 @@
 // FILE: src/pages/PaymentSuccessPage.tsx
-import { FC, useEffect, useState } from 'react';
+import type { FC } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { PrimaryButton } from '@/components/Button';
 import { supabase } from '@/lib/supabaseClient';

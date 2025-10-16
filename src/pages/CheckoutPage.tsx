@@ -33,7 +33,6 @@ export const CheckoutPage: FC = () => {
   // Payment State
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<PaymentMethod | null>(null);
   const [exchangeRate, setExchangeRate] = useState<number | null>(null);
-  const [banks, setBanks] = useState<Bank[]>([]);
   const [banescoIds, setBanescoIds] = useState<{ transfer: string | null; mobile: string | null }>({ transfer: null, mobile: null });
   const [selectedBank, setSelectedBank] = useState('');
   const [referenceNumber, setReferenceNumber] = useState('');
@@ -70,7 +69,6 @@ export const CheckoutPage: FC = () => {
           const { data, error } = await supabase.functions.invoke('totalpago-get-banks');
           if (error) throw error;
           const bankList: Bank[] = data || [];
-          setBanks(bankList);
 
           const transferId = bankList.find(b => b.nmbancoTransf.includes('Transferencia') && b.nmbancoTransf.includes('BANESCO'))?.idbancoTransf || null;
           const mobileId = bankList.find(b => b.nmbancoTransf.includes('Pago Móvil') && b.nmbancoTransf.includes('BANESCO'))?.idbancoTransf || null;

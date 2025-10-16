@@ -10,9 +10,10 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'whatsapp' | 'nav'; // Add variant prop
   target?: string;
   rel?: string;
+  disabled?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ href, children, className, onClick, type, variant, target, rel }) => {
+const Button: FC<ButtonProps> = ({ href, children, className, onClick, type, variant, target, rel, disabled }) => {
   const baseClasses = "inline-block py-3 px-8 rounded-custom font-bold text-base transition-all duration-300 cursor-pointer text-center";
   
   const variantClasses = {
@@ -22,9 +23,11 @@ const Button: FC<ButtonProps> = ({ href, children, className, onClick, type, var
     nav: "bg-transparent text-white shadow-none hover:text-accent-orange py-2 px-3",
   };
 
-  const combinedClasses = `${baseClasses} ${variant ? variantClasses[variant] : ''} ${className || ''}`;
+  const disabledClasses = disabled ? "opacity-50 cursor-not-allowed" : "";
 
-  if (href) {
+  const combinedClasses = `${baseClasses} ${variant ? variantClasses[variant] : ''} ${className || ''} ${disabledClasses}`;
+
+  if (href && !disabled) {
     return (
       <a href={href} className={combinedClasses} onClick={onClick as MouseEventHandler<HTMLAnchorElement>} target={target} rel={rel}>
         {children}
@@ -32,8 +35,16 @@ const Button: FC<ButtonProps> = ({ href, children, className, onClick, type, var
     );
   }
 
+  if (href && disabled) {
+    return (
+      <span className={combinedClasses}>
+        {children}
+      </span>
+    );
+  }
+
   return (
-    <button type={type || 'button'} className={combinedClasses} onClick={onClick as MouseEventHandler<HTMLButtonElement>}>
+    <button type={type || 'button'} className={combinedClasses} onClick={onClick as MouseEventHandler<HTMLButtonElement>} disabled={disabled}>
       {children}
     </button>
   );
