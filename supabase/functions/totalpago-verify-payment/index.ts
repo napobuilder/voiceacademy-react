@@ -2,7 +2,7 @@
 
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
 
-const TOTALPAGO_API_URL = 'https://www.totalpago.net/WSPasarela/service.svc/WM_fcn_VerificacionPagoPost';
+const TOTALPAGO_API_URL = 'https://www.totalpago.net/WsPasarela/service.svc/WM_fcn_VerificacionPagoPost';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -28,16 +28,18 @@ serve(async (req) => {
       throw new Error('Missing idPago parameter');
     }
 
+    const totalpagoPayload = {
+      idusr: userId,
+      token: token,
+      idPago: idPago,
+    };
+
     const response = await fetch(TOTALPAGO_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        idusr: userId,
-        token: token,
-        idPago: idPago,
-      }),
+      body: JSON.stringify(totalpagoPayload),
     });
 
     if (!response.ok) {
@@ -50,6 +52,7 @@ serve(async (req) => {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 200,
     });
+
   } catch (error) {
     return new Response(JSON.stringify({ error: error.message }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

@@ -51,7 +51,7 @@ export const CartPanel: FC<CartPanelProps> = ({ isOpen, onClose }) => {
                   />
                   <div className="flex-grow">
                     <h3 className="font-bold text-texto-principal">{item.title}</h3>
-                    <p className="text-accent-orange font-bold">${item.price}</p>
+                    <p className="text-accent-orange font-bold">€{item.price}</p>
                   </div>
                   <button onClick={() => removeFromCart(item.slug)} className="text-sm text-red-500 hover:underline">Eliminar</button>
                 </div>
@@ -63,7 +63,7 @@ export const CartPanel: FC<CartPanelProps> = ({ isOpen, onClose }) => {
             <div className="p-6 border-t bg-gray-50">
               <div className="flex justify-between items-center font-bold text-lg mb-4">
                 <span>Subtotal:</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>€{subtotal.toFixed(2)}</span>
               </div>
               <PrimaryButton onClick={handleCheckout} className="w-full">Proceder al Pago</PrimaryButton>
               <button onClick={clearCart} className="w-full text-center mt-2 text-sm text-gray-500 hover:underline">Vaciar Carrito</button>

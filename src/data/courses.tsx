@@ -20,7 +20,7 @@ export interface Course {
   shortDescription: string;
   longDescription: string;
   price: number;
-  currency: 'USD';
+  currency: 'EUR';
   icon: ReactNode;
   startDate?: Date;
   featured?: boolean;
@@ -46,7 +46,7 @@ export const courses: Course[] = [
     shortDescription: "Deslocaliza tu acento y logra una comunicación de alcance internacional. Te enseñamos un método único para aplicarlo en locución, doblaje y oratoria.",
     longDescription: "Este entrenamiento intensivo y efectivo, se basa en un método propio que te enseña a deslocalizar tu acento natal. Te enseñamos sus distintas aplicaciones para la oratoria, la locución, el doblaje y para la comunicación en general. No vas a creer como cambia tu forma de comunicar cuando deslocalizas y neutralizas tu acento.",
     price: 50,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <MicrophoneIcon className="w-9 h-9 text-secondary-bg" />,
     startDate: new Date('2025-10-04T09:00:00Z'), 
     featured: true,
@@ -68,7 +68,7 @@ export const courses: Course[] = [
       shortDescription: "La oratoria moderna, la que se basa en la comunicación efectiva, en la estructura de mensajes orientados a impactar.",
       longDescription: "La oratoria moderna, la que se basa en la comunicación efectiva, en la estructura de mensajes orientados a impactar mediante herramientas como el storytelling, la naturalidad y el sentido orgánico de la expresión, pero trabajada con técnicas y herramientas para hacerlo bien, que suene bien y que se vea bien. No hay comunicación sin autenticidad y eso es lo que te enseñamos aquí.",
       price: 50,
-      currency: 'USD',
+      currency: 'EUR',
       icon: <PresentationChartLineIcon className="w-9 h-9 text-secondary-bg" />,
       startDate: new Date('2025-10-07T13:00:00Z'),
       details: [
@@ -89,7 +89,7 @@ export const courses: Course[] = [
     shortDescription: "Un programa completo que abarca desde la locución comercial y corporativa hasta la locución de promociones para Radio y TV.",
     longDescription: "Un programa integral que te convertirá en un locutor todo terreno. Aprenderás a decodificar textos, manejar diferentes estilos e intenciones, y entender el nuevo rol del locutor en la industria. Con prácticas en cabina y dirección personalizada de dos de nuestros mejores instructores.",
     price: 170,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <MegaphoneIcon className="w-9 h-9 text-secondary-bg" />,
     startDate: new Date('2025-10-14T13:00:00Z'),
     featured: true,
@@ -111,7 +111,7 @@ export const courses: Course[] = [
     shortDescription: "Un programa intensivo que te lleva desde los fundamentos del doblaje hasta técnicas avanzadas en reality shows, documentales y animados.",
     longDescription: "Este es el programa más completo de doblaje. En cuatro módulos intensivos, aprenderás los fundamentos de la sincronización y la actuación vocal, para luego especializarte en los géneros más demandados: reality shows, documentales y dibujos animados. Un curso impartido por tres de las voces más experimentadas de la industria.",
     price: 170,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <SpeakerWaveIcon className="w-9 h-9 text-secondary-bg" />,
     startDate: new Date('2025-10-21T13:00:00Z'),
     details: [
@@ -133,7 +133,7 @@ export const courses: Course[] = [
       shortDescription: "Vive una experiencia inmersiva en el mundo del doblaje, entrenando tu capacidad interpretativa y manejando el lip sync.",
       longDescription: "Vive una experiencia inmersiva en el mundo del doblaje, entrenando tu capacidad interpretativa, manejando y controlando tonos, matices, ritmos e intenciones, aprende a manejar el lip sync y otras herramientas para que vivas la experiencia real de ponerle tu voz a personajes de series reales o dibujos animados. Prácticas dirigidas y ejercicios reales.",
       price: 50,
-      currency: 'USD',
+      currency: 'EUR',
       icon: <SpeakerWaveIcon className="w-9 h-9 text-secondary-bg" />,
       startDate: new Date('2025-10-04T09:00:00Z'),
       details: [
@@ -155,7 +155,7 @@ export const courses: Course[] = [
     shortDescription: "Vive una experiencia inmersiva en el mundo del doblaje, entrenando tu capacidad interpretativa y manejando el lip sync.",
     longDescription: "Vive una experiencia inmersiva en el mundo del doblaje, entrenando tu capacidad interpretativa, manejando y controlando tonos, matices, ritmos e intenciones, aprende a manejar el lip sync y otras herramientas para que vivas la experiencia real de ponerle tu voz a personajes de series reales o dibujos animados. Prácticas dirigidas y ejercicios reales.",
     price: 50,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <SpeakerWaveIcon className="w-9 h-9 text-secondary-bg" />,
     startDate: new Date('2025-10-14T13:00:00Z'),
     details: [
@@ -179,7 +179,7 @@ export const courses: Course[] = [
     shortDescription: "La oratoria moderna, la que se basa en la comunicación efectiva, en la estructura de mensajes orientados a impactar.",
     longDescription: "La oratoria moderna, la que se basa en la comunicación efectiva, en la estructura de mensajes orientados a impactar mediante herramientas como el storytelling, la naturalidad y el sentido orgánico de la expresión, pero trabajada con técnicas y herramientas para hacerlo bien, que suene bien y que se vea bien. No hay comunicación sin autenticidad y eso es lo que te enseñamos aquí.",
     price: 50,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <PresentationChartLineIcon className="w-9 h-9 text-secondary-bg" />,
     startDate: new Date('2025-10-18T09:00:00Z'),
     details: [
@@ -201,7 +201,7 @@ export const courses: Course[] = [
     shortDescription: "Deja de usar el lápiz creyendo que vas a corregir tus problemas de pronunciación. Aquí te enseñamos un método único.",
     longDescription: "Aquí te enseñamos un método único que se basa en la mecánica de los fonemas y en el componente auditivo de la dicción, para que tu pronunciación vaya de 0 a 100 en simples pasos. 100% práctico, interactivo y con resultados sorprendentes.",
     price: 50,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <ChatBubbleBottomCenterTextIcon className="w-9 h-9 text-secondary-bg" />,
     startDate: new Date('2025-10-18T09:00:00Z'),
     featured: true,
@@ -223,7 +223,7 @@ export const courses: Course[] = [
     shortDescription: "El doblaje de animados no es imitar voces; la caracterización es un arte y se basa en técnica.",
     longDescription: "Aprende a manejar tu voz, a colocarla, a usar tus resonadores para convertirla en aguda o en grave según las características de tu personaje. Te enseñamos a combinar esas habilidades con la interpretación a través de técnicas divertidas, inmersivas y 100% prácticas.",
     price: 50,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <MicrophoneIcon className="w-9 h-9 text-secondary-bg" />,
     startDate: new Date('2025-10-18T09:00:00Z'),
     details: [
@@ -248,7 +248,7 @@ export const courses: Course[] = [
     shortDescription: "Aprende a contar historias que cautivan. Domina el arte de la narración para documentales, desde el tono y el ritmo hasta el storytelling.",
     longDescription: "Este curso te sumerge en el mundo de la narración de documentales. Aprenderás a analizar guiones, a encontrar el tono adecuado para cada historia y a utilizar tu voz como una herramienta poderosa para informar y emocionar. Con prácticas intensivas y la guía de un experto en el área.",
     price: 50,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <ChatBubbleBottomCenterTextIcon className="w-9 h-9 text-secondary-bg" />,
     startDate: new Date('2025-10-21T09:00:00Z'),
     details: [
@@ -273,7 +273,7 @@ export const courses: Course[] = [
     shortDescription: "Corrige tus problemas de pronunciación con un método único basado en la mecánica de los fonemas.",
     longDescription: "Deja de usar el lápiz creyendo que vas a corregir tus problemas de pronunciación. Aquí te enseñamos un método único que se basa en la mecánica de los fonemas y en el componente auditivo de la dicción, para que tu pronunciación vaya de 0 a 100 en 4 simples pasos. 100% práctico, interactivo y con resultados sorprendentes.",
     price: 45,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <ChatBubbleBottomCenterTextIcon className="w-9 h-9 text-accent-blue" />,
     startDate: new Date('2025-09-30T20:00:00Z'),
     featured: true,
@@ -295,7 +295,7 @@ export const courses: Course[] = [
     shortDescription: "La oratoria moderna basada en la comunicación efectiva, la estructura de mensajes y el storytelling para impactar con naturalidad y autenticidad.",
     longDescription: "La oratoria moderna, la que se basa en la comunicación efectiva, en la estructura de mensajes orientados a impactar mediante herramientas como el storytelling, la naturalidad y el sentido orgánico de la expresión, pero trabajada con técnicas y herramientas para hacerlo bien, que suene bien y que se vea bien. No hay comunicación sin autenticidad y eso es lo que te enseñamos aquí.",
     price: 45,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <PresentationChartLineIcon className="w-9 h-9 text-accent-blue" />,
     startDate: new Date('2025-10-14T20:00:00Z'),
     featured: true,
@@ -317,7 +317,7 @@ export const courses: Course[] = [
     shortDescription: "Aprende a grabar promociones para radio y TV, manejando la intención, el ritmo y los diferentes estilos que demanda el medio.",
     longDescription: "Un curso intensivo para dominar el arte de las promociones. Aprenderás a manejar la entonación, el ritmo y las intenciones específicas para identificar emisoras de radio, canales de TV y grabar promociones de alto impacto. Con ejercicios prácticos y dirigidos por un experto.",
     price: 45,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <MegaphoneIcon className="w-9 h-9 text-accent-blue" />,
     startDate: new Date('2025-10-21T20:00:00Z'),
     featured: true,
@@ -339,7 +339,7 @@ export const courses: Course[] = [
     shortDescription: "Una experiencia inmersiva en el doblaje, entrenando tu capacidad interpretativa, manejando tonos, matices, ritmos, intenciones y lip sync.",
     longDescription: "Vive una experiencia inmersiva en el mundo del doblaje, entrenando tu capacidad interpretativa, manejando y controlando tonos, matices, ritmos e intenciones, aprende a manejar el lip sync y otras herramientas para que vivas la experiencia real de ponerle tu voz a personajes de series reales o dibujos animados. Prácticas dirigidas y ejercicios reales.",
     price: 45,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <MicrophoneIcon className="w-9 h-9 text-accent-blue" />,
     startDate: new Date('2025-10-07T20:00:00Z'),
     featured: true,
@@ -362,7 +362,7 @@ export const courses: Course[] = [
     shortDescription: "Aprende a contar historias que cautivan. Domina el arte de la narración para documentales, desde el tono y el ritmo hasta el storytelling.",
     longDescription: "Este curso te sumerge en el mundo de la narración de documentales. Aprenderás a analizar guiones, a encontrar el tono adecuado para cada historia y a utilizar tu voz como una herramienta poderosa para informar y emocionar. Con prácticas intensivas y la guía de un experto en el área.",
     price: 45,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <ChatBubbleBottomCenterTextIcon className="w-9 h-9 text-accent-blue" />,
     startDate: new Date('2025-10-28T20:00:00Z'),
     featured: true,
@@ -384,7 +384,7 @@ export const courses: Course[] = [
     shortDescription: "Desarrolla tu capacidad interpretativa y aprende a dar vida a las historias con tu voz. Un curso enfocado en las técnicas de actuación y narración para audiolibros.",
     longDescription: "Sumérgete en el creciente mundo de los audiolibros. Este curso te proporcionará las herramientas para manejar tu voz, caracterizar personajes y dominar las intenciones y ritmos narrativos. A través de ejercicios prácticos, aprenderás a interpretar textos y a cautivar a la audiencia.",
     price: 45,
-    currency: 'USD',
+    currency: 'EUR',
     icon: <SpeakerWaveIcon className="w-9 h-9 text-accent-blue" />,
     startDate: new Date('2025-12-03T20:00:00Z'),
     featured: true,

@@ -6,8 +6,10 @@ import { Footer } from '@/sections/Footer';
 import { HomePage } from '@/pages/HomePage';
 import { CoursePage } from '@/pages/CoursePage';
 import { CheckoutPage } from '@/pages/CheckoutPage';
-import GoDemosPage from '@/pages/GoDemosPage'; // Import GoDemosPage
+import GoDemosPage from '@/pages/GoDemosPage';
 import { CartPanel } from '@/components/CartPanel';
+import { PaymentSuccessPage } from '@/pages/PaymentSuccessPage';
+import { PaymentCancelledPage } from '@/pages/PaymentCancelledPage';
 
 function Layout() {
   const { isCartOpen, openCart, closeCart } = useCartStore();
@@ -31,7 +33,9 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="cursos/:slug" element={<CoursePage />} />
         <Route path="checkout" element={<CheckoutPage />} />
-        <Route path="godemos" element={<GoDemosPage />} /> {/* Add GoDemosPage Route */}
+        <Route path="godemos" element={<GoDemosPage />} />
+        <Route path="payment/success" element={<PaymentSuccessPage />} />
+        <Route path="payment/cancelled" element={<PaymentCancelledPage />} />
       </Route>
     </Routes>
   );

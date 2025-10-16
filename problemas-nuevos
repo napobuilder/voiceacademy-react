@@ -1,6 +1,0 @@
-[vite] connecting... client:733:9
-Uncaught Error: Supabase URL and anon key are required. Make sure to create a .env file with VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.
-    <anonymous> supabaseClient.ts:9
-supabaseClient.ts:5:9
-    <anonymous> supabaseClient.ts:9
-[vite] connected. client:827:12

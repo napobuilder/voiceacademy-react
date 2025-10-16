@@ -93,7 +93,7 @@ export function CoursePage() {
           {/* Sidebar de Compra */}
           <aside className="lg:col-span-1">
             <div className="bg-white rounded-lg shadow-lg p-6 sticky top-32">
-              <h3 className="text-3xl font-bold text-accent-blue text-center">${course.price} <span className="text-lg font-normal">{course.currency}</span></h3>
+              <h3 className="text-3xl font-bold text-accent-blue text-center">€{course.price} <span className="text-lg font-normal">{course.currency}</span></h3>
               
               {course.details && course.details.length > 0 && (
                 <div className="my-6 space-y-3">

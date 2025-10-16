@@ -1,3 +1,10 @@
+# Dependencies
+node_modules
+
+# Build artifacts
+dist
+dist-ssr
+
 # Logs
 logs
 *.log
@@ -7,10 +14,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Local environment files
 *.local
+.env
 
 # Editor directories and files
 .vscode/*
@@ -23,9 +29,11 @@ dist-ssr
 *.sln
 *.sw?
 
-# Local Secrets
-instrucciones-totalpago
-
-# Archivos y carpetas locales del proyecto
+# Local development notes & assets
+/dev-notes/
+/instrucciones-totalpago
 /Guía de integración TotalPago V1.5.2.pdf
-/apis/.env 
+/apis/.env
+
+# Supabase temporary files
+/supabase/.temp/
