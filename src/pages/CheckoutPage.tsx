@@ -4,8 +4,8 @@ import { useCartStore } from '@/stores/cartStore';
 import { PrimaryButton } from '@/components/Button';
 import { supabase } from '@/lib/supabaseClient';
 import { CasheaButton } from '@/components/CasheaButton';
-
-type PaymentMethod = 'cashea' | 'totalpago' | 'bancamiga' | 'other';
+import { PaymentMethodSelector, type PaymentMethod } from '@/components/PaymentMethodSelector';
+import { SkeletonLoader } from '@/components/SkeletonLoader';
 
 // Updated Bank type to match Totalpago API response
 type Bank = {
@@ -31,7 +31,7 @@ export const CheckoutPage: FC = () => {
   const [instagram, setInstagram] = useState('');
 
   // Payment State
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<PaymentMethod | null>(null);
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<PaymentMethod>(null);
   const [exchangeRate, setExchangeRate] = useState<number | null>(null);
   const [banescoIds, setBanescoIds] = useState<{ transfer: string | null; mobile: string | null }>({ transfer: null, mobile: null });
   const [selectedBank, setSelectedBank] = useState('');
@@ -41,13 +41,14 @@ export const CheckoutPage: FC = () => {
   const [verifyingPagoId, setVerifyingPagoId] = useState<string | null>(null);
 
   // UI State
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true); // Start with loading true for initial data fetch
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [casheaError, setCasheaError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchExchangeRate = async () => {
+    const initialLoad = async () => {
+      setLoading(true);
       try {
         const { data, error } = await supabase.functions.invoke('get-exchange-rate');
         if (error) throw error;
@@ -56,8 +57,9 @@ export const CheckoutPage: FC = () => {
         console.error('Error fetching exchange rate:', error);
         setError('No se pudo obtener la tasa de cambio. Por favor, recargue la página.');
       }
+      setLoading(false);
     };
-    fetchExchangeRate();
+    initialLoad();
   }, []);
 
   useEffect(() => {
@@ -206,7 +208,7 @@ export const CheckoutPage: FC = () => {
       <div className="container mx-auto px-5">
         <h1 className="text-4xl md:text-5xl font-bold text-accent-blue mb-12 text-center">Finalizar Compra</h1>
         
-        {items.length === 0 ? (
+        {items.length === 0 && !loading ? (
           <div className="text-center">
             <p className="text-xl text-texto-secundario">Tu carrito está vacío.</p>
             <p className="mt-4">No tienes productos que pagar.</p>
@@ -231,15 +233,11 @@ export const CheckoutPage: FC = () => {
 
                 <section className="mt-12">
                   <h2 className="text-2xl font-bold text-accent-blue mb-6">Método de Pago</h2>
-                  <div className="space-y-4">
-                    <button type="button" onClick={() => setSelectedPaymentMethod('cashea')} className={`w-full flex items-center justify-between p-4 border rounded-md text-left transition ${selectedPaymentMethod === 'cashea' ? 'border-accent-blue ring-2 ring-accent-blue' : 'border-gray-300 hover:bg-gray-50'}`}>
-                      <span className="font-bold">Financia con Cashea</span>
-                      <img src="/assets/logo-cashea-oficial.webp" alt="Cashea" className="h-6" />
-                    </button>
-                    <button type="button" onClick={() => setSelectedPaymentMethod('totalpago')} className={`w-full flex items-center justify-between p-4 border rounded-md text-left transition ${selectedPaymentMethod === 'totalpago' ? 'border-accent-blue ring-2 ring-accent-blue' : 'border-gray-300 hover:bg-gray-50'}`}>
-                      <span className="font-bold">Pagos en Bs (Transferencia o Pago Móvil)</span>
-                    </button>
-                  </div>
+                  <PaymentMethodSelector
+                    selectedMethod={selectedPaymentMethod}
+                    onSelectMethod={setSelectedPaymentMethod}
+                    disabled={!fullName || !email || !idNumber}
+                  />
                 </section>
 
                 {selectedPaymentMethod === 'cashea' && (
@@ -269,7 +267,17 @@ export const CheckoutPage: FC = () => {
                 {selectedPaymentMethod === 'totalpago' && (
                   <section className="mt-12 p-6 bg-gray-50 rounded-lg border border-gray-200">
                     <h3 className="text-xl font-bold text-accent-blue mb-4">Detalles del Pago en Bolívares</h3>
-                    {exchangeRate && !loading ? (
+                    {loading || !exchangeRate ? (
+                      <div className="space-y-4">
+                        <SkeletonLoader className="h-8 w-1/3" />
+                        <div className="grid grid-cols-2 gap-4">
+                          <SkeletonLoader className="h-12 w-full" />
+                          <SkeletonLoader className="h-12 w-full" />
+                        </div>
+                        <SkeletonLoader className="h-10 w-full" />
+                        <SkeletonLoader className="h-10 w-full" />
+                      </div>
+                    ) : (
                       <div className="grid sm:grid-cols-2 gap-6">
                         {/* Smart Operation Type Selection */}
                         <div className="sm:col-span-2">
@@ -310,8 +318,6 @@ export const CheckoutPage: FC = () => {
                           Monto a Pagar: Bs. {(total * exchangeRate).toFixed(2)}
                         </div>
                       </div>
-                    ) : (
-                      <p>Cargando información de pago...</p>
                     )}
                   </section>
                 )}
@@ -334,20 +340,39 @@ export const CheckoutPage: FC = () => {
             <aside className="lg:col-span-1">
               <div className="bg-white p-6 rounded-lg shadow-suave sticky top-32">
                 <h2 className="text-2xl font-bold text-accent-blue mb-6 border-b pb-4">Resumen de tu Pedido</h2>
-                <div className="space-y-4">
-                  {items.map(item => (
-                    <div key={item.slug} className="flex justify-between items-start">
-                      <div className="flex items-start gap-4">
-                        <img src={item.instructors?.[0]?.imageUrl || '/assets/logo-solo.png'} alt={item.title} className="w-16 h-16 object-cover rounded-md" />
-                        <div>
-                          <h3 className="font-bold text-texto-principal">{item.title}</h3>
-                          <p className="text-sm text-texto-secundario">x {item.quantity}</p>
-                        </div>
+                {loading ? (
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4">
+                      <SkeletonLoader className="w-16 h-16 rounded-md" />
+                      <div className="flex-1 space-y-2">
+                        <SkeletonLoader className="h-5 w-3/4" />
+                        <SkeletonLoader className="h-4 w-1/4" />
                       </div>
-                      <p className="font-bold text-texto-principal">€{item.price.toFixed(2)}</p>
                     </div>
-                  ))}
-                </div>
+                    <div className="flex items-center gap-4">
+                      <SkeletonLoader className="w-16 h-16 rounded-md" />
+                      <div className="flex-1 space-y-2">
+                        <SkeletonLoader className="h-5 w-3/4" />
+                        <SkeletonLoader className="h-4 w-1/4" />
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {items.map(item => (
+                      <div key={item.slug} className="flex justify-between items-start">
+                        <div className="flex items-start gap-4">
+                          <img src={item.instructors?.[0]?.imageUrl || '/assets/logo-solo.png'} alt={item.title} className="w-16 h-16 object-cover rounded-md" />
+                          <div>
+                            <h3 className="font-bold text-texto-principal">{item.title}</h3>
+                            <p className="text-sm text-texto-secundario">x {item.quantity}</p>
+                          </div>
+                        </div>
+                        <p className="font-bold text-texto-principal">€{item.price.toFixed(2)}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
                 <div className="mt-6 pt-6 border-t space-y-2">
                   <div className="flex justify-between">
                     <span>Subtotal</span>
