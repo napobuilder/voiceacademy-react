@@ -75,7 +75,7 @@ export function HomePage() {
       <Online courses={courses} />
       <Corporativos />
       <Servicios />
-      <Nosotros />
+      <Nosotros courses={courses} />
       <CtaFinal />
     </main>
   );

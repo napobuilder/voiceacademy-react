@@ -1,27 +1,76 @@
 // FILE: src/pages/CoursePage.tsx
+import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { courses } from '@/data/courses';
-import { getInstructorBySlug } from '@/data/instructors';
+import { supabase } from '@/lib/supabaseClient';
+import { getInstructorBySlug, type Instructor } from '@/data/instructors';
 import { PrimaryButton } from '@/components/Button';
 import { useCartStore } from '@/stores/cartStore';
+import { transformDbCourseToCourse } from '@/data/course-helpers';
+import type { Course } from '@/data/courses';
 
 export function CoursePage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const addToCart = useCartStore((state) => state.addToCart);
   const openCart = useCartStore((state) => state.openCart);
-  
-  const course = courses.find(c => c.slug === slug);
 
-  // Obtener los objetos completos de los instructores para este curso
-  const courseInstructors = course?.instructorSlugs
-    .map(slug => getInstructorBySlug(slug))
-    .filter(instructor => instructor !== undefined) as NonNullable<ReturnType<typeof getInstructorBySlug>>[];
+  const [course, setCourse] = useState<Course | null>(null);
+  const [instructors, setInstructors] = useState<Instructor[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  if (!course) {
+  useEffect(() => {
+    const fetchCourse = async () => {
+      if (!slug) {
+        setLoading(false);
+        setError('No se ha especificado un curso.');
+        return;
+      }
+
+      setLoading(true);
+      try {
+        const { data: dbCourse, error: dbError } = await supabase
+          .from('courses')
+          .select('*')
+          .eq('slug', slug)
+          .single();
+
+        if (dbError || !dbCourse) {
+          throw new Error('Curso no encontrado.');
+        }
+
+        const transformedCourse = transformDbCourseToCourse(dbCourse);
+        setCourse(transformedCourse);
+
+        if (transformedCourse.instructorSlugs) {
+          const courseInstructors = transformedCourse.instructorSlugs
+            .map(slug => getInstructorBySlug(slug))
+            .filter((instructor): instructor is Instructor => instructor !== undefined);
+          setInstructors(courseInstructors);
+        }
+
+      } catch (err: any) {
+        setError(err.message || 'Ocurrió un error al cargar el curso.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCourse();
+  }, [slug]);
+
+  if (loading) {
     return (
       <div className="container mx-auto px-5 py-24 text-center">
-        <h1 className="text-4xl font-bold text-accent-blue">Curso no encontrado</h1>
+        <h1 className="text-4xl font-bold text-accent-blue">Cargando curso...</h1>
+      </div>
+    );
+  }
+
+  if (error || !course) {
+    return (
+      <div className="container mx-auto px-5 py-24 text-center">
+        <h1 className="text-4xl font-bold text-accent-blue">{error || 'Curso no encontrado'}</h1>
         <p className="mt-4 text-lg text-texto-secundario">El curso que buscas no existe o ha sido movido.</p>
         <Link to="/" className="mt-8 inline-block">
           <PrimaryButton>Volver al Inicio</PrimaryButton>
@@ -32,13 +81,13 @@ export function CoursePage() {
 
   const handleAddToCart = () => {
     if (!course) return;
-    addToCart(course, courseInstructors);
+    addToCart(course, instructors);
     openCart();
   };
 
   const handleBuyNow = () => {
     if (!course) return;
-    addToCart(course, courseInstructors); // Ensure item is in cart before checkout
+    addToCart(course, instructors);
     navigate('/checkout');
   };
 
@@ -47,7 +96,6 @@ export function CoursePage() {
       <div className="container mx-auto px-5 py-16 md:py-24">
         <div className="grid lg:grid-cols-3 gap-12">
           
-          {/* Columna Principal */}
           <div className="lg:col-span-2">
             <span className={`inline-block mb-4 text-sm font-bold uppercase tracking-wider ${course.type === 'Presencial' ? 'text-secondary-bg' : 'text-accent-orange'}`}>
               Curso {course.type}
@@ -55,20 +103,15 @@ export function CoursePage() {
             <h1 className="text-4xl md:text-5xl font-bold text-accent-blue leading-tight">{course.title}</h1>
             
             <div className="mt-6 mb-8 space-y-4">
-              {course.instructorSlugs.map((slug, index) => {
-                const instructor = getInstructorBySlug(slug);
-                if (!instructor) return null; // No debería pasar si los datos son consistentes
-
-                return (
-                  <div key={index} className="flex items-center gap-4">
-                    <img src={instructor.imageUrl} alt={instructor.name} className="w-12 h-12 rounded-full object-cover" />
-                    <div>
-                      <p className="font-bold text-texto-principal">{instructor.name}</p>
-                      <p className="text-sm text-texto-secundario">{instructor.title}</p>
-                    </div>
+              {instructors.map((instructor, index) => (
+                <div key={index} className="flex items-center gap-4">
+                  <img src={instructor.imageUrl} alt={instructor.name} className="w-12 h-12 rounded-full object-cover" />
+                  <div>
+                    <p className="font-bold text-texto-principal">{instructor.name}</p>
+                    <p className="text-sm text-texto-secundario">{instructor.title}</p>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
 
             <h2 className="text-2xl font-bold text-accent-blue mt-12 mb-4">Descripción del Curso</h2>
@@ -90,7 +133,6 @@ export function CoursePage() {
             </div>
           </div>
 
-          {/* Sidebar de Compra */}
           <aside className="lg:col-span-1">
             <div className="bg-white rounded-lg shadow-lg p-6 sticky top-32">
               <h3 className="text-3xl font-bold text-accent-blue text-center">€{course.price} <span className="text-lg font-normal">{course.currency}</span></h3>

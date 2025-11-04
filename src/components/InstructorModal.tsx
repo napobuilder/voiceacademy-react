@@ -3,14 +3,15 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { XMarkIcon, BookOpenIcon } from '@heroicons/react/24/solid';
 import type { Instructor } from '@/data/instructors';
-import { courses } from '@/data/courses';
+import type { Course } from '@/data/courses'; // Keep this import for the Course type
 
 interface InstructorModalProps {
   instructor: Instructor | null;
+  courses: Course[]; // Now accepts filtered courses directly
   onClose: () => void;
 }
 
-export function InstructorModal({ instructor, onClose }: InstructorModalProps) {
+export function InstructorModal({ instructor, courses, onClose }: InstructorModalProps) {
   useEffect(() => {
     if (instructor) {
       document.body.style.overflow = 'hidden';
@@ -24,9 +25,8 @@ export function InstructorModal({ instructor, onClose }: InstructorModalProps) {
 
   if (!instructor) return null;
 
-  const instructorCourses = courses.filter(course => 
-    course.instructorSlugs.includes(instructor.slug)
-  );
+  // instructorCourses is now passed as 'courses' prop
+  const instructorCourses = courses; // Use the prop directly
 
   return (
     <div 

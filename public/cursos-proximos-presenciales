@@ -1,216 +1,194 @@
-Programación Presencial Caracas 2025 - Voice Academy
-Haz de tu voz una marca
-
-1. DOBLAJE BÁSICO (SABATINO)
-Fechas y Horario: Octubre: 4 y 11 | Hora: 9:00 AM - 4:00 PM
-
-Inversión: EUR €50
-
-Instructor: José Gómez Chompré
-
-Contenido:
-
-Respiración y manejo del aire.
-
-Entonación.
-
-Articulación y dicción.
-
-Manejo de la voz.
-
-Acento neutro internacional.
-
-Técnicas de dicción.
-
-Proyección de la voz.
-
-Manejo de intenciones.
-
-Ejercicios prácticos y dirigidos.
-
-2. ACENTO NEUTRO (SABATINO)
-Fechas y Horario: Octubre: 4 y 11 | Hora: 9:00 AM - 4:00 PM
-
-Inversión: EUR €50
-
-Instructor: Abelardo Oseches (Nota: el documento tiene un error tipográfico, "Aberlardo")
-
-Contenido:
-
-Características del acento neutro.
-
-Ritmo, melodía y cadencia del acento neutro.
-
-Técnicas para desarrollar el acento neutro.
-
-Usos del acento neutro en narración, doblaje, locución.
-
-Ejercicios prácticos y dirigidos.
-
-3. ORATORIA (Entre semana)
-Fechas y Horario: Octubre: 7 al 10 | Hora: 1:00 PM - 4:00 PM
-
-Inversión: EUR €50
-
-Instructor: Félix Ptolo
-
-Contenido:
-
-Manejo del miedo escénico y autoconfianza.
-
-Elementos del discurso.
-
-Cómo comunicar eficazmente.
-
-Cómo elaborar una presentación.
-
-El lenguaje corporal y gestual como elemento de comunicación.
-
-Ejercicios prácticos y dirigidos.
-
-4. LOCUCIÓN COMERCIAL INTEGRAL
-Fechas y Horario: Octubre: 14 al 31 | Hora: 1:00 PM a 4:00 PM
-
-Inversión: EUR €170
-
-Instructores: Abelardo Oseches y Jesús Conde
-
-Módulos:
-
-Módulo 1: Locución Comercial.
-
-Módulo 2: Locución de Promociones para Radio y TV.
-
-Módulo 3: Locución Corporativa.
-
-5. DOBLAJE BÁSICO (Entre semana)
-Fechas y Horario: Octubre: 14 al 17 | Hora: 1:00 PM - 4:00 PM
-
-Inversión: EUR €50
-
-Instructor: José Gómez Chompré
-
-Contenido:
-
-Respiración y manejo del aire.
-
-Entonación.
-
-Articulación y dicción.
-
-Manejo de la voz.
-
-Acento neutro internacional.
-
-Técnicas de dicción.
-
-Proyección de la voz.
-
-Manejo de intenciones.
-
-Ejercicios prácticos y dirigidos.
-
-6. ORATORIA (SABATINO)
-Fechas y Horario: Octubre: 18 y 25 | Hora: 9:00 AM – 4:00 PM
-
-Inversión: EUR €50
-
-Instructor: Félix Ptolo
-
-Contenido:
-
-Manejo del miedo escénico y autoconfianza.
-
-Elementos del discurso.
-
-Cómo comunicar eficazmente.
-
-Cómo elaborar una presentación.
-
-El lenguaje corporal y gestual como elemento de comunicación.
-
-Ejercicios prácticos y dirigidos.
-
-7. DICCIÓN PERFECTA (SABATINO)
-Fechas y Horario: Octubre: 18 y 25 | Hora: 9:00 AM - 4:00 PM
-
-Inversión: EUR €50
-
-Instructor: Abelardo Oseches
-
-Contenido:
-
-Método de la mecánica de la dicción.
-
-Conocimiento de los órganos articulatorios.
-
-Puntos articulatorios de cada fonema.
-
-Ejercicios prácticos y dirigidos.
-
-8. VOCES PARA DIBUJOS ANIMADOS (SABATINO)
-Fechas y Horario: Octubre 18 y 25 | Hora: 9:00 AM - 4:00 PM
-
-Inversión: EUR €50
-
-Instructor: José Gómez Chompré
-
-Contenido:
-
-Intención e interpretación.
-
-Caracterización de voces.
-
-Cómo crear voces originales.
-
-Manejo del ritmo.
-
-Sincro.
-
-Manejo del libreto.
-
-Ejercicios prácticos y dirigidos.
-
-9. DOBLAJE INTEGRAL
-Fechas y Horario: Octubre: 21 a Noviembre: 14 | Hora: 1:00 PM - 4:00 PM
-
-Inversión: EUR €170
-
-Módulos e Instructores:
-
-Módulo 1: Acento Neutro (Instructor: Abelardo Oseches).
-
-Módulo 2: Dibujos Animados (Instructor: José Gómez Chompré).
-
-Módulo 3: Reality y Live Action (Instructora: Mariangélica Aumaitre).
-
-Módulo 4: Narración para Documentales (Instructor: Abelardo Oseches).
-
-10. NARRACIÓN PARA DOCUMENTALES (Entre semana)
-Fechas y Horario: Octubre: 21 al 24 | Hora: 9:00 AM – 12:00 M
-
-Inversión: EUR €50
-
-Instructor: Abelardo Oseches
-
-Contenido:
-
-Características de la narración de documentales.
-
-Articulación.
-
-Proyección de la voz.
-
-Intención.
-
-Ritmo, melodía y cadencia.
-
-Usos del acento neutro en narración.
-
-Ejercicios prácticos y grabados.
-
-Datos de Contacto General:
-
-Email: voiceacademyve@gmail.com (Nota: Un curso usa talleresvoiceacademy@gmail.com).
-
-Teléfono: +58 412 743 55 16
+{
+  "academyInfo": {
+    "name": "Voice Academy",
+    "slug": "voice-academy",
+    "slogan": "Haz de tu voz una marca",
+    "programTitle": "Programación Presencial Caracas 2025",
+    "contactInfo": {
+      "phone": "+58 412 743 55 16",
+      "emailPrimary": "voiceacademyve@gmail.com",
+      "emailSecondary": "talleresvoiceacademy@gmail.com"
+    },
+    "paymentOptions": [
+      {
+        "name": "Cashéalo",
+        "description": "Permite financiamiento o pago en cuotas."
+      }
+    ],
+    "sourceDocument": "PRESENCIAL 2025.pdf"
+  },
+  "courses": [
+    {
+      "id": "va-c01-2025-halloween",
+      "title": "Doblaje Especial Halloween",
+      "subtitle": "Especial temático",
+      "description": "Curso especial de doblaje con temática de Halloween impartido por Henrique Palacios.",
+      "dates": "Del 4 al 7 de noviembre",
+      "schedule": "IPMA 4PM",
+      "investment": {
+        "amount": null,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Henrique Palacios",
+          "bio": null
+        }
+      ],
+      "content": [],
+      "targetAudience": null,
+      "paymentMethods": [],
+      "sourcePages": [
+        2
+      ]
+    },
+    {
+      "id": "va-c02-2025-oratoria-nov",
+      "title": "Oratoria",
+      "subtitle": null,
+      "description": "Aprende a comunicar eficazmente, manejar el miedo escénico, estructurar un discurso y utilizar el lenguaje corporal.",
+      "dates": "4 al 7 de noviembre",
+      "schedule": "1PM - 4PM",
+      "investment": {
+        "amount": 50,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Félix Ptolo",
+          "bio": null
+        }
+      ],
+      "content": [
+        "Manejo del miedo escénico y autoconfianza",
+        "Elementos del discurso",
+        "Cómo comunicar eficazmente",
+        "Cómo elaborar una presentación",
+        "El lenguaje corporal y gestual como elemento de comunicación",
+        "Ejercicios prácticos y dirigidos"
+      ],
+      "targetAudience": null,
+      "paymentMethods": [
+        "Cashéalo"
+      ],
+      "sourcePages": [
+        3
+      ]
+    },
+    {
+      "id": "va-c03-2025-doblaje-integral",
+      "title": "Doblaje Integral",
+      "subtitle": "Dibujos Animados (Sabatino)",
+      "description": "Un curso sabatino completo que cubre el doblaje de dibujos animados, desde clásicos y Disney hasta Anime y Superhéroes, con múltiples instructores especializados.",
+      "dates": "8 de noviembre a 13 de diciembre",
+      "schedule": "9AM - 4PM",
+      "investment": {
+        "amount": 170,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Alí Rondón",
+          "bio": "Especialista en Módulo 1: Animados Clásicos"
+        },
+        {
+          "name": "Maritza Rojas",
+          "bio": "Especialista en Módulo 2: Animados Disney"
+        },
+        {
+          "name": "Henrique Palacios",
+          "bio": "Especialista en Módulo 3: Anime"
+        },
+        {
+          "name": "José Gómez Chompré",
+          "bio": "Especialista en Módulo 4: Superhéroes"
+        }
+      ],
+      "content": [
+        "Módulo 1: Animados Clásicos",
+        "Módulo 2: Animados Disney",
+        "Módulo 3: Anime",
+        "Módulo 4: Superhéroes"
+      ],
+      "targetAudience": null,
+      "paymentMethods": [
+        "Cashéalo"
+      ],
+      "sourcePages": [
+        4
+      ]
+    },
+    {
+      "id": "va-c04-2025-doblaje-basico-nov",
+      "title": "Doblaje Básico",
+      "subtitle": null,
+      "description": "Curso fundamental para iniciar en el doblaje. Cubre desde la respiración y dicción hasta el manejo de intenciones y el acento neutro internacional.",
+      "dates": "18 al 21 de noviembre",
+      "schedule": "9AM – 12M",
+      "investment": {
+        "amount": 50,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Mariangélica Aumaitre",
+          "bio": null
+        }
+      ],
+      "content": [
+        "Respiración y manejo del aire",
+        "Entonación",
+        "Articulación y dicción",
+        "Manejo de la voz",
+        "Acento neutro internacional",
+        "Técnicas de dicción",
+        "Proyección de la voz",
+        "Manejo de intenciones",
+        "Ejercicios prácticos y dirigidos"
+      ],
+      "targetAudience": null,
+      "paymentMethods": [
+        "Cashéalo"
+      ],
+      "sourcePages": [
+        5
+      ]
+    },
+    {
+      "id": "va-c05-2025-diccion-sabatino-nov",
+      "title": "Dicción Perfecta",
+      "subtitle": "(Sabatino)",
+      "description": "Curso sabatino enfocado en el método de la mecánica de la dicción, el conocimiento de los órganos articulatorios y los puntos de articulación de cada fonema.",
+      "dates": "15 y 22 de noviembre",
+      "schedule": "9AM – 4PM",
+      "investment": {
+        "amount": 50,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Abelardo Oseches",
+          "bio": null
+        }
+      ],
+      "content": [
+        "Método de la mecánica de la dicción.",
+        "Conocimiento de los órganos articulatorios.",
+        "Puntos articulatorios de cada fonema.",
+        "Ejercicios prácticos y dirigidos"
+      ],
+      "targetAudience": null,
+      "paymentMethods": [
+        "Cashéalo"
+      ],
+      "sourcePages": [
+        6
+      ]
+    },
+    {
+      "id": "va-c06-2025-locucion-radio",
+      "title": "Locución y Producción para Radio",
+      "subtitle": null,
+      "description": "Aprende el proceso completo de creación de un programa de radio: desde la conceptualización y análisis del target, hasta la redacción, producción y salida al aire.",
+      "dates": "18 al 21 de noviembre",
+      "schedule": "1PM -

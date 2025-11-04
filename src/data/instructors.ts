@@ -92,6 +92,20 @@ export const instructors: Instructor[] = [
     title: 'Instructora de Locución',
     imageUrl: '/assets/fotos-voiceacademy/Mariangelica-Aumaitre-perfil.jpg',
     roles: ['instructor'],
+  },
+  {
+    slug: 'maritza-rojas',
+    name: 'Maritza Rojas',
+    title: 'Instructora de Doblaje',
+    imageUrl: '/assets/fotos-voiceacademy/Maritza Rojas.jpg',
+    roles: ['instructor'],
+  },
+  {
+    slug: 'mila-capote',
+    name: 'Mila Capote',
+    title: 'Instructora',
+    imageUrl: '/assets/fotos-voiceacademy/Mila Capote.png',
+    roles: ['instructor'],
   }
 ];
 

@@ -5,19 +5,30 @@ import { InstructorCard } from '@/components/InstructorCard';
 import { InstructorGalleryCard } from '@/components/InstructorGalleryCard';
 import { InstructorModal } from '@/components/InstructorModal';
 import { getLeaders, getGalleryInstructors, type Instructor } from '@/data/instructors';
+import type { Course } from '@/data/courses';
 
 const leaders = getLeaders();
 const galleryInstructors = getGalleryInstructors();
 
-export function Nosotros() {
+interface NosotrosProps {
+  courses: Course[];
+}
+
+export function Nosotros({ courses }: NosotrosProps) {
   const [selectedInstructor, setSelectedInstructor] = useState<Instructor | null>(null);
+  const [instructorCourses, setInstructorCourses] = useState<Course[]>([]);
 
   const openModal = (instructor: Instructor) => {
+    const coursesTaught = courses.filter(course => 
+      course.instructorSlugs?.includes(instructor.slug)
+    );
     setSelectedInstructor(instructor);
+    setInstructorCourses(coursesTaught);
   };
 
   const closeModal = () => {
     setSelectedInstructor(null);
+    setInstructorCourses([]);
   };
 
   return (
@@ -46,7 +57,11 @@ export function Nosotros() {
         </div>
       </div>
 
-      <InstructorModal instructor={selectedInstructor} onClose={closeModal} />
+      <InstructorModal 
+        instructor={selectedInstructor} 
+        courses={instructorCourses} 
+        onClose={closeModal} 
+      />
     </section>
   );
 }

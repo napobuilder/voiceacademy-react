@@ -1,146 +1,222 @@
-Programación Online 2025 - Voice Academy
-Haz de tu voz una marca
-
-1. DICCIÓN PERFECTA
-Fechas y Horario: Septiembre: 30, Octubre: 1 y 2 | Hora: 8:00 PM a 9:30 PM
-
-Inversión: EUR €45
-
-Instructor: Abelardo Oseches
-
-Contenido:
-
-Método de la mecánica de la dicción.
-
-Conocimiento de los órganos articulatorios.
-
-Puntos articulatorios de cada fonema.
-
-Ejercicios prácticos y dirigidos.
-
-2. DOBLAJE BÁSICO
-Fechas y Horario: Octubre: 7, 8 y 9 | Hora: 8:00 PM a 9:30 PM
-
-Inversión: EUR €45
-
-Instructor: José Gómez Chompré
-
-Contenido:
-
-Respiración y manejo del aire.
-
-Entonación.
-
-Articulación y dicción.
-
-Manejo de la voz.
-
-Acento neutro internacional.
-
-Técnicas de dicción.
-
-Proyección de la voz.
-
-Manejo de intenciones.
-
-Ejercicios prácticos y dirigidos.
-
-3. ORATORIA
-Fechas y Horario: Octubre: 14, 15 y 16 | Hora: 8:00 PM a 9:30 PM
-
-Inversión: EUR €45
-
-Instructor: Félix Ptolo
-
-Contenido:
-
-Manejo del miedo escénico y autoconfianza.
-
-Elementos del discurso.
-
-Oratoria Efectiva.
-
-Cómo comunicar eficazmente.
-
-Cómo elaborar una presentación.
-
-El lenguaje corporal y gestual como elemento de comunicación.
-
-4. PROMOCIONES PARA RADIO Y TV
-Fechas y Horario: Octubre: 21, 22 y 23 | Hora: 8:00 PM a 9:30 PM
-
-Inversión: EUR €45
-
-Instructor: José Antonio Castillo
-
-Contenido:
-
-Entonación.
-
-Articulación y dicción.
-
-Manejo de la voz.
-
-Acento neutro internacional.
-
-Intenciones.
-
-Manejo del ritmo.
-
-Cómo abordar los diferentes tipos de promociones.
-
-Identificaciones para emisoras de Radio y canales de TV.
-
-Ejercicios prácticos y dirigidos.
-
-5. NARRACIÓN PARA DOCUMENTALES
-Fechas y Horario: Octubre: 28, 29 y 30 | Hora: 8:00 PM a 9:30 PM
-
-Inversión: EUR €45
-
-Instructor: Abelardo Oseches
-
-Contenido:
-
-Características de la narración de documentales.
-
-Articulación.
-
-Proyección de la voz.
-
-Intención.
-
-Ritmo, melodía y cadencia.
-
-Usos del acento neutro en narración.
-
-Ejercicios prácticos y grabados.
-
-6. LOCUCIÓN Y ACTING PARA AUDIOLIBROS
-Fechas y Horario: Diciembre: 3, 4 y 5 | Hora: 8:00 PM a 9:30 PM
-
-Inversión: EUR €45
-
-Instructora: Charlot Prins
-
-Contenido:
-
-Desarrollo de técnicas de actuación.
-
-Manejo de la voz.
-
-Herramientas para caracterizar.
-
-Intenciones narrativas.
-
-Ritmos e inflexiones para la interpretación de textos.
-
-Ejercicios prácticos y dirigidos.
-
-Datos de Contacto General:
-
-Email: talleresvoiceacademy@gmail.com
-
-Teléfono: +58 412 743 55 16
-
-Nota: Todos los cursos tienen un costo de EUR €45.
+{
+  "academy": "Voice Academy",
+  "program": "PROGRAMACIÓN ONLINE 2025",
+  "contact": {
+    "email": "talleresvoiceacademy@gmail.com",
+    "phone": "+58 412 743 55 16"
+  },
+  "courses": [
+    {
+      "slug": "diccion-perfecta-nov-2025",
+      "title": "DICCIÓN PERFECTA",
+      "instructor": "ABELARDO OSECHES",
+      "dates": "NOVIEMBRE: 4, 5 Y 6",
+      "time": "8PM A 9:30PM",
+      "price": {
+        "raw": "EUR €45",
+        "amount": 45,
+        "currency": "EUR"
+      },
+      "content": [
+        "Método de la mecánica de la dicción.",
+        "Conocimiento de los órganos articulatorios.",
+        "Puntos articulatorios de cada fonema.",
+        "Ejercicios prácticos y dirigidos"
+      ]
+    },
+    {
+      "slug": "locucion-comercial-nov-2025",
+      "title": "LOCUCIÓN COMERCIAL",
+      "instructor": "JOSÉ ANTONIO CASTILLO",
+      "dates": "NOVIEMBRE: 4, 5 Y 6",
+      "time": "8PM A 9:30PM",
+      "price": {
+        "raw": "EUR €45",
+        "amount": 45,
+        "currency": "EUR"
+      },
+      "content": [
+        "Respiración y manejo del aire",
+        "Entonación",
+        "Articulación y dicción",
+        "Manejo de la voz",
+        "Acento neutro internacional",
+        "Intenciones comerciales",
+        "Manejo del ritmo",
+        "Cómo abordar los diferentes tipos de comerciales",
+        "Comerciales para Radio y TV",
+        "Ejercicios prácticos y dirigidos"
+      ]
+    },
+    {
+      "slug": "oratoria-nov-2025",
+      "title": "ORATORIA",
+      "instructor": "FÉLIX PTOLO",
+      "dates": "NOVIEMBRE: 11, 12 Y 13",
+      "time": "8PM A 9:30PM",
+      "price": {
+        "raw": "EUR €45",
+        "amount": 45,
+        "currency": "EUR"
+      },
+      "content": [
+        "Manejo del miedo escénico y autoconfianza",
+        "Elementos del discurso",
+        "Oratoria Efectiva",
+        "Cómo comunicar eficazmente",
+        "Cómo elaborar una presentación",
+        "El lenguaje corporal y gestual como elemento de comunicación"
+      ]
+    },
+    {
+      "slug": "narracion-documentales-nov-2025",
+      "title": "NARRACIÓN PARA DOCUMENTALES",
+      "instructor": "ABELARDO OSECHES",
+      "dates": "NOVIEMBRE: 10, 11 Y 12",
+      "time": "8PM A 9:30PM",
+      "price": {
+        "raw": "EUR €45",
+        "amount": 45,
+        "currency": "EUR"
+      },
+      "content": [
+        "Características de la narracion de documentales",
+        "Articulación",
+        "Proyección de la voz",
+        "Intención",
+        "Ritmo, melodía y cadencia",
+        "Usos del acento neutro en narración",
+        "Ejercicios prácticos y grabados."
+      ]
+    },
+    {
+      "slug": "acento-neutro-nov-2025",
+      "title": "ACENTO NEUTRO",
+      "instructor": "ABELARDO OSECHES",
+      "dates": "NOVIEMBRE: 18. 19 Y 20",
+      "time": "8PM A 9:30PM",
+      "price": {
+        "raw": "EUR €45",
+        "amount": 45,
+        "currency": "EUR"
+      },
+      "content": [
+        "Características del acento neutro",
+        "Ritmo, melodía y cadencia del acento neutro",
+        "Técnicas para desarrollar el acento neutro",
+        "Usos del acento neutro en narración, doblaje, locución",
+        "Ejercicios prácticos y dirigidos"
+      ]
+    },
+    {
+      "slug": "promociones-radio-tv-nov-2025",
+      "title": "PROMOCIONES PARA RADIO Y TV",
+      "instructor": "JOSÉ ANTONIO CASTILLO",
+      "dates": "NOVIEMBRE: 25, 26 Y 27",
+      "time": "8PM A 9:30PM",
+      "price": {
+        "raw": "EUR €45",
+        "amount": 45,
+        "currency": "EUR"
+      },
+      "content": [
+        "Entonación",
+        "Articulación y dicción",
+        "Manejo de la voz",
+        "Acento neutro internacional",
+        "Intenciones",
+        "Manejo del ritmo",
+        "Cómo abordar los diferentes tipos de promociones",
+        "Identificaciones para emisoras de Radio y canales de TV",
+        "Ejercicios prácticos y dirigidos"
+      ]
+    },
+    {
+      "slug": "doblaje-basico-nov-2025",
+      "title": "DOBLAJE BÁSICO",
+      "instructor": "MARIANGÉLICA AUMAITRE",
+      "dates": "NOVIEMBRE: 25, 26 Y 27",
+      "time": "8PM A 9:30PM",
+      "price": {
+        "raw": "EUR €45",
+        "amount": 45,
+        "currency": "EUR"
+      },
+      "content": [
+        "Respiración y manejo del aire",
+        "Entonación",
+        "Articulación y dicción",
+        "Manejo de la voz",
+        "Acento neutro internacional",
+        "Técnicas de dicción",
+        "Proyección de la voz",
+        "Manejo de intenciones",
+        "Ejercicios prácticos y dirigidos"
+      ]
+    },
+    {
+      "slug": "oratoria-dic-2025",
+      "title": "ORATORIA",
+      "instructor": "FÉLIX PTOLO",
+      "dates": "DICIEMBRE: 3, 4 Y 5",
+      "time": "8PM A 9:30PM",
+      "price": {
+        "raw": "EUR €45",
+        "amount": 45,
+        "currency": "EUR"
+      },
+      "content": [
+        "Manejo del miedo escénico y autoconfianza",
+        "Elementos del discurso",
+        "Oratoria Efectiva",
+        "Cómo comunicar eficazmente",
+        "Cómo elaborar una presentación",
+        "El lenguaje corporal y gestual como elemento de comunicación"
+      ]
+    },
+    {
+      "slug": "locucion-acting-audiolibros-dic-2025",
+      "title": "LOCUCIÓN Y ACTING PARA AUDIOLIBROS",
+      "instructor": "CHARLOT PRINS",
+      "dates": "DICIEMBRE: 3, 4 Y 5",
+      "time": "8PM A 9:30PM",
+      "price": {
+        "raw": "EUR €45",
+        "amount": 45,
+        "currency": "EUR"
+      },
+      "content": [
+        "Desarrollo de técnicas de actuación.",
+        "Manejo de la voz.",
+        "Herramientas para caracterizar.",
+        "Intenciones narrativas.",
+        "Ritmos e inflexiones para la interpretación de textos.",
+        "Ejercicios prácticos y dirigidos."
+      ]
+    },
+    {
+      "slug": "locucion-comercial-dic-2025",
+      "title": "LOCUCIÓN COMERCIAL",
+      "instructor": "JOSÉ ANTONIO CASTILLO",
+      "dates": "DICIEMBRE: 9, 10 Y 11",
+      "time": "8PM A 9:30PM",
+      "price": {
+        "raw": "EUR €45",
+        "amount": 45,
+        "currency": "EUR"
+      },
+      "content": [
+        "Respiración y manejo del aire",
+        "Entonación",
+        "Articulación y dicción",
+        "Manejo de la voz",
+        "Acento neutro internacional",
+        "Intenciones comerciales",
+        "Manejo del ritmo",
+        "Cómo abordar los diferentes tipos de comerciales",
+        "Comerciales para Radio y TV",
+        "Ejercicios prácticos y dirigidos"
+      ]
+    }
+  ]
+}
