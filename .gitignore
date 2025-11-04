@@ -37,3 +37,4 @@ lerna-debug.log*
 
 # Supabase temporary files
 /supabase/.temp/
+/dist-scripts/
