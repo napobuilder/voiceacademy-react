@@ -106,7 +106,12 @@ export function CourseEditorPage() {
         const details = JSON.parse(formData.details as string || '[]');
         const syllabus = JSON.parse(formData.syllabus as string || '[]');
 
-        const payload = { ...formData, details, syllabus };
+        const payload = {
+            ...formData,
+            details,
+            syllabus,
+            price: formData.price || 0, // Aseguramos que price sea 0 si es undefined
+        };
 
       if (isNewCourse) {
         // Crear curso

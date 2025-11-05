@@ -2,8 +2,12 @@
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-export const Logo: FC = () => (
-  <Link to="/" className="flex items-center text-white">
+interface LogoProps {
+  className?: string;
+}
+
+export const Logo: FC<LogoProps> = ({ className }) => (
+  <Link to="/" className={`flex items-center text-white ${className || ''}`}>
     <div 
       className="w-[55px] h-[55px] sm:mr-2 bg-white"
       style={{
