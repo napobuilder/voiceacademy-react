@@ -44,6 +44,15 @@ export default {
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
       },
+      animation: {
+        'infinite-scroll': 'scroll 40s linear infinite',
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
     },
   },
   plugins: [require('tailwind-scrollbar')],

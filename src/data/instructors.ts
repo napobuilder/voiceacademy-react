@@ -31,17 +31,38 @@ export const instructors: Instructor[] = [
     imgStyle: { objectPosition: '50% 40%' },
   },
   {
-    slug: 'ali-rondon',
-    name: 'Alí Rondón',
-    title: 'Instructor de Canto',
-    imageUrl: '/assets/fotos-voiceacademy/Alí Rondón.jpg',
-    roles: ['instructor'],
-  },
-  {
     slug: 'charlot-prince',
     name: 'Charlot Prince',
     title: 'Instructora de Doblaje',
     imageUrl: '/assets/fotos-voiceacademy/Charlot Prince.jpg',
+    roles: ['instructor'],
+  },
+  {
+    slug: 'mariangelica-aumaitre',
+    name: 'Mariangélica Aumaitre',
+    title: 'Instructora de Locución',
+    imageUrl: '/assets/fotos-voiceacademy/Mariangelica-Aumaitre-perfil.jpg',
+    roles: ['instructor'],
+  },
+  {
+    slug: 'henrique-palacios',
+    name: 'Henrique Palacios',
+    title: 'Instructor de Doblaje',
+    imageUrl: '/assets/fotos-voiceacademy/Henrique Palacios.jpg',
+    roles: ['instructor'],
+  },
+  {
+    slug: 'maritza-rojas',
+    name: 'Maritza Rojas',
+    title: 'Instructora de Doblaje',
+    imageUrl: '/assets/fotos-voiceacademy/Maritza Rojas.jpg',
+    roles: ['instructor'],
+  },
+  {
+    slug: 'mila-capote',
+    name: 'Mila Capote',
+    title: 'Instructora',
+    imageUrl: '/assets/fotos-voiceacademy/Mila Capote.png',
     roles: ['instructor'],
   },
   {
@@ -52,10 +73,10 @@ export const instructors: Instructor[] = [
     roles: ['instructor'],
   },
   {
-    slug: 'henrique-palacios',
-    name: 'Henrique Palacios',
-    title: 'Instructor de Doblaje',
-    imageUrl: '/assets/fotos-voiceacademy/Henrique Palacios.jpg',
+    slug: 'ali-rondon',
+    name: 'Alí Rondón',
+    title: 'Instructor de Canto',
+    imageUrl: '/assets/fotos-voiceacademy/Alí Rondón.jpg',
     roles: ['instructor'],
   },
   {
@@ -84,27 +105,6 @@ export const instructors: Instructor[] = [
     name: 'José Gomez Chompré',
     title: 'Instructor de Doblaje',
     imageUrl: '/assets/fotos-voiceacademy/José Gomez Chompré.jpg',
-    roles: ['instructor'],
-  },
-  {
-    slug: 'mariangelica-aumaitre',
-    name: 'Mariangélica Aumaitre',
-    title: 'Instructora de Locución',
-    imageUrl: '/assets/fotos-voiceacademy/Mariangelica-Aumaitre-perfil.jpg',
-    roles: ['instructor'],
-  },
-  {
-    slug: 'maritza-rojas',
-    name: 'Maritza Rojas',
-    title: 'Instructora de Doblaje',
-    imageUrl: '/assets/fotos-voiceacademy/Maritza Rojas.jpg',
-    roles: ['instructor'],
-  },
-  {
-    slug: 'mila-capote',
-    name: 'Mila Capote',
-    title: 'Instructora',
-    imageUrl: '/assets/fotos-voiceacademy/Mila Capote.png',
     roles: ['instructor'],
   }
 ];

@@ -46,14 +46,27 @@ export function Nosotros({ courses }: NosotrosProps) {
 
         <h3 className="text-3xl font-bold text-center text-accent-blue mb-12">Y nuestro increíble equipo de instructores</h3>
 
-        <div className="flex gap-8 overflow-x-auto pb-8 -mx-4 px-4 scrollbar-thin scrollbar-thumb-accent-orange/50 scrollbar-track-transparent">
-          {galleryInstructors.map((instructor, index) => (
-            <InstructorGalleryCard 
-              key={index} 
-              {...instructor} 
-              onClick={() => openModal(instructor)}
-            />
-          ))}
+        <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+          <ul className="flex items-center justify-center md:justify-start [&_li]:mx-4 animate-infinite-scroll hover:[animation-play-state:paused]">
+            {galleryInstructors.map((instructor, index) => (
+              <li key={index}>
+                <InstructorGalleryCard 
+                  {...instructor} 
+                  onClick={() => openModal(instructor)}
+                />
+              </li>
+            ))}
+          </ul>
+          <ul className="flex items-center justify-center md:justify-start [&_li]:mx-4 animate-infinite-scroll hover:[animation-play-state:paused]" aria-hidden="true">
+            {galleryInstructors.map((instructor, index) => (
+              <li key={index}>
+                <InstructorGalleryCard 
+                  {...instructor} 
+                  onClick={() => openModal(instructor)}
+                />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
