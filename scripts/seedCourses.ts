@@ -26,7 +26,10 @@ interface GenericCourseJSON {
   // --- Campos comunes o con nombres diferentes ---
   title?: string; // para online
   titulo?: string; // para presencial
-  instructor?: string; // para ambos, pero presencial es string
+  subtitle?: string; // para el nuevo formato
+  description?: string; // para el nuevo formato
+  instructor?: string; // para formato antiguo
+  instructors?: { name: string; bio: string | null }[]; // para el nuevo formato
   slug?: string;
   
   // --- Campos Online ---
@@ -38,7 +41,9 @@ interface GenericCourseJSON {
   // --- Campos Presencial ---
   fechas?: string;
   horario?: string;
-  inversion?: string | null;
+  schedule?: string; // para el nuevo formato
+  inversion?: any; // para formato antiguo
+  investment?: any; // para el nuevo formato
   modulos?: { titulo: string; instructor: string }[];
   edad?: string;
 }
@@ -87,7 +92,7 @@ const parsePrice = (price: any): number => {
     return 0;
 }
 
-const generateSlug = (title: string, date: string = ''): string => {
+const generateSlug = (title: string, subtitle: string = '', date: string = ''): string => {
     let baseSlug = title.toLowerCase()
         .replace(/ñ/g, 'n')
         .replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u')
@@ -97,7 +102,7 @@ const generateSlug = (title: string, date: string = ''): string => {
         .replace(/^-+|-+$/g, ''); // trim -
 
     // Add suffix for specific course types like (SABATINO)
-    if (title.toLowerCase().includes('sabatino')) {
+    if (title.toLowerCase().includes('sabatino') || subtitle.toLowerCase().includes('sabatino')) {
         baseSlug += '-sabatino';
     }
 
@@ -169,56 +174,57 @@ const seedCourses = async () => {
         if (!fs.existsSync(jsonPath)) {
             throw new Error(`El archivo JSON no se encuentra en la ruta: ${jsonPath}`);
         }
-        const jsonData = fs.readFileSync(jsonPath, 'utf-8');
-        const coursesToSeed: GenericCourseJSON[] = JSON.parse(jsonData);
-        console.log(`Se encontraron ${coursesToSeed.length} cursos en el archivo JSON.`);
-
-        // 4. Transformar datos
-        const coursesForDb = coursesToSeed.map(course => {
-            const title = course.title || course.titulo || 'Sin Título';
-            const dateString = course.dates || course.fechas || '';
-            const slug = course.slug || generateSlug(title, dateString);
-            const price = parsePrice(course.price || course.inversion);
-            const syllabusContent = course.content || course.modulos?.map(m => `${m.titulo} (con ${m.instructor})`) || [];
-            const syllabus = syllabusContent.map(item => ({ title: item, description: '' }));
-            const longDescription = syllabusContent.join('. ') + '.';
-            const shortDescription = syllabusContent[0] || '';
-
-            const startDate = parseCourseDate(course.dates || course.fechas || '');
-
-            let instructorSlugs: string[] = [];
-            if (course.instructor) {
-                const instructorSlug = instructorSlugMap[course.instructor.toLowerCase()];
-                if (instructorSlug) {
-                    instructorSlugs.push(instructorSlug);
-                } else {
-                    console.warn(`Slug no encontrado para el instructor: ${course.instructor}`);
-                }
-            } else if (course.modulos) {
-                instructorSlugs = course.modulos
-                    .map(m => instructorSlugMap[m.instructor.toLowerCase()])
-                    .filter((slug): slug is string => !!slug);
-                 // Eliminar duplicados
-                instructorSlugs = [...new Set(instructorSlugs)];
-            }
-
-
-            return {
-                slug,
-                title,
-                display_title: title,
-                short_description: shortDescription,
-                long_description: longDescription,
-                price: price,
-                icon_name: getIconName(title),
-                start_date: startDate.toISOString(),
-                featured: false,
-                details: [{ icon: 'UsersIcon', label: 'Horario', value: course.horario || course.time }],
-                syllabus,
-                instructor_slugs: instructorSlugs,
-                type: courseType,
-            };
-        });
+                const jsonData = fs.readFileSync(jsonPath, 'utf-8');
+                const coursesData = JSON.parse(jsonData);
+                const coursesToSeed: GenericCourseJSON[] = Array.isArray(coursesData) ? coursesData : coursesData.courses;
+                console.log(`Se encontraron ${coursesToSeed.length} cursos en el archivo JSON.`);
+        
+                // 4. Transformar datos
+                const coursesForDb = coursesToSeed.map(course => {
+                                const title = course.title || course.titulo || 'Sin Título';
+                                const subtitle = course.subtitle || '';
+                                const dateString = course.dates || course.fechas || '';
+                                const slug = course.slug || generateSlug(title, subtitle, dateString);                    const price = parsePrice(course.price || course.investment || course.inversion);
+                    const syllabusContent = course.content || course.modulos?.map(m => `${m.titulo} (con ${m.instructor})`) || [];
+                    const syllabus = syllabusContent.map(item => ({ title: item, description: '' }));
+                    const longDescription = course.description || syllabusContent.join('. ') + '.';
+                    const shortDescription = syllabusContent[0] || '';
+                    const startDate = parseCourseDate(dateString);
+        
+                    let instructorSlugs: string[] = [];
+                    if (course.instructors && Array.isArray(course.instructors)) {
+                        instructorSlugs = course.instructors
+                            .map(inst => instructorSlugMap[inst.name.toLowerCase()])
+                            .filter((slug): slug is string => !!slug);
+                    } else if (course.instructor && typeof course.instructor === 'string') {
+                        const instructorSlug = instructorSlugMap[course.instructor.toLowerCase()];
+                        if (instructorSlug) {
+                            instructorSlugs.push(instructorSlug);
+                        }
+                    } else if (course.modulos) {
+                        instructorSlugs = course.modulos
+                            .map(m => instructorSlugMap[m.instructor.toLowerCase()])
+                            .filter((slug): slug is string => !!slug);
+                    }
+                    instructorSlugs = [...new Set(instructorSlugs)]; // Eliminar duplicados
+        
+        
+                    return {
+                        slug,
+                        title,
+                        display_title: title,
+                        short_description: shortDescription,
+                        long_description: longDescription,
+                        price: price,
+                        icon_name: getIconName(title),
+                        start_date: startDate.toISOString(),
+                        featured: false,
+                        details: [{ icon: 'UsersIcon', label: 'Horario', value: course.schedule || course.horario || course.time }],
+                        syllabus,
+                        instructor_slugs: instructorSlugs,
+                        type: courseType,
+                    };
+                });
 
         console.log('Transformando datos para la base de datos...');
 

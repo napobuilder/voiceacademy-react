@@ -19,30 +19,6 @@
   },
   "courses": [
     {
-      "id": "va-c01-2025-halloween",
-      "title": "Doblaje Especial Halloween",
-      "subtitle": "Especial temático",
-      "description": "Curso especial de doblaje con temática de Halloween impartido por Henrique Palacios.",
-      "dates": "Del 4 al 7 de noviembre",
-      "schedule": "IPMA 4PM",
-      "investment": {
-        "amount": null,
-        "currency": "EUR"
-      },
-      "instructors": [
-        {
-          "name": "Henrique Palacios",
-          "bio": null
-        }
-      ],
-      "content": [],
-      "targetAudience": null,
-      "paymentMethods": [],
-      "sourcePages": [
-        2
-      ]
-    },
-    {
       "id": "va-c02-2025-oratoria-nov",
       "title": "Oratoria",
       "subtitle": null,
@@ -191,4 +167,330 @@
       "subtitle": null,
       "description": "Aprende el proceso completo de creación de un programa de radio: desde la conceptualización y análisis del target, hasta la redacción, producción y salida al aire.",
       "dates": "18 al 21 de noviembre",
-      "schedule": "1PM -
+      "schedule": "1PM - 4PM",
+      "investment": {
+        "amount": 50,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Luis Loreto",
+          "bio": null
+        }
+      ],
+      "content": [
+        "Cómo conceptualizar espacios de radio",
+        "Análisis del target objetivo",
+        "Estructura de producción de un programa o micro",
+        "Cómo generar contenidos para esa estructura",
+        "Cómo redactar para radio",
+        "Cómo producir y sacar el programa al aire",
+        "Ejercicios prácticos y dirigidos"
+      ],
+      "targetAudience": null,
+      "paymentMethods": [
+        "Cashéalo"
+      ],
+      "sourcePages": [
+        7
+      ]
+    },
+    {
+      "id": "va-c07-2025-oratoria-sabatino-nov",
+      "title": "Oratoria",
+      "subtitle": "(Sabatino)",
+      "description": "Versión sabatina del curso de oratoria. Aprende a comunicar eficazmente, manejar el miedo escénico, estructurar un discurso y utilizar el lenguaje corporal.",
+      "dates": "29 de noviembre y 6 de diciembre",
+      "schedule": "9AM - 4PM",
+      "investment": {
+        "amount": 50,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Félix Ptolo",
+          "bio": null
+        }
+      ],
+      "content": [
+        "Manejo del miedo escénico y autoconfianza",
+        "Elementos del discurso",
+        "Cómo comunicar eficazmente",
+        "Cómo elaborar una presentación",
+        "El lenguaje corporal y gestual como elemento de comunicación",
+        "Ejercicios prácticos y dirigidos"
+      ],
+      "targetAudience": null,
+      "paymentMethods": [
+        "Cashéalo"
+      ],
+      "sourcePages": [
+        8
+      ]
+    },
+    {
+      "id": "va-c08-2025-voces-animados",
+      "title": "Voces para Dibujos Animados",
+      "subtitle": null,
+      "description": "Curso especializado en la creación de voces para dibujos animados. Se enfoca en intención, interpretación, caracterización, creación de voces originales, ritmo y sincro.",
+      "dates": "25 al 28 de noviembre",
+      "schedule": "1PM - 4 PM",
+      "investment": {
+        "amount": 50,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Henrique Palacios",
+          "bio": null
+        }
+      ],
+      "content": [
+        "Intención e interpretación",
+        "Caracterización de voces",
+        "Cómo crear voces originales",
+        "Manejo del ritmo",
+        "Sincro",
+        "Manejo del libreto",
+        "Ejercicios prácticos y dirigidos"
+      ],
+      "targetAudience": null,
+      "paymentMethods": [],
+      "sourcePages": [
+        9
+      ]
+    },
+    {
+      "id": "va-c09-2025-acento-neutro-nov",
+      "title": "Acento Neutro",
+      "subtitle": null,
+      "description": "Desarrolla las características del acento neutro, dominando su ritmo, melodía y cadencia. Aprende sus usos prácticos en narración, doblaje y locución.",
+      "dates": "25 al 28 de noviembre",
+      "schedule": "1PM - 4PM",
+      "investment": {
+        "amount": 50,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Aberlardo Oseches",
+          "bio": "Nota: El nombre aparece como 'Aberlardo' en la fuente."
+        }
+      ],
+      "content": [
+        "Características del acento neutro",
+        "Ritmo, melodía y cadencia del acento neutro",
+        "Técnicas para desarrollar el acento neutro",
+        "Usos del acento neutro en narración, doblaje, locución",
+        "Ejercicios prácticos y dirigidos"
+      ],
+      "targetAudience": null,
+      "paymentMethods": [
+        "Cashéalo"
+      ],
+      "sourcePages": [
+        10
+      ]
+    },
+    {
+      "id": "va-c10-2025-diccion-dic",
+      "title": "Dicción Perfecta",
+      "subtitle": null,
+      "description": "Curso enfocado en el método de la mecánica de la dicción, el conocimiento de los órganos articulatorios y los puntos de articulación de cada fonema.",
+      "dates": "2 al 5 de diciembre",
+      "schedule": "1PM - 4PM",
+      "investment": {
+        "amount": 50,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Abelardo Oseches",
+          "bio": null
+        }
+      ],
+      "content": [
+        "Método de la mecánica de la dicción.",
+        "Conocimiento de los órganos articulatorios.",
+        "Puntos articulatorios de cada fonema.",
+        "Ejercicios prácticos y dirigidos"
+      ],
+      "targetAudience": null,
+      "paymentMethods": [
+        "Cashéalo"
+      ],
+      "sourcePages": [
+        11
+      ]
+    },
+    {
+      "id": "va-c11-2025-oratoria-dic",
+      "title": "Oratoria",
+      "subtitle": null,
+      "description": "Aprende a comunicar eficazmente, manejar el miedo escénico, estructurar un discurso y utilizar el lenguaje corporal.",
+      "dates": "2 al 5 de diciembre",
+      "schedule": "1PM A 4PM",
+      "investment": {
+        "amount": 50,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Félix Ptolo",
+          "bio": null
+        }
+      ],
+      "content": [
+        "Manejo del miedo escénico y autoconfianza",
+        "Elementos del discurso",
+        "Cómo comunicar eficazmente",
+        "Cómo elaborar una presentación",
+        "El lenguaje corporal y gestual como elemento de comunicación",
+        "Ejercicios prácticos y dirigidos"
+      ],
+      "targetAudience": null,
+      "paymentMethods": [],
+      "sourcePages": [
+        12
+      ]
+    },
+    {
+      "id": "va-c12-2025-acento-neutro-sabatino-dic",
+      "title": "Acento Neutro",
+      "subtitle": "(Sabatino)",
+      "description": "Versión sabatina. Desarrolla las características del acento neutro, dominando su ritmo, melodía y cadencia para narración, doblaje y locución.",
+      "dates": "6 y 13 de diciembre",
+      "schedule": "9AM - 4PM",
+      "investment": {
+        "amount": 50,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Aberlardo Oseches",
+          "bio": "Nota: El nombre aparece como 'Aberlardo' en la fuente."
+        }
+      ],
+      "content": [
+        "Características del acento neutro",
+        "Ritmo, melodía y cadencia del acento neutro",
+        "Técnicas para desarrollar el acento neutro",
+        "Usos del acento neutro en narración, doblaje, locución",
+        "Ejercicios prácticos y dirigidos"
+      ],
+      "targetAudience": null,
+      "paymentMethods": [
+        "Cashéalo"
+      ],
+      "sourcePages": [
+        13
+      ]
+    },
+    {
+      "id": "va-c13-2025-doblaje-ninos-sabatino",
+      "title": "Doblaje para Niños",
+      "subtitle": "(Sabatino)",
+      "description": "Curso sabatino diseñado para niños. Cubre los fundamentos del doblaje, incluyendo respiración, dicción, acento neutro y manejo de intenciones.",
+      "dates": "6 y 13 de diciembre",
+      "schedule": "9AM - 4PM",
+      "investment": {
+        "amount": 50,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "José Gómez Chompré",
+          "bio": "Instructora del curso para niños (Nota: El nombre 'José' aparece en la fuente, aunque la foto es femenina)."
+        }
+      ],
+      "content": [
+        "Respiración y manejo del aire",
+        "Entonación",
+        "Articulación y dicción",
+        "Manejo de la voz",
+        "Acento neutro internacional",
+        "Técnicas de dicción",
+        "Proyección de la voz",
+        "Manejo de intenciones",
+        "Ejercicios prácticos y dirigidos"
+      ],
+      "targetAudience": "8 a 13 años",
+      "paymentMethods": [
+        "Cashéalo"
+      ],
+      "sourcePages": [
+        14
+      ]
+    },
+    {
+      "id": "va-c14-2025-doblaje-basico-dic",
+      "title": "Doblaje Básico",
+      "subtitle": null,
+      "description": "Curso fundamental para iniciar en el doblaje. Cubre desde la respiración y dicción hasta el manejo de intenciones y el acento neutro internacional.",
+      "dates": "8 al 12 de diciembre",
+      "schedule": "1PM - 4PM",
+      "investment": {
+        "amount": 50,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Mariangélica Aumaitre",
+          "bio": null
+        }
+      ],
+      "content": [
+        "Respiración y manejo del aire",
+        "Entonación",
+        "Articulación y dicción",
+        "Manejo de la voz",
+        "Acento neutro internacional",
+        "Técnicas de dicción",
+        "Proyección de la voz",
+        "Manejo de intenciones",
+        "Ejercicios prácticos y dirigidos"
+      ],
+      "targetAudience": null,
+      "paymentMethods": [
+        "Cashéalo"
+      ],
+      "sourcePages": [
+        15
+      ]
+    },
+    {
+      "id": "va-c15-2025-narracion-documentales",
+      "title": "Narración de Documentales",
+      "subtitle": null,
+      "description": "Curso enfocado en las técnicas y características de la narración de documentales. Cubre articulación, proyección, intención, ritmo y el uso del acento neutro.",
+      "dates": "10, 11 y 12 de diciembre",
+      "schedule": "1PM – 4PM",
+      "investment": {
+        "amount": 50,
+        "currency": "EUR"
+      },
+      "instructors": [
+        {
+          "name": "Abelardo Oseches",
+          "bio": null
+        }
+      ],
+      "content": [
+        "Características de la narracion de documentales",
+        "Articulación",
+        "Proyección de la voz",
+        "Intención",
+        "Ritmo, melodía y cadencia",
+        "Usos del acento neutro en narración",
+        "Ejercicios prácticos y grabados"
+      ],
+      "targetAudience": null,
+      "paymentMethods": [
+        "Cashéalo"
+      ],
+      "sourcePages": [
+        16
+      ]
+    }
+  ]
+}
